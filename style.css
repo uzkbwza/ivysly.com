@@ -15,7 +15,7 @@ body {
 h1 {
     /* padding-top: 10px; */
     /* line-height: 0; */
-    font-size: 36pt;
+    font-size: 50px;
     padding: 0px;
     margin: 0px;
 }
@@ -114,14 +114,14 @@ h1 > a:hover, a:hover > h1 {
 
 h1.entry-title {
     line-height: 1;
-    font-size: 50px;
+    font-size: 39px;
     margin: 0px;
     
 }
 
 h2.entry-title {
     line-height: 1;
-    font-size: 26px;
+    font-size: 20px;
     margin-top: 10px;
     margin-bottom: 5px;
 }
