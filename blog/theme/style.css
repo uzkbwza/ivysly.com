@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:300, 400,700");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700");
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700");
 
 /* it's probably better if you don't look (´・ω・｀) */
 
@@ -14,10 +14,8 @@ body {
 
 h1 {
     /* padding-top: 10px; */
-    /* line-height: 0; */
+    line-height: 0;
     font-size: 36pt;
-    padding: 0px;
-    margin: 0px;
 }
 
 h1 > a {
@@ -33,7 +31,6 @@ h1 > a:hover {
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-    padding-top: 10px
 }
 
 .linkbar {
@@ -50,11 +47,6 @@ h1 > a:hover {
 
 .linkbar-top {
     padding-top: 0px;
-}
-
-.linkbar-article {
-    /* font-size: 30px; */
-    padding-bottom: 50px;
 }
 
 .linkbar > a {
@@ -84,94 +76,13 @@ h1 > a:hover {
     border-width: 3px;
 }
 
-.content-no-bottom-border {
-    min-height: 400px;
-    font-size: 17px;
-    border-style: double none none none;
-    padding-bottom: 50px
-}
-
 .subtitle {
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 17;
     color: #444444;
-}
+} 
 
-.blog-entry {
-    text-align: left;
-    border-style: dotted none none none;
-    border-width: 1px;
-    border-color: #222222;
-    padding-bottom: 10px;
-    /* padding-top: 10px; */
-    margin-bottom: 10px;
-}
-
-#article {
-    padding-top: 10px;
-}
-
-h1.entry-title {
-    line-height: 1;
-    font-size: 50px;
-    margin: 0px;
-    
-}
-
-h2.entry-title {
-    line-height: 1;
-    font-size: 26px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.entry-title {
-    /* text-transform: capitalize; */
-}
-
-
-#article > .entry-content {
-    padding-top: 20px;
-    text-align: left;
-    /* text-indent: 20px; */
-    font-size: 18px;
-    margin-top: 5px;
-    line-height: 1;
-}
-
-.entry-content > h1 {
-    font-size: 36px;
-}
-
-.entry-content > p, li {
-    /* font-weight: 200; */
-    letter-spacing: 1px;
-    font-size: 18px;
-    margin-top: 5px;
-}
-
-.entry-summary {
-    margin-top: 5px;
-}
-
-time {
-    font-size: 18px;
-    text-align: left;
-}
-
-.titlebox {
-    text-align: left;
-    border: dotted;
-    border-width: 1px;
-    border-style: none none dotted none;
-    border-color: #222222;
-    padding-bottom: 10px;
-}
-
-.titlebox > time {
-    text-align: left;
-}
 
 .music-entry {
     padding: 10px;
@@ -203,7 +114,6 @@ time {
     text-justify: inter-character;
     text-align-last: justify;
     font-family: "IBM Plex Mono";
-    font-weight: 500;
 }
 
 a {
