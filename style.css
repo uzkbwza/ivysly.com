@@ -20,11 +20,11 @@ h1 {
     margin: 0px;
 }
 
-h1 > a {
+h1 > a, a > h1 {
     color: #EEEEEE;
 }
 
-h1 > a:hover {
+h1 > a:hover, a:hover > h1 {
     color: #AAAAAA;
 }
 
