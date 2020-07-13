@@ -130,6 +130,9 @@ h2.entry-title {
     /* text-transform: capitalize; */
 }
 
+.appleLinks a  { 
+    text-decoration: none !important; 
+}
 
 #article > .entry-content {
     padding-top: 20px;
@@ -208,7 +211,7 @@ time {
 
 a {
     color: #C9002B;
-    text-decoration: wavy;
+    text-decoration: none;
     font-weight: bolder;
 }
 
