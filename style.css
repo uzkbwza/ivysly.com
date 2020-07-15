@@ -209,6 +209,12 @@ time {
     font-weight: 500;
 }
 
+img {
+        max-width:100%;
+            height:auto;
+            
+}
+
 a {
     color: #C9002B;
     text-decoration: none;
