@@ -209,6 +209,10 @@ time {
     font-weight: 500;
 }
 
+hr {
+    margin: 30px 10px
+}
+
 img {
         max-width:100%;
             height:auto;
