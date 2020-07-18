@@ -1,50 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ivy sly ∙ blog</title><link href="https://ivysly.com/blog/" rel="alternate"></link><link href="https://ivysly.com/blog/feeds/all.atom.xml" rel="self"></link><id>https://ivysly.com/blog/</id><updated>2020-07-12T00:00:00-07:00</updated><entry><title>Test Post (i will delete this soon)</title><link href="https://ivysly.com/blog/test-post.html" rel="alternate"></link><published>2020-07-12T00:00:00-07:00</published><updated>2020-07-12T00:00:00-07:00</updated><author><name>Ivy Sly</name></author><id>tag:ivysly.com,2020-07-12:/blog/test-post.html</id><summary type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus id lorem id dapibus.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorem markdownum. Nec quisve pinus inquit similis timorem, ulnas nequiquam timor
-igne in. Tamen frustra; Iove omnes primo cervum, acies nebulis templa Boeotiaque
-cacumen est.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Verba antiquae senecta&lt;/li&gt;
-&lt;li&gt;Adhuc oppositas Aeacidae&lt;/li&gt;
-&lt;li&gt;Restabat extremo viribus&lt;/li&gt;
-&lt;li&gt;Retexitur est hic bipennifer lumina navita postquam&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Favillae disce inque poenas miscet munusque iaculo paterna sibi &lt;a href="http://www.patruelibuspollice.org/librato"&gt;omina
-simul&lt;/a&gt; ludat terga orant lacerta
-veluti tubae. Hanc &lt;strong&gt;cave lucida locus&lt;/strong&gt; stolidarum taurus qua haec leves nec
-vita lentaque poenas virgine parentis: inde. Sub luctus quondam premens,
-struxisse voce animam cauda, variat oscula; o &lt;em&gt;patruo&lt;/em&gt; passa figuris &lt;strong&gt;pugnant
-crura&lt;/strong&gt;, nitenti! Iudicium internodia Iovis quod famaque est: negaverit Sidonide
-meritum. Prius verba, Eumenides per &lt;strong&gt;infelix album&lt;/strong&gt;, insula &lt;strong&gt;saxo&lt;/strong&gt;, idem
-Phiale in &lt;strong&gt;senior ad turba&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2&gt;Hectora esse&lt;/h2&gt;
-&lt;p&gt;Segetes tacito ad elidite, ora, eloquioque hunc curvantem abesse templa tremulis
-vulnerat cernam. Modo positaeque: coniuge vidisset lingua, carnes &lt;em&gt;si cecidit&lt;/em&gt;.
-Laetusque antris genitus &lt;a href="http://meorum-aut.org/tellure.html"&gt;et muneris
-zephyri&lt;/a&gt; induere frontem genitore iuncti.
-Alatur deus Oceani leges, Thaumantea annos tum mirantis iacet horriferum numinis
-salva.&lt;/p&gt;
-&lt;p&gt;Ad Iunonem macies: vobis sub: ab oculos prioribus viroque condiderant mori
-meliora? Sedem &lt;em&gt;uni&lt;/em&gt; fata astris Tusci qui austro parte et, quid colantur viri
-locus, sunt. Aliqua palmis funere, gravitate opacas abdita, victima o plura
-Phoebus specta adiecerit. In eludere temptabat est. &lt;a href="http://esse.net/adconcha"&gt;Hectora
-utiliter&lt;/a&gt; cum, dira venis ego unaque inquit, huc tum
-fias sed inermis conlato poteram: undas.&lt;/p&gt;
-&lt;h2&gt;Laurus totidem sua urbes signa ambiguo&lt;/h2&gt;
-&lt;p&gt;Luminis sed toro. Spargimur corpus &lt;a href="http://www.artus.net/"&gt;cava&lt;/a&gt; peritura fuit.
-Vomit aetate et nec gradus totumque manus. Fletumque animus, positisque exigis
-calcitrat post nunc est horrendis gradu &lt;strong&gt;noviens levem intendensque&lt;/strong&gt;. Nova est
-heu crudeles ebori, mea patri facies misit hanc illud veniam habebam, caelesti.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Cupido ducumque pendentes manebo adstantem pallorem luctusque&lt;/li&gt;
-&lt;li&gt;Quamvis promissa succiso&lt;/li&gt;
-&lt;li&gt;Nam gens fugitque diris in exul ora&lt;/li&gt;
-&lt;li&gt;Saepius huc tangam ipsa remotam&lt;/li&gt;
-&lt;li&gt;Quidem tanti&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Omnibus carinas si nubila murmure adduxit patulis postquam certum forma tecti.
-Resupinoque Inoo, sit non luctusque moderator &lt;em&gt;fuerunt nisi barba&lt;/em&gt; hostem tot:
-lupus.&lt;/p&gt;
-&lt;p&gt;Caecisque os Aeas deus dubitat, cura Solis, &lt;em&gt;in sua&lt;/em&gt; ferendo. Sonus liquidis,
-absistite duritia, &lt;a href="http://www.serpentum.com/nec-satis.html"&gt;equis&lt;/a&gt; non Achivam
-passim, in piget &lt;a href="http://aliquid-lacrimas.io/a-velox.php"&gt;narratur&lt;/a&gt;, ara incedit
-nymphae.&lt;/p&gt;</content><category term="misc"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ivy sly ∙ blog</title><link href="https://ivysly.com/blog/" rel="alternate"></link><link href="https://ivysly.com/blog/feeds/all.atom.xml" rel="self"></link><id>https://ivysly.com/blog/</id><updated>2020-07-14T00:00:00-07:00</updated><entry><title>Observations on the Discord-Twitter Dynamic</title><link href="https://ivysly.com/blog/hyperforum-macrochannel.html" rel="alternate"></link><published>2020-07-14T00:00:00-07:00</published><updated>2020-07-14T00:00:00-07:00</updated><author><name>Ivy Sly</name></author><id>tag:ivysly.com,2020-07-14:/blog/hyperforum-macrochannel.html</id><summary type="html">&lt;p&gt;My thoughts on the evolution of what I call the hyperforum and the macrochannel. Some things I've noticed about the separation of online culture into two new major forms (reversed from their original purposes) and how they interact with each other. Why teenagers are being ludicrously racist. An unreadable diagram.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Something curious to me is the behavior of private gatherings in online chat 
+rooms (before, Skype; further still, IRC; now, Discord) and their roles as 
+highly efficient avenues for developing microculture, rapid discourse, and
+sharing discovery. In the early-mid 10's I was a member 
+of some extremely active groups of musicians
+on Skype, and some of them have gone on to see considerable success in their 
+niche&lt;sup&gt;&lt;a href="#fn1" id="ref1"&gt;[1]&lt;/a&gt;&lt;/sup&gt;. 
+Even when you are allotted just one room, a consensus is made quickly on the 
+etiquette, direction, and, often, the path to innovation in the group's subject 
+interest.&lt;/p&gt;
+&lt;p&gt;Discord harmonizes with this quality. Users are given the opportunity to
+now expand their groups into multiple rooms, explicitly specifying what you are 
+allowed to talk about and where, with varying levels of moderator 
+abities for rule enforcement and wanton power play.&lt;/p&gt;
+&lt;h2&gt;A Shortcut To Esotericism&lt;/h2&gt;
+&lt;p&gt;Enter the hyperforum. &lt;strong&gt;Frozen in time, a substantially large Discord server is 
+entirely indistinguishable from the message boards one might have seen 
+spattering the Web in the naughts and early 10's&lt;/strong&gt;—except, this time, 
+communication is &lt;em&gt;instant&lt;/em&gt;, and you don't have to spend the cash, 
+time, or brain power setting it up 
+yourself. 
+In scope and accessibility, nothing like this has ever been done before, nor has
+it even come close. The process behind hosting a place of 
+discussion&lt;sup&gt;&lt;a href="#fn2" id="ref2"&gt;[2]&lt;/a&gt;&lt;/sup&gt; 
+quickly transformed from an 
+ordeal usually reserved for sorcerers with knowledge of arcane arts like "php" 
+or "DNS" to something any computer-literate putz can do for free. &lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Ding! You've received an invite to a private Discord server.&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Immediately, you enter a new, 
+instantly eternal universe of unintelligible discourse and 
+alien social norms. Every server you're in has a hackjob Python robot arbiter 
+scanning your outward messages and updating some obscure variable if your 
+post matches one of its many regex 
+patterns&lt;sup&gt;&lt;a href="#fn3" id="ref3"&gt;[3]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Of course, it's obviously not news that any exclusive group or niche will develop 
+a unique culture. But consider the 
+userbase&lt;sup&gt;&lt;a href="#fn4" id="ref4"&gt;[4]&lt;/a&gt;&lt;/sup&gt; we are talking about here.
+Internet microcultures are blossoming into troves of art and knowledge at an
+unprecedented frequency. Make no mistake, I think this is beautiful and profound, 
+and the effects on meatspace outer-culture are certainly going to be 
+unpredictable (this is already proving to be the case).&lt;/p&gt;
+&lt;p&gt;Insular web communities full of overly-online weirdos and teenagers 
+aren't wholly without fault, however. I don't want to rehash
+what a thousand people have said about why echo chambers are bad,
+but I do want to touch on a few things. &lt;/p&gt;
+&lt;h3&gt;I Can't Understand What The Kids Are Saying But I Think It's Racist&lt;/h3&gt;
+&lt;p&gt;In the sphere of quickly evolving discussion, one must reduce their environment to
+its symbols; it's simply impossible to keep track of the holistic human
+being behind every user avatar on every server you participate in. Vice versa, 
+better your own identity be reduced to the symbols you choose, so
+that you can adequately maintain the pace without muddying up the discourse 
+(in fact, it is impossible not to do this).&lt;/p&gt;
+&lt;p&gt;While talking to a &lt;a href="https://www.instagram.com/wifihermit"&gt;friend&lt;/a&gt; about this, he made a good point to me. Consider the 
+"starter pack" meme.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An example of the starter pack meme posted to Twitter." src="https://ivysly.com/blog/images/starterpack.png"&gt;
+&lt;sup&gt;An example of the starter pack meme posted to Twitter.&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;The intent here is to categorize people into
+"types"&lt;sup&gt;&lt;a href="#fn5" id="ref5"&gt;[5]&lt;/a&gt;&lt;/sup&gt;. Everything gets much easier
+when the world becomes simple. You begin to think this way of yourself. What
+starterpack describes me? What symbols do people imagine when they read my
+messages? When they see my avatar? What container contains me? Is it more than
+one?&lt;/p&gt;
+&lt;p&gt;This framework of pathological categorization is shared by identity politics, 
+neoliberalism, capitalism, fascism, etc.—that is to say, ideologies that are bent on 
+"efficiency" despite their emphasis of form over function. &lt;/p&gt;
+&lt;p&gt;So, of course we are seeing a radical divide towards the extremes. Reducing the 
+world to its signifiers leaves no room for anything else. And it's obvious why
+even the most heinous poasters don't pay their actions any mind: people in webforums 
+are no longer material human beings. We are primarily &lt;em&gt;not&lt;/em&gt; engaging with the 
+material. &lt;/p&gt;
+&lt;p&gt;But what difference does it make when you're only racist online?&lt;/p&gt;
+&lt;p&gt;Well, for one, most people can't help but to be their race &lt;em&gt;all of the time&lt;/em&gt;. 
+Also, now that we've established an environment of symbolism and
+identity politics, what you do or say online is indistinguishable from what
+you do in material space. You aren't only racist online, you're only racist
+&lt;em&gt;sometimes&lt;/em&gt;. There is no difference; the medium is no longer the message.&lt;/p&gt;
+&lt;p&gt;And there are many names for the vehement response to online fascism; 
+"Cancel culture", "censorship", "SJW" something or other. But ultimately
+how the Left responds to this is barely praxis at all. &lt;strong&gt;It does not matter
+if you are "cancelled". It means nothing.&lt;/strong&gt; &lt;/p&gt;
+&lt;h2&gt;The Macrochannel: The Long Way Around to The Thing You Were Already Doing&lt;/h2&gt;
+&lt;p&gt;Before I get too far ahead of myself, let's talk about the underlying 
+canvas of internet discourse, so that we can see how these large-scale
+interactions (e.g. being "cancelled") are taking place.&lt;/p&gt;
+&lt;p&gt;Twitter is what I call a "macrochannel"—in other words, Twitter is more like
+an IRC channel than Discord is, but with a few dozen million active users and only 
+a pittance of options to filter them out. The difference between the apparent use 
+cases is surprising; Discord is home to sprawling community, but Twitter's 
+deliberate lack of structure seems to at best lead to small niche in-groups, and they 
+are all under constant surveillance by those adjacent to 
+them&lt;sup&gt;&lt;a href="#fn6" id="ref6"&gt;[6]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Interestingly, the more public-facing, "open" center of discussion seems like the 
+least conducive to it.&lt;/p&gt;
+&lt;p&gt;It's important, also, to understand that Twitter has an understated, tertiary, 
+emergent function. Twitter itself is an efficient 
+backdoor to many of the closed communities on
+hyperforums. If a link is not 
+already in someone's bio, it only takes a 
+bit of parasocial trust-building before you are 
+invited to the back stage workshop 
+responsible for a cult of personality. &lt;/p&gt;
+&lt;p&gt;This binary is largely what separates modern internet discourse from its past forms. 
+Despite their enormous popularity in the same crowds, a state of tension exists 
+between the communities on Discord and those on Twitter.&lt;/p&gt;
+&lt;h2&gt;The Invisible Hand of Meta-Slacktivism and Zoomer PR&lt;/h2&gt;
+&lt;p&gt;What is happening when two or more of these Twitter accounts clash
+publicly, with seemingly no setup or substantial history between the two?
+Of course people have their private affairs, and sometimes they go public, 
+but I posit there tends to be a manufactured element to this—not that either 
+party are being ingenuine, nor that bad blood is farcical, nor that allegations 
+are untrue, but that often the goal of and process behind this is more than just 
+realizing one's own desire for justice or conflict. &lt;/p&gt;
+&lt;p&gt;Your identity is not just showcased by these interactions, 
+it is &lt;em&gt;defined&lt;/em&gt; by them. Your vicious beef with @cum_chungus69
+encompasses more than just your distaste for them; it is the basis for your
+claim to humanity inside the chatroom (take a look at the accounts people call 
+"bots". Usually, they aren't). After all, isn't there a reason we are making
+anything public? Isn't the idea to delegate influence within the platform you
+are on? It is not like we are in town square, and can punish offenders directly,
+or vote on some legislature, or &lt;em&gt;win anything&lt;/em&gt;. We can't &lt;em&gt;do a communism&lt;/em&gt; on 
+Twitter—categorically this does not even make sense. Ultimately, 
+no matter how right your cause is, the best thing you can do is put an asterisk 
+on someone's entry in the archive.&lt;/p&gt;
+&lt;h3&gt;Well, fuck it, that's what we're gonna have to do then, right?&lt;/h3&gt;
+&lt;p&gt;Discord is the perfect engine for this. It is a tool molded for 
+the microculture war, something a niche can use to determine where to draw the border
+between us and them, something they can use to delimit what dirt is and subsequently 
+dig it up. With tools like this, we've reached a new capacity for the simulation 
+of activism on the internet.&lt;/p&gt;
+&lt;p&gt;Understand that I am not 
+even referring to something like the 
+"leftists vs fascists"
+conflict, because this is occuring on much smaller levels too: "leftists vs 
+different leftists", "philosophy dweebs vs teenagers", "anime pfp's vs normal
+people", "kpop stans vs..."&lt;sup&gt;&lt;a href="#fn7" id="ref7"&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;It may be helpful to understand it like this: the Twitter matrix 
+is simultaneously the history book written by the cumulative minds of hyperforums (on 
+Discord) and the battleground they are fighting on; it is the history book in that 
+it is pseudo-nonfiction (all Twitter personalities and interactions between them 
+are inherently editorialized), and the battleground because it is 
+nonetheless a place of genuine ideological conflict—it is &lt;em&gt;hyperreal&lt;/em&gt;. &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a href="#ref1" id="fn1"&gt;[1]&lt;/a&gt;&lt;/sup&gt; 
+Unfortunately, my niche was and remains "whatever I'm feeling
+like doing at the time". I'll let you know when it works out.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a href="#ref2" id="fn2"&gt;[2]&lt;/a&gt;&lt;/sup&gt; 
+While we are making up words, how about "cyber-symposium"?&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a href="#ref3" id="fn3"&gt;[3]&lt;/a&gt;&lt;/sup&gt; 
+Of course, it may alert you to this, or it may not—or perhaps
+instead you may simply query the robot and it will harmlessly spit out a
+naked or half-naked anime woman back at you, and for one small moment you are
+invited to enjoy the artwork before it is consumed by the endless swathes of
+newer posts; infinitely ninja'd. This impermance is illusory, though. That 
+catgirl will be there for as long as the server exists, and Discord itself 
+invites you to index it for older messages in a way  much more akin 
+to a bulletin board than an IRC channel. 
+At what point are we still calling Discord a chatroom?&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a href="#ref4" id="fn4"&gt;[4]&lt;/a&gt;&lt;/sup&gt; 
+I do not mean to alarm you, but twenty-somethings masquerading as 
+Japanese cartoon girls are exposing your teenager to Deleuze &lt;em&gt;this very second&lt;/em&gt;. 
+And there's nothing you can do about it.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a href="#ref5" id="fn5"&gt;[5]&lt;/a&gt;&lt;/sup&gt; 
+Related: &lt;a href="https://twitter.com/search?q=%22new%20type%20of%20guy%22&amp;amp;src=typed_query&amp;amp;f=live"&gt;this meme&lt;/a&gt; which is very 
+popular at the time of writing. Furthermore, at this point, 
+suffice it to say that Jean Baudrillard's writings on 
+simulation and symbols are relevant to the whole article.
+I suggest afterwards you skim the book, &lt;em&gt;Simulacra and Simulation&lt;/em&gt;, which you can 
+find pdf's of on Google.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a href="#ref6" id="fn6"&gt;[6]&lt;/a&gt;&lt;/sup&gt; 
+&lt;a href="https://www.opendemocracy.net/en/opendemocracyuk/exiting-vampire-castle/"&gt;I am not the first person to point this out&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a href="#ref7" id="fn7"&gt;[7]&lt;/a&gt;&lt;/sup&gt;
+...I don't need to tell you how unintelligible this gets.&lt;/p&gt;</content><category term="misc"></category></entry></feed>
