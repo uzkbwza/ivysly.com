@@ -140,7 +140,14 @@ h2.entry-title {
     /* text-indent: 20px; */
     font-size: 18px;
     margin-top: 5px;
-    line-height: 1;
+}
+
+.about {
+    text-align: left;
+    /* text-indent: 20px; */
+    font-size: 18px;
+    /* font-weight: 200; */
+    letter-spacing: 1px;
 }
 
 .entry-content > h1 {
@@ -198,7 +205,7 @@ time {
     padding: 0px;
 }
 
-.poem {
+.poem > p {
     text-transform: uppercase;
     /* font-variant: small-caps; */
     text-align: justify;
@@ -207,6 +214,7 @@ time {
     text-align-last: justify;
     font-family: "IBM Plex Mono";
     font-weight: 500;
+    line-height: 1.0;
 }
 
 hr {
@@ -215,7 +223,35 @@ hr {
 
 img {
         max-width:100%;
-            height:auto;
+        height:auto;
+}
+
+.image-in-text {
+    float: right;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 200px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.image-in-text > img {
+    /* width: 200px; */
+    border-style: solid;
+    border-width: 1px;
+    border-color: #222222;
+    margin-bottom: 5px
+}
+
+.image-in-text > p {
+    padding: 3px;
+    margin: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #222222
+
 }
 
 a {
@@ -230,4 +266,5 @@ a:hover {
 
 p {
     margin: 10px 0px;
+    line-height: 1.1;
 }
