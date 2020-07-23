@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:300, 400,700");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700");
+
+/* it's probably better if you don't look (´・ω・｀) */
+
+body {
+    font-family: "Source Serif Pro";
+    line-height: 1.0;
+    background-color: black;
+    color: #EEEEEE; /* pepsi red */
+    text-align: center;
+    font-size: 100%;
+}
+
+h1 {
+    /* padding-top: 10px; */
+    /* line-height: 0; */
+    font-size: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 > a, a > h1 {
+    color: #EEEEEE;
+}
+
+h1 > a:hover, a:hover > h1 {
+    color: #AAAAAA;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 10px
+}
+
+.linkbar {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    border-color: #111111;
+}
+
+.linkbar-top {
+    padding-top: 0px;
+}
+
+.linkbar-article {
+    /* font-size: 30px; */
+    padding-bottom: 50px;
+}
+
+.linkbar > a {
+    margin: 0px 10px;
+}
+
+.linkbar-top > a {
+    font-size: 28px;
+}
+
+.linkbar-bottom > a {
+    color: #004B93;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    max-width: 600px;
+    margin: auto;
+    /* padding-bottom: 10px; */
+}
+
+.content {
+    min-height: 400px;
+    font-size: 17px;
+    border-style: double none double none ;
+    border-width: 3px;
+}
+
+.content-no-bottom-border {
+    min-height: 400px;
+    font-size: 17px;
+    border-style: double none none none;
+    padding-bottom: 50px
+}
+
+.subtitle {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 17;
+    color: #444444;
+}
+
+.blog-entry {
+    text-align: left;
+    border-style: dotted none none none;
+    border-width: 1px;
+    border-color: #222222;
+    padding-bottom: 10px;
+    /* padding-top: 10px; */
+    margin-bottom: 10px;
+}
+
+#article {
+    padding-top: 10px;
+}
+
+h1.entry-title {
+    line-height: 1;
+    font-size: 39px;
+    margin: 0px;
+    
+}
+
+h2.entry-title {
+    line-height: 1;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.entry-title {
+    /* text-transform: capitalize; */
+}
+
+.appleLinks a  { 
+    text-decoration: none !important; 
+}
+
+#article > .entry-content {
+    padding-top: 20px;
+    text-align: left;
+    /* text-indent: 20px; */
+    font-size: 18px;
+    margin-top: 5px;
+    line-height: 1;
+}
+
+.entry-content > h1 {
+    font-size: 36px;
+}
+
+.entry-content > p, li {
+    /* font-weight: 200; */
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.entry-summary {
+    margin-top: 5px;
+}
+
+time {
+    font-size: 18px;
+    text-align: left;
+}
+
+.titlebox {
+    text-align: left;
+    border: dotted;
+    border-width: 1px;
+    border-style: none none dotted none;
+    border-color: #222222;
+    padding-bottom: 10px;
+}
+
+.titlebox > time {
+    text-align: left;
+}
+
+.music-entry {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-style: none none dotted none;
+    border-width: 1px;
+    border-color: #222222;
+}
+
+.music-entry > .linkbar {
+    font-size: 48px;
+    padding: 0px;
+}
+
+.music-entry > h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    padding: 0px;
+}
+
+.poem {
+    text-transform: uppercase;
+    /* font-variant: small-caps; */
+    text-align: justify;
+    color: #AAAAAA;
+    text-justify: inter-character;
+    text-align-last: justify;
+    font-family: "IBM Plex Mono";
+    font-weight: 500;
+}
+
+a {
+    color: #C9002B;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+a:hover {
+    color: #EEEEEE;
+}
+
+p {
+    margin: 10px 0px;
+}

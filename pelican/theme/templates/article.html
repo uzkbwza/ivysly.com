@@ -1,0 +1,61 @@
+
+{% extends "base.html" %}
+{% block html_lang %}{{ article.lang }}{% endblock %}
+{% block linktitle %}{{article.title|striptags}} - Ivy Sly{% endblock linktitle %}
+
+{% block title %}{{ article.title|striptags  }} ∙ {{ SITENAME }}{% endblock %}
+
+{% block head %}
+  {{ super() }}
+
+  {% import 'translations.html' as translations with context %}
+  {% if translations.entry_hreflang(article) %}
+    {{ translations.entry_hreflang(article) }}
+  {% endif %}
+
+  {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block contenttype %}"content content-no-bottom-border"{% endblock contenttype %}
+
+{% block content %}
+<section id="article" class="body">
+  <div class="titlebox">
+    <header>
+        <h1 class="entry-title">
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+            title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+    </header>
+    <footer class="post-info">
+        <time class="published" datetime="{{ article.date.isoformat() }}">
+            {{ article.date|strftime('%Y-%m-%d') }}
+        </time>
+        {% if article.modified %}
+        <time class="modified" datetime="{{ article.modified.isoformat() }}">
+            <br/>
+            modified {{ article.modified|strftime('%Y-%m-%d')}}
+        </time>
+        {% endif %}
+    </footer><!-- /.post-info -->
+  </div>
+  <div class="entry-content">
+    {{ article.content }}
+  </div><!-- /.entry-content -->
+</section>
+{% endblock %}
+
+{% block linkbar %}
+<div class="linkbar linkbar-article">
+    <a href="{{ SITEURL }}/index.html">go back</a>
+    </div>
+{{super()}}
+{% endblock linkbar %}
