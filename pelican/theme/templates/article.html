@@ -36,9 +36,11 @@
     {{ translations.translations_for(article) }}
     </header>
     <footer class="post-info">
-        <time class="published" datetime="{{ article.date.isoformat() }}">
-            {{ article.date|strftime('%Y-%m-%d') }}
-        </time>
+      poasted 
+      <time class="published" datetime="{{ article.date.isoformat() }}">
+        {{ article.date|strftime('%Y-%m-%d') }}
+      </time>
+      by <a href="{{ HOMEURL }}/about.html">Ivy Sly</a> 
         {% if article.modified %}
         <time class="modified" datetime="{{ article.modified.isoformat() }}">
             <br/>
