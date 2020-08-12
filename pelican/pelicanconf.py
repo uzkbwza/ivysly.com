@@ -36,4 +36,4 @@ DEFAULT_PAGINATION = False
 # RELATIVE_URLS = True
 FEED_RSS='rss.xml'
 
-
+STATIC_PATHS = ['images', 'videos']
