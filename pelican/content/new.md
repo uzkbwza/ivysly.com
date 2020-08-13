@@ -32,9 +32,9 @@ I am currently writing this post in my text editor with a 8pt bitmap font called
 This was a satisfying little art project for me, and pragmatically a good way of squeezing some real estate out of my claustrophobic, low-dpi laptop screen. I don't really know the first thing about typography, but with such a limited space to draw points for each glyph, it starts to feel more like a meditation or puzzle than a rigorous artform. Most characters are 5x7 with an ascent and descent of 2 pixels each (I think?). Many times, especially with the bold characters, the difference between legible and not was a matter of changing one pixel. 
 
 <div class="image-in-text">
-    <img alt="The full set of characters in viii" src="./images/viii2.png" style="max-width:250px">
-    <p>The full set of characters in viii</p>
-</div>
+<img alt="The full set of characters in viii" src="./images/viii2.png" style="max-width:250px">
+<p>The full set of characters in viii</p>
+    </div>
 
 I won't lie and say I didn't often look at [other fonts](https://github.com/Tecate/bitmap-fonts) for guidance, 'cause I did, but I did always try to figure things out on my own first, and to take the design in a unique direction. I took from my own handwriting some quirks—for example, note the somewhat unusual finials<a href="#fn2", id="ref2"><sup>[2]</sup></a> that bend forward under some glyphs ('i', 'l', 't', and 'T'). That may have something to do with some nature of my left-handedness. Or maybe I just want to feel special. 
 
