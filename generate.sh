@@ -1,4 +1,6 @@
 #!/bin/sh
+python footnotes.py
+echo "running footnotes script"
 echo "generating blog"
 cd pelican && make publish
 cd ..
