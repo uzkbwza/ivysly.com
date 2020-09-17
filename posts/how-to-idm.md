@@ -4,7 +4,7 @@ Author: Ivy Sly
 Slug: how-to-do-drukqs
 Summary: In which I respond to a simple question with a bunch of unwarranted advice. How I made my latest "braindance" (???) album, Becomesher. Some general tips on how to approach making this style of music.
 
-So I released my latest album recently. It's called [Becomesher](https://iv-music.bandcamp.com/album/becomesher), released under then name IV. This album by far is my most developed, mature work, and I am boundlessly proud of it. I spent about 6 months working on it, and every song took on average a few weeks' time to make. You should go listen before you read the rest of this article! Though, if you don't, there are still points I think are relevant to anyone creating electronic music.
+So I released my latest album recently. It's called [Becomesher](https://iv-music.bandcamp.com/album/becomesher), released under the name IV. This album by far is my most developed, mature work, and I am boundlessly proud of it. I spent about 6 months working on it, and every song took on average a few weeks' time to make. You should go listen before you read the rest of this article! Though, if you don't, there are still points I think are relevant to anyone creating electronic music.
 
 <iframe width="600" height="600" src="https://www.youtube.com/embed/IDlnxL0POPA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
