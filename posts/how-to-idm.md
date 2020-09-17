@@ -83,7 +83,7 @@ Ivy
 
 ---
 
-[*1] Yes this email is real! Somebody actually liked it that much! I'm as floored as you are.
+[*1] Yes this email is real! Somebody actually liked it that much! I'm as floored as you are. Also, please, I love getting emails! [Send me one](mailto:ivysly@protonmail.com)!
 
 [*2] When you find yourself typing this out, it's time to learn notation.
 
