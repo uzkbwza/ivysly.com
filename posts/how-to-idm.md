@@ -1,4 +1,4 @@
-Title: Making Becomesher, or, "How to Do Drukqs" - The Long Answer to a Short Question
+Title: Making Becomesher, or, 'How to Do Drukqs' - The Long Answer to a Short Question
 Date: 2020-09-17
 Author: Ivy Sly
 Slug: how-to-do-drukqs
