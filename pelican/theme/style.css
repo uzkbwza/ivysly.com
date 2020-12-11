@@ -150,6 +150,11 @@ h2.entry-title {
     letter-spacing: 1px;
 }
 
+.affiliates > h2{
+  text-align: center;
+  margin: 0px;
+}
+
 .entry-content > h1 {
     font-size: 36px;
 }
