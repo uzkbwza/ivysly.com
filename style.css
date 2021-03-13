@@ -1,18 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:300, 400,700");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
 
 /* it's probably better if you don't look (´・ω・｀) */
 
 body {
-    font-family: "Source Serif Pro";
+    font-family: "IBM Plex Sans";
     line-height: 1.0;
-    background-color: black;
-    color: #EEEEEE; /* pepsi red */
+    background-color: white;
+    color: black; /* pepsi red */
     text-align: center;
+    font-weight: 400;
     font-size: 100%;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 h1 {
+    font-family: "Source Serif Pro";
     /* padding-top: 10px; */
     /* line-height: 0; */
     font-size: 50px;
@@ -21,7 +29,7 @@ h1 {
 }
 
 h1 > a, a > h1 {
-    color: #EEEEEE;
+    color: black;
 }
 
 h1 > a:hover, a:hover > h1 {
@@ -38,14 +46,41 @@ h1 > a:hover, a:hover > h1 {
 
 .linkbar {
     font-size: 20px;
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 10px;
+    font-weight: 700;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-width: 1px;
     border-color: #111111;
+}
+
+.home {
+    /* overflow: hidden; */
+    /* position: absolute; */
+    display: flex;
+    margin: auto;
+    height: 100vh;
+    /* min-height: 100%; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    text-align: center;
+    /* min-height: 100vh; */
+}
+
+.home > a > h1 {
+    margin: 15px;
+}
+
+.home > div {
+    /* flex:1 1 auto; */
+    /* border:1px red solid; */
+    /* text-align:center; */
+    margin:15px;
 }
 
 .linkbar-top {
@@ -82,6 +117,7 @@ h1 > a:hover, a:hover > h1 {
     font-size: 17px;
     border-style: double none double none ;
     border-width: 3px;
+    margin-bottom: 10px;
 }
 
 .content-no-bottom-border {
@@ -106,6 +142,8 @@ h1 > a:hover, a:hover > h1 {
     padding-bottom: 10px;
     /* padding-top: 10px; */
     margin-bottom: 10px;
+    
+    
 }
 
 #article {
@@ -140,6 +178,7 @@ h2.entry-title {
     /* text-indent: 20px; */
     font-size: 18px;
     margin-top: 5px;
+    
 }
 
 .about {
@@ -205,7 +244,7 @@ time {
 }
 
 .music-entry > h1 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 30px;
     padding: 0px;
 }
@@ -223,14 +262,15 @@ time {
 }
 
 hr {
-    margin: 30px 10px
+    margin: 30px 10px;
+    color: #EEEEEE;
 }
 
 img {
         display: block;
         border-style: solid;
         border-width: 1px;
-        border-color: #222222;
+        border-color: #AAAAAA;
         max-width:100%;
         height:auto;
         margin-left: auto;
@@ -258,7 +298,7 @@ img {
     margin: 0px;
     border-style: solid;
     border-width: 1px;
-    border-color: #222222
+    border-color: #AAAAAA
 
 }
 
@@ -273,7 +313,7 @@ a {
 }
 
 a:hover {
-    color: #EEEEEE;
+    color: #AAAAAA;
 }
 
 p {
