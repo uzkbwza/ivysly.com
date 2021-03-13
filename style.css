@@ -7,12 +7,13 @@
 body {
     font-family: "IBM Plex Sans";
     line-height: 1.0;
-    background-color: white;
+    /* background-color: #222222; */
     color: black; /* pepsi red */
     text-align: center;
     font-weight: 400;
     font-size: 100%;
     min-height: 100%;
+    margin: 0px;
 }
 
 html {
@@ -57,19 +58,37 @@ h1 > a:hover, a:hover > h1 {
     border-color: #111111;
 }
 
+.home-container {
+    display: flex;
+    /* background-image: url("bg.gif"); */
+    /* background: #222222; */
+    /* margin:auto; */
+    height: 100vh;
+    /* background: */
+
+}
+
 .home {
     /* overflow: hidden; */
     /* position: absolute; */
     display: flex;
     margin: auto;
-    height: 100vh;
+    width:  400px;
+    height: 400px;
     /* min-height: 100%; */
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     position: relative;
     text-align: center;
+    background: white;
+    /* border-style: double none double none; */
+    border-width: 1px;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-color: #222222;
     /* min-height: 100vh; */
+    
 }
 
 .home > a > h1 {
@@ -77,14 +96,20 @@ h1 > a:hover, a:hover > h1 {
 }
 
 .home > div {
+    
     /* flex:1 1 auto; */
     /* border:1px red solid; */
     /* text-align:center; */
-    margin:15px;
+    margin-top:15px;
+    margin-bottom:15px;
 }
 
 .linkbar-top {
     padding-top: 0px;
+}
+
+.home > .linkbar-top {
+    margin: 0px;
 }
 
 .linkbar-article {
@@ -105,9 +130,12 @@ h1 > a:hover, a:hover > h1 {
 }
 
 .container {
-    width: 90%;
-    height: 100%;
-    max-width: 600px;
+
+    background: white;
+    padding: 10px;
+    /* width: 90%; */
+    /* height: 100%; */
+    max-width: 700px;
     margin: auto;
     /* padding-bottom: 10px; */
 }
