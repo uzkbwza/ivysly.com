@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function replace_footnotes() {
   # replace footnotes of posts with html footnote links

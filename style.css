@@ -58,12 +58,15 @@ h1 > a:hover, a:hover > h1 {
     border-color: #111111;
 }
 
-.home-container {
+.center-container {
     display: flex;
     /* background-image: url("bg.gif"); */
     /* background: #222222; */
     /* margin:auto; */
     height: 100vh;
+    
+    /* flex-direction: column; */
+
     /* background: */
 
 }
@@ -130,22 +133,27 @@ h1 > a:hover, a:hover > h1 {
 }
 
 .container {
-
     background: white;
     padding: 10px;
-    /* width: 90%; */
-    /* height: 100%; */
+    width: 90%;
+    height: 100%;
     max-width: 700px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
     /* padding-bottom: 10px; */
 }
 
 .content {
     min-height: 400px;
+    /* height: 100%; */
     font-size: 17px;
     border-style: double none double none ;
     border-width: 3px;
     margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .content-no-bottom-border {
@@ -209,12 +217,13 @@ h2.entry-title {
     
 }
 
-.about {
+.content-text {
     text-align: left;
     /* text-indent: 20px; */
     font-size: 18px;
     /* font-weight: 200; */
     letter-spacing: 1px;
+    
 }
 
 .affiliates > h2{
@@ -307,9 +316,11 @@ img {
 
 .image-in-text {
     float: right;
-    margin-left: 20px;
-    margin-right: 20px;
-    max-width: 15vw;
+    padding-left: 20px;
+    padding-right: 5px;
+    /* margin: 10px; */
+    height: auto;
+    max-width: 25vw;
     font-size: 12px;
     display: flex;
     flex-direction: column;
@@ -317,8 +328,9 @@ img {
 }
 
 .image-in-text > img {
-    /* width: 200px; */
-    margin-bottom: 5px
+   
+    margin-bottom: 5px;
+    /* overflow: hidden; */
 }
 
 .image-in-text > p {
@@ -326,8 +338,19 @@ img {
     margin: 0px;
     border-style: solid;
     border-width: 1px;
-    border-color: #AAAAAA
+    border-color: #AAAAAA;
+    margin-bottom: 10px;
 
+}
+
+.image-in-text > a {
+    text-align: center;
+}
+
+.left {
+    float: left;
+    padding-right: 20px;
+    padding-left: 5px;
 }
 
 .yt {
@@ -347,4 +370,29 @@ a:hover {
 p {
     margin: 10px 0px;
     line-height: 1.1;
+}
+
+.game-entry {
+    /* clear: both; */
+    overflow: hidden;
+    /* overflow-y:hidden */
+    border-style: none none dotted none;
+    padding-bottom: 10px;
+    border-width: 1px;
+    border-color: #222222;
+}
+
+
+
+.game-description {
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.game-description > h1 {
+    font-size: 30px;    
+    font-family: "Source Serif Pro";
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
