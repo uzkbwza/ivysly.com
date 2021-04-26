@@ -1,7 +1,7 @@
 Title: Some Dreams I've Gone And Dreamt, And Why You Should Dream, Too
 Date: 2021-04-26
 Author: Ivy Sly
-Slug: some-dreams-ive-gone-and-dreamt
+Slug: dreams-1
 Summary: I preach the benefits of dream journaling, and why I do it. I cherry-pick the highlights of my dream journal, going back a year, with some explanations and commentary, and a couple illustrations. 
 
 I started my dream journal in April of last year. It was a good idea, in 
@@ -102,8 +102,8 @@ For many people, I think nightmares are a source of trauma. But I
 haven't had a dream that really disturbed me past waking up since I was 
 young. I've mentioned this online, but I find that nightmares are a lot more
 tolerable than particularly good dreams; with the latter I usually just feel
-disappointed, whereas I always tend to wake up relieved that I get a "second 
-chance." 
+disappointed, whereas after a nightmare I always tend to wake up relieved that 
+I get a "second chance." 
 
 ***
 
