@@ -4,13 +4,13 @@
 /* it's probably better if you don't look (´・ω・｀) */
 
 body {
-    font-family: "IBM Plex Sans";
+    font-family: "Source Serif Pro";
     line-height: 1.0;
     /* background-color: #222222; */
     color: black; /* pepsi red */
     text-align: center;
-    font-weight: 400;
-    font-size: 100%;
+    /* font-weight: 400; */
+    font-size: 18px;
     min-height: 100%;
     margin: 0px;
 }
@@ -147,7 +147,7 @@ h1 > a:hover, a:hover > h1 {
 .content {
     min-height: 400px;
     /* height: 100%; */
-    font-size: 17px;
+    /* font-size: 17px; */
     border-style: double none double none ;
     border-width: 3px;
     margin-bottom: 10px;
@@ -157,7 +157,7 @@ h1 > a:hover, a:hover > h1 {
 
 .content-no-bottom-border {
     min-height: 400px;
-    font-size: 17px;
+
     border-style: double none none none;
     padding-bottom: 50px
 }
@@ -212,7 +212,7 @@ h2.entry-title {
     padding-top: 20px;
     text-align: left;
     /* text-indent: 20px; */
-    font-size: 18px;
+    /* font-size: 14px; */
     margin-top: 5px;
     
 }
@@ -220,9 +220,9 @@ h2.entry-title {
 .content-text {
     text-align: left;
     /* text-indent: 20px; */
-    font-size: 18px;
+    /* font-size: 14px; */
     /* font-weight: 200; */
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     
 }
 
@@ -237,8 +237,8 @@ h2.entry-title {
 
 .entry-content > p, li {
     /* font-weight: 200; */
-    letter-spacing: 1px;
-    font-size: 18px;
+    /* letter-spacing: 1px; */
+    /* font-size: 14px; */
     margin-top: 5px;
 }
 
