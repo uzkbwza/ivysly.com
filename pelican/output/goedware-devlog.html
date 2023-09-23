@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<head>
+	<!--I used Pelican to generate this blog, 
+	so it may look a little different over here-->
+      <meta charset="UTF-8">
+    <link rel='stylesheet' type='text/css' href="../style.css">
+    <script src="https://kit.fontawesome.com/d453510ff5.js" crossorigin="anonymous"></script>
+  
+    <meta name="keywords" content="music, electronic">
+    <meta name="description" content="musician, programmer, internet user">
+    <meta name="author" content="Ivy Sly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <meta name="language" content="English">
+    <meta name="title" content="Goedware Game Jam 5 Devlog - Ivy Sly">
+
+    <meta property="og:title" content="Goedware Game Jam 5 Devlog - Ivy Sly">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ivysly.com/card.png">
+    <meta property="og:description" content="musician, programmer, internet user">
+    
+    <meta name="twitter:site" content="@ivy_sly_">
+    <meta name="twitter:creator" content="@ivy_sly_">
+    <meta name="twitter:title" content="Ivy Sly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="musician, programmer, internet user">
+    <meta name="twitter:image" content="https://ivysly.com/card.png">
+  
+    <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+    <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+    <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+    <link rel=icon type=image/png sizes=192x192 href=/android-chrome-192x192.png>
+    <link rel=icon type=image/png sizes=512x512 href=/android-chrome-512x512.png>
+    
+    <title>Goedware Game Jam 5 Devlog ∙  blog ∙ ivy sly</title>
+
+
+
+
+
+  </head>
+
+  <body>
+      <div class="container">
+        <div class="header">
+        <a href="https://ivysly.com"><h1>bloog</h1></a>
+        <div class="linkbar linkbar-top">
+          <a href="./index.html"><i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+
+        <div class="content content-no-bottom-border">
+<section id="article" class="body">
+  <div class="titlebox">
+    <header>
+        <h1 class="entry-title">
+        <a href="./goedware-devlog.html" rel="bookmark"
+            title="Permalink to Goedware Game Jam 5 Devlog">Goedware Game Jam 5 Devlog</a></h1>
+    
+    </header>
+    <footer class="post-info">
+      poasted 
+      <time class="published" datetime="2022-06-12T00:00:00-07:00">
+        2022-06-12
+      </time>
+      by <a href="https://ivysly.com/about.html">Ivy Sly</a> 
+    </footer><!-- /.post-info -->
+  </div>
+  <div class="entry-content">
+    <p><a href="https://itch.io/jam/goedware-game-jam-5">Jam page here</a>.</p>
+<p>So I just finished this jam game, <a href="https://ivysly.itch.io/no-reservations">No Reservations</a>, with the very skilled <a href="https://humanisred.itch.io">HumanIsRed</a> behind all the art. Go give him a follow! Also on <a href="https://twitter.com/tinybox11">twitter</a>!!</p>
+<p>A requirement of the jam is that all entrants submit a devlog, in hopes that we can all learn from each other. Here I'll run through what's been on my mind while developing the game, things I think could be helpful, and how I dealt with certain challenges. Starting off...</p>
+<h2>GDScript 2.0 Rules</h2>
+<p>And I can't go back. For a while now, I've been using Godot 4.0 - even building the master branch before alpha builds <a href="https://godotengine.org/article/dev-snapshot-godot-4-0-alpha-1">became available</a>. First off - I really, really don't recommend using 4.0 for developing anything serious yet. Even for a week-long jam, it surprised me with bugs, features that were poorly implemented if at all, general performance problems I couldn't pin down (although you can blame my code for this one), and frequent editor crashes. If you have any self control, try the new stuff, and then put it away for now. Don't be like me.</p>
+<p>I can't help myself. New GDScript is so nice. It's also faster to write. To keep it succinct, I'll focus on the most important changes (to me). The first two are that functions and signals can now be treated as any other object. We already know that first-class functions are nice, but first-class signals are another secret killer. In Godot 3, if you wanted to connect a timer to a function, this is how you'd write it:</p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="n">timer</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;some_function&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">func</span><span class="w"> </span><span class="n">some_function</span><span class="p">():</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># do stuff ...</span><span class="w"></span>
+</code></pre></div>
+
+<p>In 4.0, you eliminate the need for wanton string use by changing that line to this:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">timer</span>.<span class="nb">timeout</span>.<span class="k">connect</span><span class="ss">(</span><span class="nv">some_function</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>Isn't that nice? No strings! Both the signal and the function are referred to directly. Now you can catch typos before they muck everything up during runtime. </p>
+<p>But maybe that's not a big deal to you. Ok, no strings, big deal. But you wanna write less code! Okay. What if that function just changes a variable, and doesn't call anything else?</p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span><span class="w"></span>
+
+<span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">false</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="n">timer</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;some_function&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">some_function</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span><span class="w"></span>
+</code></pre></div>
+
+<p>That's a lot of code for just flipping a switch, right? You have a game jam to finish. Well, now 4.0 allows you to easily do weird and hacky things like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span><span class="w"></span>
+
+<span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">false</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="n">timer</span><span class="o">.</span><span class="n">timeout</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">set</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">))</span><span class="w"></span>
+</code></pre></div>
+
+<p>Since <code>set</code> is a method in every <code>Object</code>, we can take advantage of that by just connecting and binding it directly. We've totally eliminated the need for that second function. </p>
+<p>...Okay, we've also reintroduced reflection with strings, but if your primary concern is development time (as was mine), this is a huge W. This also allows for currying. Along with the new lambda functions, GDScript can be very flexible in its expression (though still not as much as Python).</p>
+<p>Here's some more intuitive stuff with first-class functions, which I used in my custom (cpu bound) particle FX code. Essentially, a number of particles are animated to shoot outwards in a direction, with different amounts of random spread and length for different kinds of animation - a user defined narrow spread, a wide spread, and full-circle. Which kind is chosen is random, again with user-defined weights for each. To do this, I randomly select from 3 instances of the constructor function directly, each bound with different parameters based on the kind of animation chosen, matched with an array of weights created from the user defined variables exported earlier.</p>
+<p>It looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="o">...</span><span class="w"></span>
+<span class="k">func</span><span class="w"> </span><span class="n">animate_particle</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">line</span><span class="p">:</span><span class="w"> </span><span class="n">LineParticle</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">straight</span><span class="p">:</span><span class="w"> </span><span class="n">Callable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_particle</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">spread1</span><span class="p">,</span><span class="w"> </span><span class="n">size1</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">wide</span><span class="p">:</span><span class="w"> </span><span class="n">Callable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_particle</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">spread2</span><span class="p">,</span><span class="w"> </span><span class="n">size2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">full_circle</span><span class="p">:</span><span class="w"> </span><span class="n">Callable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_particle</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span><span class="w"> </span><span class="n">size3</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">funcs</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Array</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">straight</span><span class="p">,</span><span class="w"> </span><span class="n">wide</span><span class="p">,</span><span class="w"> </span><span class="n">full_circle</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">weights</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Array</span><span class="p">[</span><span class="nb nb-Type">float</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">straight_w</span><span class="p">,</span><span class="w"> </span><span class="n">wide_w</span><span class="p">,</span><span class="w"> </span><span class="n">full_circle_w</span><span class="p">]</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rng</span><span class="o">.</span><span class="n">weighted_choice</span><span class="p">(</span><span class="n">funcs</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="o">...</span><span class="w"></span>
+</code></pre></div>
+
+<video style="max-width:100%" controls>
+<source src="videos/particle.webm">
+</video>
+
+<p>In fact, even that <code>weighted_choice</code> function uses first-class functions under the hood, in my own <code>RandomNumberGenerator</code>-derived class:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">weighted_randi_range</span><span class="p">(</span><span class="n">start</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span><span class="w"> </span><span class="n">weight_function</span><span class="p">:</span><span class="w"> </span><span class="n">Callable</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">weight_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">):</span><span class="w"></span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">weight</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight_function</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">weights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">weight_sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">weight</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">rnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randf_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">weight_sum</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">):</span><span class="w"></span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weights</span><span class="p">[</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">rnd</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">weight</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="w">        </span><span class="n">rnd</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">weight</span><span class="w"></span>
+<span class="w">    </span><span class="nb">assert</span><span class="p">(</span><span class="bp">false</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;should never get here&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">weighted_choice</span><span class="p">(</span><span class="n">array</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Array</span><span class="p">,</span><span class="w"> </span><span class="n">weight_array</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Array</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">function_weighted_choice</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="k">func</span><span class="p">(</span><span class="n">i</span><span class="p">):</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">weight_array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">function_weighted_choice</span><span class="p">(</span><span class="n">array</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Array</span><span class="p">,</span><span class="w"> </span><span class="n">weight_function</span><span class="p">:</span><span class="w"> </span><span class="n">Callable</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">weighted_randi_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">weight_function</span><span class="p">)]</span><span class="w"></span>
+</code></pre></div>
+
+<p>This probably isn't the fastest way of doing things, but I think it works well as a generic &amp; re-usable way to weigh random number generation for whatever your purpose is.</p>
+<p>Now for the bad stuff...</p>
+<h2>Godot 4.0 is DEFINITELY STILL ALPHA</h2>
+<p>A new change in the vast Godot 4.0 features list is a promising rewrite of the navigation system. Now it's server-based, much like rendering, physics, etc. I hoped to take advantage of this, as I had used their navigation system for my game, <a href="https://ivysly.itch.io/super-misfire">Super Misfire or: One Gun to Shoot Them All</a>, to good effect, and it was relatively easy to implement. Unfortunately, in Godot 4.0 alpha 8 (which is the version I am currently using for No Reservations), it seems like a major component of the navigation system simply does not work: the NavigationObstacle2D. Unfortunately for me, my game has tables. </p>
+<p>Let me explain.</p>
+<p>Here are some tables in my game:</p>
+<p><img alt="Some tables in my game." src="./images/tables.png"></p>
+<p>You can shoot over these tables, but they block movement. An explosion will destroy them, clearing the path. They're physics objects, so a smaller explosion that doesn't destroy them will move them a little bit. In early iterations of this project, enemies would frequently get stuck on tables, as their pathfinding didn't see them. You see, all the pathfinding information was added by hand, by me, as baking it into the tilemap just wouldn't cut it.</p>
+<p>Godot 4.0 has a convenient node called NavigationObstacle2D. Its purpose is to be attached to a dynamic object, informing navigation agents that they must move around it. This was express-made for my purpose, so I used it.</p>
+<p>Except, it didn't do anything. Enemies didn't avoid the obstacles. No amount of tweaking navigation settings helped at all. So I had to come up with a backup solution short of making a different game entirely. What could I do? Well, I went with the obvious solution: exclude the area around tables from the navigation regions.</p>
+<p>I went back and did this for nearly every table in the game.</p>
+<p><img alt="A navigation polygon wrapped around (but not overlapping) the tables." src="./images/tables2.png"></p>
+<p><img alt="More navigation region nonsense, multiple complicated polygons drawn to avoid tables." src="./images/tables3.png"></p>
+<p>To allow enemies to cross paths where tables used to exist, when a table is destroyed, it then added &amp; enabled a new navigation region to the map. Of course, this didn't account for when a table still exists but has been moved by some force. In fact, it still doesn't. And I don't know how or if I am going to solve that, outside of simply waiting for them to fix the feature.</p>
+<p>Hand-drawing the navigation polygons had already taken up about a third of the time spent designing levels, and doing it AGAIN probably bumped that up to half. What an enormous waste of time! It's also a big reason why there are only 3 levels.</p>
+<h3>Moving onto another annoying thing.</h3>
+<p>First off, Godot's new TileMap feature is quite nice. The new terrains system allows for easily making auto-tiles between different types of tiles, all the new features for editing tile properties are extremely useful, if not a bit clunky to use. But there's one problem that made it an utter slog to use; it seems that you cannot define a "template" for autotiling terrain. That means, for every single terrain type, you have to paint it manually. Here is what that looks like, in real time:</p>
+<video style="max-width:100%" controls>
+<source src="videos/tilemap.mp4">
+</video>
+
+<p>Rinse and repeat. Granted, I am going quite fast here; at first, this would take me even longer, as I was not totally sure which tile was supposed to be what, and I had not got used to the weird UI. No eraser button? Really? To add icing to the cake, you couldn't copy physics polygon templates either. For this tileset it doesn't matter, as they all use the whole tile, but for something like the "walls" underneath these tiles, I had to make sure I manually set each one to be the same size:</p>
+<p><img alt="Physics polygons of the walls." src="./images/walls.png"></p>
+<p>There's no way to copy and paste them either! I had to manually draw a new polygon each time I had reset the brush to something else, and then compare it visually with the others. Why???</p>
+<h3>Oh yeah, there's also memory leaks like crazy.</h3>
+<p>Sorry if you played my game for too long and your pc crashed. It's hardly my fault; Godot 4.0 games constantly leak memory. In my recent experience, it leaks whenever you create a tween, whenever you use await, and so on. <a href="https://github.com/godotengine/godot/issues/54542">I'm</a> <a href="https://github.com/godotengine/godot/issues/61340">not the only one</a> <a href="https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+memory+leak">with this problem</a>.</p>
+<p>Lastly, I think it's time to accept a problem with my own self.</p>
+<h2>My code is slow</h2>
+<p>I suck at writing fast code. When I write code, I usually optimize for "amount of time writing code" or "amount of time I will have to spend writing code, later". Because I don't really like to write code. But this is starting to bite me in the ass; GDScript is just kinda slow. There's no getting around that. I can't afford to be lazy.</p>
+<p>Here's an example of some "nice but slow" code I wrote for this jam.</p>
+<p>Every character in the game has a "brain", or something that generates inputs for the character to respond to. Below is that class:</p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node2D</span><span class="w"></span>
+
+<span class="k">class_name</span><span class="w"> </span><span class="n">InputBrain</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">previous_state</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">InputState</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="w"></span>
+<span class="k">var</span><span class="w"> </span><span class="n">input_state</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">InputState</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="w"></span>
+<span class="k">var</span><span class="w"> </span><span class="n">host</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_enter_tree</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_parent</span><span class="p">()</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">get_input</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="n">input_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InputState</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">input_state</span><span class="o">.</span><span class="n">get_previous</span><span class="p">(</span><span class="n">previous_state</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">process_input</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="n">previous_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input_state</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">input_state</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">process_input</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">pass</span><span class="w"></span>
+</code></pre></div>
+
+<p>Function <code>get_input</code> is usually called every frame, unless the character is inactive or dead. Not so bad, right? Let's look inside the InputState class to see what's going on there.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class_name</span><span class="w"> </span><span class="n">InputState</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">input_map</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="k">var</span><span class="w"> </span><span class="n">prev_input_map</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">input_map</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">prev_inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">prev_input_map</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_init</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># edit this for your game</span><span class="w"></span>
+<span class="w">    </span><span class="n">add_input</span><span class="p">(</span><span class="n">AxisInput2D</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;MoveDir&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="n">add_input</span><span class="p">(</span><span class="n">AxisInput2D</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;AimDir&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="n">add_input</span><span class="p">(</span><span class="n">ButtonInput</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Primary&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="n">add_input</span><span class="p">(</span><span class="n">ButtonInput</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Secondary&quot;</span><span class="p">))</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">duplicate</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InputState</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">state</span><span class="o">.</span><span class="n">add_input</span><span class="p">(</span><span class="n">input</span><span class="o">.</span><span class="n">duplicate</span><span class="p">())</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">is_active</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">is_active</span><span class="p">():</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="bp">true</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="bp">false</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">set_previous</span><span class="p">(</span><span class="n">state</span><span class="p">:</span><span class="w"> </span><span class="n">InputState</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">state</span><span class="o">.</span><span class="n">input_map</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">prev_input_map</span><span class="p">[</span><span class="n">input</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="o">.</span><span class="n">input_map</span><span class="p">[</span><span class="n">input</span><span class="p">]</span><span class="o">.</span><span class="n">duplicate</span><span class="p">()</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">add_input</span><span class="p">(</span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="n">BaseInput</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="n">input_map</span><span class="p">[</span><span class="n">input</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">prev_input_map</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">input</span><span class="o">.</span><span class="n">name</span><span class="p">):</span><span class="w"></span>
+<span class="w">        </span><span class="n">input</span><span class="o">.</span><span class="n">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prev_input_map</span><span class="p">[</span><span class="n">input</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">duplicate</span><span class="p">()</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">apply_map</span><span class="p">(</span><span class="n">state</span><span class="p">:</span><span class="w"> </span><span class="n">InputState</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="o">.</span><span class="n">input_map</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">map</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="n">input_map</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">is_active</span><span class="p">():</span><span class="w"></span>
+<span class="w">            </span><span class="n">add_input</span><span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">BaseInput</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">input_map</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">name</span><span class="p">):</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">input_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">printable</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">input_map</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input_map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">print</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dict</span><span class="w"></span>
+</code></pre></div>
+
+<p>Okay, this is getting interesting. There is no code specific to my game here, other than in <code>_init</code>. You can see what inputs were made this tick, as well as the previous - something useful to any game with more than trivial input schemes. Look at all these dictionaries, objects, duplications... all for a single frame of input for a single character! The duplication is my way of solving a really enormous and silly memory leak where every input had a reference to the previous input, which had a reference to the previous input, and so on... essentially forming a linked list backwards to the very first input that character made in the game. Since they're RefCounted (Reference in previous Godot versions), they were kept in memory as long as something else referenced them. Now they are duplicated and orphaned, meaning the garbage collector will take care of them normally.</p>
+<p>What is that BaseInput class? Well, it looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class_name</span><span class="w"> </span><span class="n">BaseInput</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BaseInput&quot;</span><span class="w"></span>
+<span class="k">var</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">false</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">_prev</span><span class="p">:</span><span class="w"> </span><span class="n">BaseInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="w"></span>
+<span class="k">var</span><span class="w"> </span><span class="n">_get_prev_func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_get_prev_lazy</span><span class="w"></span>
+<span class="k">var</span><span class="w"> </span><span class="n">prev</span><span class="p">:</span><span class="w"> </span><span class="n">BaseInput</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_get_prev_func</span><span class="o">.</span><span class="n">call</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="n">set</span><span class="p">(</span><span class="n">input</span><span class="p">):</span><span class="w"></span>
+<span class="w">        </span><span class="n">_prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">value_smashed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_get_smashed</span><span class="p">()</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">is_smashed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_is_smashed</span><span class="p">()</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_init</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">StringName</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="nb nb-Type">null</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">time_held</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_get_smashed</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="o">!</span><span class="n">prev</span><span class="o">.</span><span class="n">value</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_is_smashed</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value_smashed</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_get_prev_lazy</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">_prev</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">_prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_script</span><span class="p">()</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">_get_prev_func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">func</span><span class="p">():</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">_prev</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_prev</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">is_active</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="bp">true</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="nb">print</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">clear</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">false</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">duplicate</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">get_script</span><span class="p">()</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>More clever hacks, right? Lazy evaluation to get the previous input, or generate one if it doesn't exist! Woah!! And a bunch of properties to get different info about the input without calculating it all beforehand. You can see that better demonstrated with this subtype, which represents a joystick or other directional input:</p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">BaseInput</span><span class="w"></span>
+
+<span class="k">class_name</span><span class="w"> </span><span class="n">AxisInput2D</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_init</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="nb nb-Type">Vector2</span><span class="p">()):</span><span class="w"></span>
+<span class="w">    </span><span class="nb">assert</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">super</span><span class="o">.</span><span class="n">_init</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">h_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir</span><span class="o">.</span><span class="n">x</span><span class="w"></span>
+<span class="w">    </span><span class="n">v_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir</span><span class="o">.</span><span class="n">y</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">is_active</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">h_active</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">v_active</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_get_smashed</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="n">h_dir_smashed</span><span class="p">,</span><span class="w"> </span><span class="n">v_dir_smashed</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_is_smashed</span><span class="p">():</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">is_v_smashed</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">is_h_smashed</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">dir</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">dir_smashed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">value_smashed</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">_dir_normalized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">dir_normalized</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">_dir_normalized</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">_dir_normalized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_dir_normalized</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">angle</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">_angle</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_angle</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">_dir_smashed_normalized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">dir_smashed_normalized</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">_dir_smashed_normalized</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">_dir_smashed_normalized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir_smashed</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_dir_smashed_normalized</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">dir_sign</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">sign</span><span class="p">(</span><span class="n">dir</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">dir_sign_smashed</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">sign</span><span class="p">(</span><span class="n">dir_smashed</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">h_dir</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"></span>
+<span class="k">var</span><span class="w"> </span><span class="n">v_dir</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">v_dir_smashed</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">v_dir</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">v_dir</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">prev</span><span class="o">.</span><span class="n">v_dir</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">h_dir_smashed</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">h_dir</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">h_dir</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">prev</span><span class="o">.</span><span class="n">h_dir</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">h_active</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">bool</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">h_dir</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">v_active</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">bool</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">v_dir</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">h_sign</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">sign</span><span class="p">(</span><span class="n">h_dir</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">v_sign</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">sign</span><span class="p">(</span><span class="n">v_dir</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">h_sign_smashed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">sign</span><span class="p">(</span><span class="n">h_dir_smashed</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">v_sign_smashed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">sign</span><span class="p">(</span><span class="n">v_dir_smashed</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">is_v_smashed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">v_dir_smashed</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">is_h_smashed</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">h_dir_smashed</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+</code></pre></div>
+
+<p>Before you tell me: yes, I know I can just use Input.is_action_just_pressed(). Otherwise, isn't all this extra stuff so <em>nice??</em> More lazy eval of things like the normalized direction, angle, etc. But, I guess these abstractions are not zero-cost with Godot. It's not huge, but there is definitely a noticeable impact on performance when things are done this way. Perhaps it's time to rewrite it in Rust... once they get it working with GDExtension, of course.</p>
+<p>Anyway, this concludes my devlog. I hope to have helped you learn something here.</p>
+  </div><!-- /.entry-content -->
+</section>
+        </div>
+<div class="linkbar linkbar-article">
+    <a href="./index.html">go back</a>
+    </div>
+        <div class="linkbar linkbar-bottom">
+          <a href="https://twitter.com/ivy_sly_"><i class="fab fa-twitter"></i></a>      
+          <a href="https://discord.gg/youronlymoveishustle"><i class="fab fa-discord"></i></a>  
+          <a href="https://github.com/uzkbwza"><i class="fab fa-github-alt"></i></a>       
+          <a href="https://ivysly.itch.io"><i class="fab fa-itch-io"></i></a>
+          <a href="/blog/rss.xml"><i class="fas fa-rss"></i></a>
+          
+        </div>
+
+      </div>
+  </body>

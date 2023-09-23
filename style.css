@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:300, 400,700");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700");
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
-
 /* it's probably better if you don't look (´・ω・｀) */
 
 body {
@@ -170,6 +169,7 @@ h1 > a:hover, a:hover > h1 {
     color: #444444;
 }
 
+
 .blog-entry {
     text-align: left;
     border-style: none none dotted none;
@@ -286,6 +286,19 @@ time {
     padding: 0px;
 }
 
+/* code {
+    background-color: #111111;
+    color:#EEEEEE;
+} */
+
+.highlight {
+    background-color: #111111;
+    padding: 10px;
+    /* display:inline-block; */
+    overflow-x: scroll;
+    color:#EEEEEE;
+}
+
 .poem > p {
     text-transform: uppercase;
     /* font-variant: small-caps; */
@@ -397,3 +410,4 @@ p {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
