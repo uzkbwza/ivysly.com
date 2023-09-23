@@ -9,8 +9,9 @@ function replace_footnotes() {
 }
 
 rsync -av posts/* pelican/content/ --delete
+search_dir=pelican/content
 
-for file in ls pelican/content/*.md
+for file in "$search_dir"/*.md
 do
   replace_footnotes $file
 done
@@ -25,4 +26,3 @@ echo "removing duplicates from pelican content folder (these already exist in th
 rm -r pelican/content/*
 echo "copying pelican output contents to blog folder"
 rsync -av pelican/output/* blog --delete
-
