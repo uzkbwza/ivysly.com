@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
     <meta name="language" content="English">
-    <meta name="title" content="{% block linktitle %}Blog - Ivy Sly{% endblock linktitle %}">
+    <meta name="title" content="{% block linktitle %}Ivy Sly{% endblock linktitle %}">
 
     <meta property="og:title" content="{{ self.linktitle() }}">
     <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
     
     <meta name="twitter:site" content="@ivy_sly_">
     <meta name="twitter:creator" content="@ivy_sly_">
-    <meta name="twitter:title" content="Ivy Sly">
+    <meta name="twitter:title" content="{{ self.linktitle() }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="musician, programmer, internet user">
     <meta name="twitter:image" content="{{ HOMEURL }}/card.png">

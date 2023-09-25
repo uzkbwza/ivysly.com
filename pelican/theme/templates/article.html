@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
-{% block linktitle %}{{article.title|striptags}} - Ivy Sly{% endblock linktitle %}
+{% block linktitle %}{{article.title|striptags}}{% endblock linktitle %}
 
 {% block title %}{{ article.title|striptags  }} ∙ {{ SITENAME }}{% endblock %}
 
