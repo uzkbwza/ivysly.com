@@ -219,7 +219,7 @@ h3 {
 }
 
 #article > .entry-content {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     text-align: left;
     /* text-indent: 20px; */
     /* font-size: 14px; */
