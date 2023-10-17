@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM Plex Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM Plex Serif&display=block');
 /* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap'); */
 /* @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700");
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
@@ -12,7 +12,7 @@ body {
     line-height: 1.0;
     /* background-color: #222222; */
     color: black; /* pepsi red */
-    text-align: center;
+    /* text-align: center; */
     /* font-weight: 400; */
     /* font-size: 18px; */
     min-height: 100%;
@@ -31,6 +31,16 @@ h1 {
     font-size: 50px;
     padding: 0px;
     margin: 0px;
+}
+
+ul {
+    display: block;
+    list-style-type:circle;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
 
 h1 > a, a > h1 {
@@ -55,7 +65,7 @@ h1 > a:hover, a:hover > h1 {
     padding-top: 0px;
     padding-bottom: 10px;
     font-weight: 700;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -79,7 +89,7 @@ h1 > a:hover, a:hover > h1 {
 .home {
     /* overflow: hidden; */
     /* position: absolute; */
-    display: flex;
+    /* display: flex; */
     margin: auto;
     width:  400px;
     height: 400px;
@@ -112,23 +122,6 @@ h1 > a:hover, a:hover > h1 {
     margin-bottom:15px;
 }
 
-.linkbar-top {
-    padding-top: 0px;
-}
-
-.home > .linkbar-top {
-    margin: 0px;
-}
-
-.linkbar-article {
-    /* font-size: 30px; */
-    padding-bottom: 50px;
-}
-
-.linkbar > a {
-    margin: 0px 10px;
-}
-
 .linkbar-top > a {
     font-size: 28px;
 }
@@ -137,14 +130,18 @@ h1 > a:hover, a:hover > h1 {
     color: #004B93;
 }
 
+.linkbar-home {
+    line-height: 1.2;
+}
+
 .container {
     background: white;
-    padding: 10px;
+    /* padding: 10px; */
     width: 90%;
     height: 100%;
     max-width: 900px;
     margin: auto;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     /* justify-content: space-between; */
     /* padding-bottom: 10px; */
@@ -155,10 +152,10 @@ h1 > a:hover, a:hover > h1 {
     /* height: 100%; */
     /* font-size: 17px; */
     /* border-style: double none double none ; */
-    border-width: 3px;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /* border-width: 3px; */
+    /* margin-bottom: 10px; */
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
 }
 
 .content-no-bottom-border {
@@ -281,14 +278,14 @@ time {
 }
 
 .music-entry {
-    padding: 10px;
+    min-height: 50px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     /* border-style: none none dotted none; */
-    border-width: 1px;
-    border-color: #222222;
+    /* border-width: 1px;
+    border-color: #222222; */
 }
 
 .music-entry > .linkbar {
@@ -345,8 +342,8 @@ img {
 
 .image-in-text {
     float: right;
-    padding-left: 20px;
-    padding-right: 5px;
+    padding-left: 5px;
+    /* padding-right: 5px; */
     /* margin: 10px; */
     height: auto;
     max-width: 25vw;
@@ -398,7 +395,7 @@ a:hover {
 }
 
 p {
-    /* margin: 10px 0px; */
+    margin: 0px 0px;
     line-height: 1.5;
 }
 
