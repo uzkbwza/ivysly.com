@@ -1,12 +1,12 @@
 Title: Long Distance
-Date: 2023-10-16
+Date: 2023-10-17
 Author: Ivy Sly
 Tags: fiction
 Slug: long-distance
 
-My dreams were inflamed with visions of escape, and my vision was clouded by dreams. Not much else to do other than eat, shit, and dream. There was no time on my lonely satellite but the clock read 08:10. A drone had left breakfast in my cell through a slit under the impregnable metal door forty minutes ago. I was in bed, extinguished.
-
 “Kelly,” pleaded Perrault over the intercom, “I need eight. Eight more today.” Piezoelectric static contaminated his request. I did not respond. Undeterred by silence, he continued, “Sequence of eight, Kelly. I need it. Can't you? Oh Kelly. Just eight. Please... It’s important, Kelly, that I get this. I can’t do it myself.” His voice shook.
+
+My dreams were inflamed with visions of escape, and my vision was clouded by dreams. Not much else to do other than eat, shit, and dream. There was no time on my lonely satellite but the clock read 08:10. A drone had left breakfast in my cell through a slit under the impregnable metal door forty minutes ago. I was in bed, extinguished.
 
 I surrendered. “Enough. Please. Give me a second,” I said, and he did. I began to think of numbers, and reported each one as it came to mind, pausing, allowing him time to write it down. Just eight today. Some days it is half that in digits. It was important to Perrault that these numbers came from me, without forethought. I don’t know what he did with them, and he wouldn’t give me a coherent answer, but only by appeasing him was I rewarded with his absence. His routine became mine. He was hundreds of trillions of miles away, yet we talked as if from neighboring cells, of which I knew I had none.
 
