@@ -121,7 +121,7 @@ in a FFVII style text box),
 On this day I turned 23.
 
 Underneath this entry in my journal is a (non-dream) bullet point which reads, 
-"When you sleep, you go back in time." 
+"When you sleep, you ↩ in time." 
 
 
 ***
