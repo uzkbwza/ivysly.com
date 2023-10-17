@@ -42,11 +42,11 @@
         {% block header %}
         <div class="header">
           <a href={% block blog_title_url %}{% endblock blog_title_url %}><h1>{% block blogtitle %}{% endblock blogtitle %}</h1></a>
-          <div class="linkbar linkbar-top">
+          <div class="linkbar linkbar-top linkbar-arrow">
             {% if output_file == 'index.html' %}
-            <a href="{{ HOMEURL }}"><i class="fas fa-arrow-left"></i></a>
+            <a href="{{ HOMEURL }}">⮌</a>
             {% else %}
-            <a href="{{ SITEURL }}/index.html"><i class="fas fa-arrow-left"></i></a>
+            <a href="{{ SITEURL }}/index.html">⮌</a>
             {% endif %}
             </div>
           </div>
