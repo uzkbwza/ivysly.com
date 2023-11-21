@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- okay, sorry, listen, i have no 
+  idea how any of this shit works -->
+<head>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' type='text/css' href='../../style.css'>
+  <script src="https://kit.fontawesome.com/d453510ff5.js" crossorigin="anonymous"></script>
+
+  <meta name="keywords" content="music, electronic">
+  <meta name="description" content="ivy sly webzone">
+  <meta name="author" content="Ivy Sly">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="language" content="English">
+  <meta name="title" content="Ivy Sly">
+
+  <meta name="twitter:site" content="@ivy_sly_">
+  <meta name="twitter:creator" content="@ivy_sly_">
+  <meta name="twitter:title" content="Ivy Sly">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="ivy sly webzone">
+  <meta name="twitter:image" content="https://ivysly.com/card.png">
+
+  <meta property="og:title" content="Ivy Sly">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ivysly.com/card.png">
+  <meta property="og:description" content="ivy sly webzone">
+
+  <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+  <link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png>
+  <link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
+  <link rel=icon type=image/png sizes=192x192 href=android-chrome-192x192.png>
+  <link rel=icon type=image/png sizes=512x512 href=android-chrome-512x512.png>
+
+  <title>ivy sly</title>
+</head>
+
+<body>
+  <div class="container patchnotes">
+    <div class="header">
+        <a href="/"><h1>1.8.5</h1></a>
+    </div>
+    <div class="content">
+
+
+      <ul>
+        <li>Just a quick bugfix and small balance update to tackle some of the bigger more obvious problems.</li>
+        <li>Possibly fixed landing-related prediction errors. This might cause some changes to landing IASA.</li>
+        </ul>
+        <h2 id="all-characters">All Characters</h2>
+        <ul>
+        <li>Fixed Block not working after Pushblock.</li>
+        <li>Sadness gain is reduced for the player with less health, proportional to the difference.</li>
+        <li><p>You can no longer whiff cancel after your opponent blocks a block-punishable move.</p>
+        </li>
+        <li><p>Super Jump</p>
+        <ul>
+        <li>Now tracks your opponent during neutral but is un-angleable. </li>
+        <li>Fully angleable in 🅱️ombos.</li>
+        </ul>
+        </li>
+        <li><p>Block</p>
+        <ul>
+        <li>Air blocking multiple consecutive melee attacks won&#39;t drain your air options more than once.</li>
+        <li>Whiffing Block puts you at -1 block advantage.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="ninja">Ninja</h2>
+        <ul>
+        <li><p>Store Momentum</p>
+        <ul>
+        <li>Reduced IASA (15f -&gt; 13f)</li>
+        </ul>
+        </li>
+        <li><p>Uppercut (grounded)</p>
+        <ul>
+        <li>Is now immune to aerial attacks while the hitbox is out.</li>
+        <li>Increased vertical gain.</li>
+        <li>Has 1 more active frame.</li>
+        <li>Second hitbox also has +2 proration like the first one.</li>
+        <li>No longer cancels early vs block.</li>
+        </ul>
+        </li>
+        <li><p>Nun Chuk (up)</p>
+        <ul>
+        <li>No longer hitcancels on block (buff).</li>
+        </ul>
+        </li>
+        <li><p>Jump Kick</p>
+        <ul>
+        <li>No longer hitcancels on block when started from the ground or blocked by a grounded opponent (buff).</li>
+        <li>Landing is now projectile invulnerable.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="cowboy">Cowboy</h2>
+        <ul>
+        <li>Shift<ul>
+        <li>Reduced sadness penalty</li>
+        </ul>
+        </li>
+        <li><p>Rift</p>
+        <ul>
+        <li>Is now +0 on block (from +1)</li>
+        </ul>
+        </li>
+        <li><p>Foresight</p>
+        <ul>
+        <li>Increased IASA (13f -&gt; 14f)</li>
+        </ul>
+        </li>
+        <li><p>Temporal Round</p>
+        <ul>
+        <li>Auto-aims at the opponent&#39;s center, not their feet.</li>
+        </ul>
+        </li>
+        <li><p>Gun Throw</p>
+        <ul>
+        <li>Shoots 1 frame faster after hitting (20f -&gt; 18f).</li>
+        </ul>
+        </li>
+        <li><p>Shoot/Temporal Round</p>
+        <ul>
+        <li>Bullet chip modifier increased <em>before</em> ricochet (0.67x -&gt; 0.75)</li>
+        <li>Bullet chip modifier decreased <em>after</em> ricochet (0.67x -&gt; 0.37)</li>
+        </ul>
+        </li>
+        <li><p>Horiz. Slash (up)</p>
+        <ul>
+        <li>No longer hitcancels on block (buff).</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="wizard">Wizard</h2>
+        <ul>
+        <li><p>Bolt of Magma</p>
+        <ul>
+        <li>No longer hitcancels on block (buff).</li>
+        </ul>
+        </li>
+        <li><p>Missile Form</p>
+        <ul>
+        <li>Triggers Orb Dart again.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="robot">Robot</h2>
+        <ul>
+        <li>Currently Robot&#39;s playstyle is defined by choosing extremely safe options that have higher reward than the other characters&#39;. The risk should more closely match the reward.</li>
+        <li>Fixed blockstun not being applied to Robot when blocking after autoguard.</li>
+        <li>Can no longer fly and parry melee attacks at the same time. Can still fly + block and parry projectiles.</li>
+        <li><p>Blocking a melee attack disables flight.</p>
+        </li>
+        <li><p>Overflow</p>
+        <ul>
+        <li>Making this move act more like an air-to-ground Command: Grab instead of the overwhelmingly powerful combo starter it is right now. You can still combo if the opponent DIs poorly, but it&#39;s no longer a free 6k damage.</li>
+        <li>Increased damage (1250 -&gt; 1650)</li>
+        <li>Proration adjusted (0 -&gt; 1)</li>
+        <li>Hitstun reduced (20f -&gt; 15f)</li>
+        <li>Increased hurtbox size</li>
+        <li>Decreased hitbox size</li>
+        </ul>
+        </li>
+        <li><p>Optical Beam (grounded)</p>
+        <ul>
+        <li>No longer hitcancels on block (buff)</li>
+        </ul>
+        </li>
+        <li><p>Step</p>
+        <ul>
+        <li>Is now +0 on block (from +1).</li>
+        </ul>
+        </li>
+        <li><p>Spin Cycle</p>
+        <ul>
+        <li>Is now -2 on block (from -1).</li>
+        <li>Reduced damage per hit (480 -&gt; 300)</li>
+        </ul>
+        </li>
+        </ul>
+        
+
+    </div>
+
+  </div>
+    <!-- <div class="content"> -->
+      <!-- <div class="linkbar linkbar-bottom linkbar-icons"> -->
+        <!-- <a href="https://twitter.com/ivy_sly_"><i class="fab fa-twitter"></i></a>      
+        <a href="https://discord.gg/youronlymoveishustle"><i class="fab fa-discord"></i></a>  
+        <a href="https://github.com/uzkbwza"><i class="fab fa-github-alt"></i></a>       
+        <a href="https://ivysly.itch.io"><i class="fab fa-itch-io"></i></a>
+        <a href="/blog/rss.xml"><i class="fas fa-rss"></i></a> -->
+      <!-- </div> -->
+    <!-- </div> -->
+</body>
