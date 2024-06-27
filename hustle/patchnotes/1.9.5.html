@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- okay, sorry, listen, i have no 
+  idea how any of this shit works -->
+<head>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' type='text/css' href='../../style.css'>
+  <script src="https://kit.fontawesome.com/d453510ff5.js" crossorigin="anonymous"></script>
+
+  <meta name="keywords" content="music, electronic">
+  <meta name="description" content="ivy sly webzone">
+  <meta name="author" content="Ivy Sly">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="language" content="English">
+  <meta name="title" content="Ivy Sly">
+
+  <meta name="twitter:site" content="@ivy_sly_">
+  <meta name="twitter:creator" content="@ivy_sly_">
+  <meta name="twitter:title" content="Ivy Sly">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="ivy sly webzone">
+  <meta name="twitter:image" content="https://ivysly.com/card.png">
+
+  <meta property="og:title" content="Ivy Sly">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ivysly.com/card.png">
+  <meta property="og:description" content="ivy sly webzone">
+
+  <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+  <link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png>
+  <link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
+  <link rel=icon type=image/png sizes=192x192 href=android-chrome-192x192.png>
+  <link rel=icon type=image/png sizes=512x512 href=android-chrome-512x512.png>
+
+  <title>ivy sly</title>
+</head>
+
+<body>
+  <div class="container patchnotes">
+    <div class="header">
+        <a href="/"><h1>1.9.5</h1></a>
+    </div>
+    <div class="content">
+      <ul>
+        <li>Lobbies now wait for characters to load, this should fix the &quot;mod mismatch&quot; issue</li>
+        <li>Adjusted sound effect for all level-1 supers (think of them like EX moves...)</li>
+        <li>Added some global freeze frames on hit/block. Shouldn&#39;t affect gameplay at all. The goal is to make full-speed replays a little more watchable and satisfying.<ul>
+        <li>You can turn it off in the options if you want, for now.</li>
+        <li>Might break some modded character cutscenes?</li>
+        </ul>
+        </li>
+        </ul>
+        <h1 id="character-changes">Character Changes</h1>
+        <h2 id="all-characters">All Characters</h2>
+        <ul>
+        <li><p>Moves that don&#39;t scale combos should no longer be resetting proration on the 2nd hit. probably introduces new bugs</p>
+        </li>
+        <li><p>Dash Grab</p>
+        <ul>
+        <li>Forward momentum is delayed to the 2nd frame.</li>
+        </ul>
+        </li>
+        <li><p>Whiff Cancel / Instant Cancel</p>
+        <ul>
+        <li>Changed FX</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="ninja">Ninja</h2>
+        <ul>
+        <li><p>Boost</p>
+        <ul>
+        <li>Decreased parry penalty to 10f (from 20f)</li>
+        <li>Updated SFX</li>
+        </ul>
+        </li>
+        <li><p>Back Sway</p>
+        <ul>
+        <li>Invulnerability now starts on frame 3 (from frame 1)</li>
+        <li>Now automatically follows into Palm Strike on hold.</li>
+        </ul>
+        </li>
+        <li><p>Jump Kick</p>
+        <ul>
+        <li>Reduced landing lag (15f -&gt; 8f)</li>
+        </ul>
+        </li>
+        <li><p>Uppercut (grounded)</p>
+        <ul>
+        <li>Now is interruptible into all movement options after recovering.</li>
+        </ul>
+        </li>
+        <li><p>Uppercut (aerial)</p>
+        <ul>
+        <li>Now is interruptible into all movement options after recovering.</li>
+        <li>First hitbox no longer is block-punishable.</li>
+        </ul>
+        </li>
+        <li><p>Shuriken</p>
+        <ul>
+        <li>Powered-up shuriken is no longer affected by Gust and Zephyr.</li>
+        </ul>
+        </li>
+        <li><p>Chuk Heavy</p>
+        <ul>
+        <li>IASA reduced (19f -&gt; 16f)</li>
+        <li>Added 4f extra hitstop on parry</li>
+        </ul>
+        </li>
+        <li><p>Kick (aerial)</p>
+        <ul>
+        <li>Fixed no-impact land hitcancel having fewer options</li>
+        </ul>
+        </li>
+        <li><p>Dive Kick</p>
+        <ul>
+        <li>Upward versions hitcancel on block.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="wizard">Wizard</h2>
+        <ul>
+        <li>Orb<ul>
+        <li>Fixed pushblocking Orb Dart not unlocking the orb.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="cowboy">Cowboy</h2>
+        <ul>
+        <li>Can no longer use Rift, Shift, Drift, or Sight toggles when blocking.</li>
+        <li><p>Draw Cancel IASA has been increased by 1f across the board.</p>
+        </li>
+        <li><p>Time Splitter</p>
+        <ul>
+        <li>Reduced startup (11f -&gt; 6f)</li>
+        </ul>
+        </li>
+        <li><p>Lightning Slice</p>
+        <ul>
+        <li>Now sends airborne.</li>
+        </ul>
+        </li>
+        <li><p>Quick Draw</p>
+        <ul>
+        <li>Increased IASA (11f -&gt; 12f)</li>
+        </ul>
+        </li>
+        <li><p>Upward Swipe</p>
+        <ul>
+        <li>No longer draw-cancellable.</li>
+        </ul>
+        </li>
+        <li><p>Pistol Whip</p>
+        <ul>
+        <li>Is now draw cancellable.</li>
+        <li>Can no longer be free-cancelled (or draw-cancelled) from Quick Draw.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="robot">Robot</h2>
+        <ul>
+        <li><p>Launch</p>
+        <ul>
+        <li>Now uses 1/4 fuel (from 1/2)</li>
+        </ul>
+        </li>
+        <li><p>LOIC</p>
+        <ul>
+        <li>Is now +2 on block (from +1)</li>
+        <li>Increased active time</li>
+        </ul>
+        </li>
+        <li><p>Crash</p>
+        <ul>
+        <li>Added 4f hitstop when this move gets parried.</li>
+        </ul>
+        </li>
+        <li><p>Landing</p>
+        <ul>
+        <li>Shockwave is now unparriable for the first 6 frames.</li>
+        <li>Shockwave is no longer affected by Gust or Zephyr.</li>
+        </ul>
+        </li>
+        <li><p>Remote Bomb</p>
+        <ul>
+        <li>Di nudge disabled when armed (prevents double-SDI issue)</li>
+        <li>Explosion changes<ul>
+        <li>Increased explosion hitstop (8f -&gt; 10f)</li>
+        <li>Explosion no longer incurs hitstop on the explosion hitbox itself (lol)</li>
+        <li>Reduced knockback on explosion (10 -&gt; 0.9) </li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><p>Ping</p>
+        <ul>
+        <li>Drive cancel happens 3 frames earlier</li>
+        </ul>
+        </li>
+        <li><p>Drive</p>
+        <ul>
+        <li>Fixed this move being punishable on block. Oops!!!!!!!!!!</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="mutant">Mutant</h2>
+        <ul>
+        <li><p>Mutant has some stalling issues so most of these changes are made to address that.</p>
+        <ul>
+        <li>Slightly increased typical passive sadness gain<ul>
+        <li>Flavor: Mutant has a bloodlust that makes him more sad than typical characters when he&#39;s not fighting.</li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><p>Jump</p>
+        <ul>
+        <li>Increased sadness penalty on jumping backward.</li>
+        </ul>
+        </li>
+        <li><p>Dash Back</p>
+        <ul>
+        <li>Increased sadness penalty.</li>
+        </ul>
+        </li>
+        <li><p>Super Dash</p>
+        <ul>
+        <li>Gives a juke pip once Mutant starts moving and another later on.</li>
+        </ul>
+        </li>
+        <li><p>Dash</p>
+        <ul>
+        <li>Mutant gains a pip of juke when using 100 dash (does not work for repeated dashes).</li>
+        </ul>
+        </li>
+        <li><p>Caustic Barrage</p>
+        <ul>
+        <li>Decreased first-hit damage (800 -&gt; 500)</li>
+        </ul>
+        </li>
+        <li><p>Caustic Spike</p>
+        <ul>
+        <li>Initiative startup reduction is now a combo-only bonus and still only happens while airborne.</li>
+        </ul>
+        </li>
+        <li><p>Pounce</p>
+        <ul>
+        <li>Is now +2 on block (from +1)</li>
+        <li>If you miss with this move, Mutant becomes vulnerable. :fefe:</li>
+        </ul>
+        </li>
+        <li><p>Envenom</p>
+        <ul>
+        <li>Adjusted damage proration (+0 -&gt; +3)</li>
+        </ul>
+        </li>
+        <li><p>Leap Slash</p>
+        <ul>
+        <li>Adjusted hurtbox.</li>
+        <li>Added some limb hurtboxes.</li>
+        <li>Can&#39;t clash anymore.</li>
+        </ul>
+        </li>
+        <li><p>Shred</p>
+        <ul>
+        <li>Grounded version now has projectile invulnerability once Mutant leaves the ground.</li>
+        <li>Increased hitbox size.</li>
+        <li>Landing hitbox doesn&#39;t trigger until the aerial hitbox comes out.</li>
+        </ul>
+        </li>
+        <li><p>Low Swipe</p>
+        <ul>
+        <li>Reduced low-profile</li>
+        </ul>
+        </li>
+        </ul>
+        
+    </div>
+
+  </div>
+    <!-- <div class="content"> -->
+      <!-- <div class="linkbar linkbar-bottom linkbar-icons"> -->
+        <!-- <a href="https://twitter.com/ivy_sly_"><i class="fab fa-twitter"></i></a>      
+        <a href="https://discord.gg/youronlymoveishustle"><i class="fab fa-discord"></i></a>  
+        <a href="https://github.com/uzkbwza"><i class="fab fa-github-alt"></i></a>       
+        <a href="https://ivysly.itch.io"><i class="fab fa-itch-io"></i></a>
+        <a href="/blog/rss.xml"><i class="fas fa-rss"></i></a> -->
+      <!-- </div> -->
+    <!-- </div> -->
+</body>
