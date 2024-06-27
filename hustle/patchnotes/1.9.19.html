@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!-- okay, sorry, listen, i have no 
+  idea how any of this shit works -->
+<head>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' type='text/css' href='../../style.css'>
+  <script src="https://kit.fontawesome.com/d453510ff5.js" crossorigin="anonymous"></script>
+
+  <meta name="keywords" content="music, electronic">
+  <meta name="description" content="ivy sly webzone">
+  <meta name="author" content="Ivy Sly">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="language" content="English">
+  <meta name="title" content="Ivy Sly">
+
+  <meta name="twitter:site" content="@ivy_sly_">
+  <meta name="twitter:creator" content="@ivy_sly_">
+  <meta name="twitter:title" content="Ivy Sly">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="ivy sly webzone">
+  <meta name="twitter:image" content="https://ivysly.com/card.png">
+
+  <meta property="og:title" content="Ivy Sly">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ivysly.com/card.png">
+  <meta property="og:description" content="ivy sly webzone">
+
+  <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+  <link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png>
+  <link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
+  <link rel=icon type=image/png sizes=192x192 href=android-chrome-192x192.png>
+  <link rel=icon type=image/png sizes=512x512 href=android-chrome-512x512.png>
+
+  <title>ivy sly</title>
+</head>
+
+<body>
+  <div class="container patchnotes">
+    <div class="header">
+        <a href="/"><h1>1.9.19</h1></a>
+    </div>
+    <div class="content">
+      <ul>
+        <li>Lobbies no longer default to custom characters being enabled. This is to promote a similar balance of modded to vanilla lobbies to before character loader was merged into base game, as modded lobbies have become a dominant majority and vanilla players are finding it difficult to find games.<ul>
+        <li>You can now filter lobbies by whether or not they use custom characters.</li>
+        </ul>
+        </li>
+        <li>Increased global aesthetic freeze frames modifier on hit, just a little.</li>
+        </ul>
+        
+        <h1>Character Changes</h1>
+
+        <h2 id="all-characters">All Characters</h2>
+        <ul>
+        <li>Getting hit out of a super within 3 frames will now grant you half of the super meter you lost.</li>
+        <li>You can no longer die from Sadness.</li>
+        <li>Counter-hit changes<ul>
+        <li>Basically every neutral interaction ends with a counter-hit, so I&#39;m toning down the reward.</li>
+        <li>Counter-hit attacks now do 10% extra damage.</li>
+        <li>Extra hitstun on counter-hit has been removed (5f -&gt; 0f).</li>
+        <li>Extra hitstop on counter-hit has been removed (3f -&gt; 0f).</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="ninja">Ninja</h2>
+        <ul>
+        <li><p>Made Ninja&#39;s toggles more visually consistent with the rest of the cast. </p>
+        </li>
+        <li><p>Super Fall </p>
+        <ul>
+        <li>Disables Pull while active.</li>
+        </ul>
+        </li>
+        <li><p>Dive Kick (grounded)</p>
+        <ul>
+        <li>Up version changes<ul>
+        <li>Incurs +8 frames hitstop when parried</li>
+        <li>Transitions into a recovery animation after a short time</li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><p>Dive Kick (aerial)</p>
+        <ul>
+        <li>Reduced startup when Ninja has no Initiative (12f -&gt; 9f)</li>
+        </ul>
+        </li>
+        <li><p>Boost</p>
+        <ul>
+        <li>Removed stack exploit that regenerated decayed boost.</li>
+        <li>No longer decays under a speed of 8.</li>
+        <li>No longer decays when Ninja is hit or blocks.</li>
+        </ul>
+        </li>
+        <li><p>Grappling Hook</p>
+        <ul>
+        <li>using Pull now uncaps Ninja&#39;s speed.</li>
+        <li>Added back the extra momentum in neutral.</li>
+        <li>Removed pull + block. Too safe!</li>
+        </ul>
+        </li>
+        <li><p>Whip Wave</p>
+        <ul>
+        <li>Added 6f extra hitstop when parried</li>
+        </ul>
+        </li>
+        <li><p>Summon    </p>
+        <ul>
+        <li>Forward kunai summon spawns 1 pixel higher.<ul>
+        <li>This move was terrorizing the Robot matchup.</li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><p>Stomp</p>
+        <ul>
+        <li>Increased hitstun (30f -&gt; 31f)</li>
+        </ul>
+        </li>
+        <li><p>Sweep</p>
+        <ul>
+        <li>Ninja is now moved forward 16px on hit.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="cowboy">Cowboy</h2>
+        <ul>
+        <li>Time Splitter<ul>
+        <li>Why did this 4 meter super do no damage lol</li>
+        <li>Increased damage (1450 -&gt; 2000)</li>
+        <li>Increased minimum damage (600 -&gt; 1000)</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="wizard">Wizard</h2>
+        <ul>
+        <li><p>Updated gravity bar visuals.</p>
+        </li>
+        <li><p>Orb</p>
+        <ul>
+        <li>Orb Portal<ul>
+        <li>No longer scales meter during combos.</li>
+        </ul>
+        </li>
+        <li>Can&#39;t be locked for 20 frames after getting unlocked by Push Block.</li>
+        <li>Dart<ul>
+        <li>Damage proration adjusted (+0 -&gt; +2)</li>
+        </ul>
+        </li>
+        <li>Swords<ul>
+        <li>Damage proration adjusted (+0 -&gt; +1)</li>
+        </ul>
+        </li>
+        <li>Lightning<ul>
+        <li>Damage proration adjusted (+0 -&gt; +2)</li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        <li><p>Telekinesis</p>
+        <ul>
+        <li>Stomp hitbox hits OTG now lmao.</li>
+        <li>Updated visuals to match the hitbox (why was it like that?).</li>
+        </ul>
+        </li>
+        <li><p>Fast Fall</p>
+        <ul>
+        <li>Removed fast fall + block. Too safe!</li>
+        </ul>
+        </li>
+        <li><p>Back Dash</p>
+        <ul>
+        <li>Reduced speed (8 -&gt; 7)</li>
+        </ul>
+        </li>
+        <li><p>Mana Dart</p>
+        <ul>
+        <li>Increased damage in neutral (800 -&gt; 900)</li>
+        </ul>
+        </li>
+        <li><p>Flame Wave</p>
+        <ul>
+        <li>Now has a 30 frame cooldown after the flame dissipates.</li>
+        </ul>
+        </li>
+        <li><p>Confusing Touch</p>
+        <ul>
+        <li>Fixed bug making this invisibly less safe than it should be.</li>
+        <li>Can now be blocked and parried.</li>
+        <li>Is now +1 on block.</li>
+        </ul>
+        </li>
+        <li><p>Icicle (grounded, down)</p>
+        <ul>
+        <li>No longer hitcancels on block.</li>
+        <li>Can now be followed up into another aerial icicle.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="robot">Robot</h2>
+        <ul>
+        <li>Robot&#39;s knockback reduction no longer reduces Burst knockback.</li>
+        <li><p>Robot now stops flying during Burst and grab techs.</p>
+        </li>
+        <li><p>Landing</p>
+        <ul>
+        <li>Shockwave charge is lost when Robot&#39;s melee attacks are parried.</li>
+        </ul>
+        </li>
+        <li><p>Step</p>
+        <ul>
+        <li>Is now -1 on block (from +0). it&#39;s still a low so it&#39;s effectively +1 now instead of +2. i am hesitant to nerf step like this, but it is one of the strongest tools in the game and +2 is very high reward for the low risk. i think this is a tame solution.</li>
+        </ul>
+        </li>
+        <li><p>Propel</p>
+        <ul>
+        <li>Holding while drive is toggled will no longer cancel the transformation.</li>
+        </ul>
+        </li>
+        <li><p>Magnetize</p>
+        <ul>
+        <li>IASA reduced in combos (16f -&gt; 8f)</li>
+        </ul>
+        </li>
+        <li><p>Flamethrower</p>
+        <ul>
+        <li>Is now a low. I don&#39;t give a fuck</li>
+        </ul>
+        </li>
+        <li><p>Bounds Check</p>
+        <ul>
+        <li>Flipping this move in neutral now has a sadness penalty.</li>
+        </ul>
+        </li>
+        <li><p>Try-Catch</p>
+        <ul>
+        <li>Is now +2 on block (from +1)</li>
+        </ul>
+        </li>
+        <li><p>Ping</p>
+        <ul>
+        <li>Increased hitstun in neutral (12f -&gt; 14f)</li>
+        </ul>
+        </li>
+        <li><p>Earthquake</p>
+        <ul>
+        <li>No longer has extra knockback after Bounds Check.</li>
+        </ul>
+        </li>
+        <li><p>Kick User (grounded)</p>
+        <ul>
+        <li>added another hitbox closer to robot and extended upward a bit.</li>
+        </ul>
+        </li>
+        </ul>
+        <h2 id="mutant">Mutant</h2>
+        <ul>
+        <li>For a low-damage character, Mutant was dealing too much damage. I&#39;ve decreased it in some areas, and improved it in others.</li>
+        <li>Lots and lots of QOL for mutant this patch, I think this character will be eating good.</li>
+        <li>Now gains 1 charge of Juke on parry</li>
+        <li>Up Juke no longer uses an extra air option on moves that already consume one.</li>
+        <li><p>Mutant is now refunded half a Juke charge if hit by burst on the same turn in a combo.</p>
+        </li>
+        <li><p>Burst Cancel</p>
+        <ul>
+        <li>Mutant can now Burst Cancel after hitting most attacks, even if they don&#39;t hit-cancel.</li>
+        </ul>
+        </li>
+        <li><p>Rebirth</p>
+        <ul>
+        <li>Damage increased (1250 -&gt; 1450)</li>
+        <li>Minimum damage increased (300 -&gt; 500)</li>
+        </ul>
+        </li>
+        <li><p>Caustic Barrage</p>
+        <ul>
+        <li>Reduced combo damage (200 -&gt; 150)</li>
+        <li>Reduced minimum damage (50 -&gt; 40)</li>
+        </ul>
+        </li>
+        <li><p>Air Dash</p>
+        <ul>
+        <li>Mutant gains a Juke pip on frame 5 of a full (100) air dash.</li>
+        </ul>
+        </li>
+        <li><p>H. Acid Slash</p>
+        <ul>
+        <li>Increased hitstun in neutral (38f -&gt; 46f)</li>
+        </ul>
+        </li>
+        <li><p>V. Acid Slash</p>
+        <ul>
+        <li>Is now a guard break. Mutant needed a decent air-to-ground tool.</li>
+        <li>Reduced knockback (15 -&gt; 12)</li>
+        </ul>
+        </li>
+        <li><p>Caustic Spike</p>
+        <ul>
+        <li>Reduced IASA in neutral (22f -&gt; 20f)</li>
+        </ul>
+        </li>
+        <li><p>Shockwave</p>
+        <ul>
+        <li>Reduced combo damage on projectile (750 -&gt; 600)</li>
+        </ul>
+        </li>
+        <li><p>Sneak Attack</p>
+        <ul>
+        <li>Improved tracking.</li>
+        <li>Crossing through the opponent resets Mutant&#39;s vertical momentum.</li>
+        </ul>
+        </li>
+        <li><p>Corkscrew</p>
+        <ul>
+        <li>You should be able to finish the animation after hitting the opponent by holding now. That you couldn&#39;t do this before was a bug.</li>
+        </ul>
+        </li>
+        <li><p>Leap Slash</p>
+        <ul>
+        <li>Leap slash was the last move to be added to mutant, and it was a total band-aid move that I always felt was way too strong for the character and the vanilla cast as a whole. This move was making many characters&#39; aerial gameplans completely unsafe for little risk on Mutant&#39;s part and making combo routing far too consistent for the mix and oki mutant has. With more buffs to that mix and oki this patch, i don&#39;t think it makes sense to leave this as-is.</li>
+        <li>Reduced forward momentum on forward leap slash.</li>
+        <li>Reduced speed by 25% when used in the air and 15% on the ground.</li>
+        <li>Is now up-jukeable from the ground.</li>
+        </ul>
+        </li>
+        <li><p>Shred (both versions)</p>
+        <ul>
+        <li>DI Nudge has a drastically lower effect until the last hit.</li>
+        <li>Landing hitbox always comes out during combos.</li>
+        <li>Last hit no longer vacuums, instead it sends away from Mutant.</li>
+        <li>Increased knockback on last hit (5/6 -&gt; 8)</li>
+        <li>Last hit sends airborne.</li>
+        </ul>
+        </li>
+        <li><p>Shred (grounded)</p>
+        <ul>
+        <li>Fixed bug where this was able to hit unparriable in 2f sometimes.</li>
+        <li>The first hit now pulls the opponent on block. </li>
+        </ul>
+        </li>
+        <li><p>Dash Attack</p>
+        <ul>
+        <li>Forward version 2nd hitbox is active for one more frame (2f -&gt; 3f)</li>
+        <li>Back version is now +1 on block (from -1).</li>
+        <li>Back version no longer hitcancels on block.</li>
+        <li>Back version now goes through the opponent.</li>
+        <li>Back version resets momentum on block.</li>
+        </ul>
+        </li>
+        <li><p>Swipe (low)</p>
+        <ul>
+        <li>Reduced pushback on block</li>
+        </ul>
+        </li>
+        <li><p>Shred</p>
+        <ul>
+        <li>Fixed bug where this was still able to hit unparriable in 2f sometimes.</li>
+        </ul>
+        </li>
+        <li><p>Kick (grounded)</p>
+        <ul>
+        <li>Increased victim hitstop (7f -&gt; 9f in neutral, 11f in combo)</li>
+        <li>Hurtbox shifts earlier (f11 -&gt; f7), is smaller, and shifted higher up.</li>
+        </ul>
+        </li>
+        <li><p>Dash Attack (forward)</p>
+        <ul>
+        <li>Does not land-cancel until frame 9</li>
+        </ul>
+        </li>
+        <li><p>Forward/Back Throw (grounded)</p>
+        <ul>
+        <li>Gravity increased by 1.2x, meaning Mutant now ends the animation grounded.</li>
+        </ul>
+        </li>
+        </ul>
+        
+    </div>
+
+  </div>
+    <!-- <div class="content"> -->
+      <!-- <div class="linkbar linkbar-bottom linkbar-icons"> -->
+        <!-- <a href="https://twitter.com/ivy_sly_"><i class="fab fa-twitter"></i></a>      
+        <a href="https://discord.gg/youronlymoveishustle"><i class="fab fa-discord"></i></a>  
+        <a href="https://github.com/uzkbwza"><i class="fab fa-github-alt"></i></a>       
+        <a href="https://ivysly.itch.io"><i class="fab fa-itch-io"></i></a>
+        <a href="/blog/rss.xml"><i class="fas fa-rss"></i></a> -->
+      <!-- </div> -->
+    <!-- </div> -->
+</body>
