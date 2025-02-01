@@ -40,7 +40,7 @@
   flex-grow: 1;
 
   flex-direction: column;
-  justify-content: end;
+  /* justify-content: end; */
 }
 
 .friend-link {

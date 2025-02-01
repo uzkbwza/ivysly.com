@@ -1,7 +1,7 @@
 Title: favs
 Slug: favs
 Sortorder: 10
-Date: 1
+Date: 1970-01-01
 Summary: things that i like
 
 TODO: enjoy things

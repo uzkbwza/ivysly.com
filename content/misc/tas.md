@@ -1,7 +1,7 @@
 Title: tas
 Slug: tas
 Sortorder: 15
-Date: 1
+Date: 1970-01-01
 Summary: making videos about games but they are played by computers
 
 i sometimes make [tool-assisted](https://tasvideos.org/) speedruuuhhh superplays? playarounds? i am not sure what they are called, but i'm not really interested in the speedrun part. i care more about making something that **looks baller**. TAS is also the basis of the design for my fighting game, [Your Only Move Is HUSTLE](../games/your-only-move-is-hustle.html).

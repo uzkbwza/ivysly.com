@@ -25,9 +25,10 @@
 <div class="header-container">
 
   {% if article.prev_article_in_category %}
-  <a href="{{ HTML_SITEURL }}/{{ article.prev_article_in_category.url}}" class="header-link-left">⯬</a>{% endif %}
+  <a href="{{ HTML_SITEURL }}/{{ article.prev_article_in_category.url}}" class="header-link-left">&lt;&lt;</a>{% endif %}
   {% if article.next_article_in_category %}
-  <a href="{{ HTML_SITEURL }}/{{ article.next_article_in_category.url}}" class="header-link-right">⯮</a>{% endif %}
+  <a href="{{ HTML_SITEURL }}/{{ article.next_article_in_category.url}}" class="header-link-right">&gt;&gt;</a>{% endif %}
+
   <h1><a href="{{ HTML_SITEURL }}/{{ article.url }}">{{ date.upper() }}</a>
 
 </div>

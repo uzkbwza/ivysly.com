@@ -1,7 +1,7 @@
 Title: friends
 Slug: friends
 Sortorder: 1
-Date: 1
+Date: 1970-01-01
 Summary: this page is a non-comprehensive list of people on the internet.
 
 this page is a non-comprehensive list of people on the internet.

@@ -1,7 +1,7 @@
 Title: bots
 Slug: bots
 Sortorder: 20
-Date: 1
+Date: 1970-01-01
 Summary: chatbots and other little internet machines
 
 i like to make chatbots and other little internet machines. listed are some of them, organized by platform:
