@@ -1,0 +1,61 @@
+{% extends "default.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/gamelist.css">
+{% endblock head %}
+
+{% block bg %}games{% endblock bg %}
+{% block title %}games{% endblock title %}
+
+{% block header %}game time{% endblock header %}
+
+{% block description %}
+welcome to game world
+{% endblock description %}
+
+{% block article_body %}
+<p>here are more or less all of the published games i made. most of these are windows-only, some gotta be played in the browser, nearly all of them are free, and there may eventually be more of them. isn't that neat!</p>
+
+<div class="game-grid">
+  {% for article in articles if not article.nondevcredit %}
+
+
+  <div class="game-box">
+
+    <a href="{{ HTML_SITEURL }}/{{ article.url }}">
+      <div class="game-image">
+        <img src="{{ article.cover }}" alt="{{ article.title }}">
+        <div class="game-image-overlay"></div>
+      </div>
+
+    </a>
+  </div>
+{% endfor %}
+</div>
+
+<!-- 
+<br>
+<h2>and others'...</h2>
+<p>below are games i did not develop but contributed to:</p>
+
+<div class="game-grid">
+{% for article in articles if article.nondevcredit %}
+
+
+
+  <div class="game-box">
+
+    <a href="{{ HTML_SITEURL }}/{{ article.url }}">
+      <div class="game-image">
+        <img src="{{ article.cover }}" alt="{{ article.title }}">
+        <div class="game-image-overlay"></div>
+      </div>
+
+    </a>
+  </div>
+{% endfor %}
+</div> -->
+
+
+{% endblock article_body %}

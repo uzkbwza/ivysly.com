@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block style %}home{% endblock %}
+
+{% block title %}home{% endblock title %}
+{% block linktitle %}home{% endblock linktitle %}
+
+{% block content %}
+<div class="header-container">
+
+      <a href={{ SITEHOME }}><img src="{{ HTML_SITEURL }}/theme/images/home/header.png" class="header-image"
+        onmouseover="this.src='{{ HTML_SITEURL }}/theme/images/home/header2.png'"
+        onmouseout="this.src='{{ HTML_SITEURL }}/theme/images/home/header.png'" ></a>
+
+</div>
+
+<div id="collage-wrapper">
+
+  <div id="collage">
+    <img 
+
+    src="{{ HTML_SITEURL }}/theme/images/home/videogames1.png" 
+    id="videoGameButton" 
+    usemap="#videoGameButtonMap" 
+      style="position: absolute; right: 260px; top: -40px;"
+    />
+
+    <img 
+    src="{{ HTML_SITEURL }}/theme/images/home/music1.png" 
+    id="musicButton" 
+    usemap="#musicButtonMap" 
+      style="position: absolute; left: 80px; top: 240px;"
+    />
+
+    <img 
+
+    src="{{ HTML_SITEURL }}/theme/images/home/webwords1.png" 
+    id="blogButton" 
+    usemap="#blogButtonMap" 
+      style="position: absolute; left: 160px; top: 380px;"
+    />
+
+    <img 
+
+    src="{{ HTML_SITEURL }}/theme/images/home/dreamlog1.png" 
+    id="dreamLog" 
+    usemap="#dreamLogMap" 
+      style="position: absolute; left: 440px; top: 460px;"
+    />
+
+
+
+    <img 
+    src="{{ HTML_SITEURL }}/theme/images/home/about1.png" 
+    id="aboutButton" 
+    usemap="#aboutButtonMap" 
+      style="position: absolute; left: 770px; top: 40px;"
+    />
+
+    <img 
+    src="{{ HTML_SITEURL }}/theme/images/home/misc1.png" 
+    id="miscButton" 
+    usemap="#miscButtonMap" 
+      style="position: absolute; left: 720px; top: 310px;"
+    />
+
+  </div>
+
+</div>
+
+  <map name="videoGameButtonMap">
+    <!-- Adjust coords to the desired clickable region. -->
+    <area 
+      shape="rect" 
+      coords="210,150,688,500" 
+      href="{{ HTML_SITEURL }}/games.html" 
+      alt="Click Region"
+      onmouseover="document.getElementById('videoGameButton').src='{{ HTML_SITEURL }}/theme/images/home/videogames2.png';"
+      onmouseout="document.getElementById('videoGameButton').src='{{ HTML_SITEURL }}/theme/images/home/videogames1.png';"
+    />
+  </map>
+
+  <map name="aboutButtonMap">
+    <area 
+      shape="rect" 
+      coords="27,40,162,208" 
+      href="{{ HTML_SITEURL }}/about.html" 
+      alt="Click Region"
+      onmouseover="document.getElementById('aboutButton').src='{{ HTML_SITEURL }}/theme/images/home/about2.png';"
+      onmouseout="document.getElementById('aboutButton').src='{{ HTML_SITEURL }}/theme/images/home/about1.png';"
+    />
+  </map>
+
+  <map name="musicButtonMap">
+    <area 
+      shape="rect" 
+      coords="0,0,180,155" 
+      href="{{ HTML_SITEURL }}/music.html" 
+      alt="Click Region"
+      onmouseover="document.getElementById('musicButton').src='{{ HTML_SITEURL }}/theme/images/home/music2.png';"
+      onmouseout="document.getElementById('musicButton').src='{{ HTML_SITEURL }}/theme/images/home/music1.png';"
+    />
+  </map>
+
+  <map name="blogButtonMap">
+    <area 
+      shape="rect" 
+      coords="0,0,300,300" 
+      href="{{ HTML_SITEURL }}/blog.html" 
+      alt="Click Region"
+      onmouseover="document.getElementById('blogButton').src='{{ HTML_SITEURL }}/theme/images/home/webwords2.png';"
+      onmouseout="document.getElementById('blogButton').src='{{ HTML_SITEURL }}/theme/images/home/webwords1.png';"
+    />
+  </map>
+
+  <map name="dreamLogMap">
+    <area 
+      shape="rect" 
+      coords="0,0,250,250" 
+      href="{{ HTML_SITEURL }}/dream.html" 
+      alt="Click Region"
+      onmouseover="document.getElementById('dreamLog').src='{{ HTML_SITEURL }}/theme/images/home/dreamlog2.png';"
+      onmouseout="document.getElementById('dreamLog').src='{{ HTML_SITEURL }}/theme/images/home/dreamlog1.png';"
+    />
+  </map>
+
+  <map name="miscButtonMap"> 
+    <area 
+      shape="rect" 
+      coords="0,0,250,250" 
+      href="{{ HTML_SITEURL }}/misc.html" 
+      alt="Click Region"
+      onmouseover="document.getElementById('miscButton').src='{{ HTML_SITEURL }}/theme/images/home/misc2.png';"
+      onmouseout="document.getElementById('miscButton').src='{{ HTML_SITEURL }}/theme/images/home/misc1.png';"
+    />
+  </map>
+
+  <script>
+    // Dynamically scale the collage to fit within the window width
+    function scaleCollage() {
+      const collage = document.getElementById('collage');
+      const wrapper = document.getElementById('collage-wrapper');
+
+      const collageWidth = collage.offsetWidth;
+      const wrapperWidth = wrapper.clientWidth;
+
+      let scale = 1;
+      if (collageWidth > wrapperWidth) {
+        scale = wrapperWidth / collageWidth; 
+      }
+
+      // Keep it horizontally centered; only update the scale factor
+      collage.style.transform = `translateX(-50%) scale(${scale})`;
+    }
+
+    // Scale on page load and on window resize
+    window.addEventListener('load', scaleCollage);
+    window.addEventListener('resize', scaleCollage);
+ function preloadImage(url)
+    {
+        var img=new Image();
+        img.src=url;
+    }
+  
+    preloadImage("/theme/images/home/videogames1.png");
+    preloadImage("/theme/images/home/videogames2.png");
+    preloadImage("/theme/images/home/music1.png");
+    preloadImage("/theme/images/home/music2.png");
+    preloadImage("/theme/images/home/webwords1.png");
+    preloadImage("/theme/images/home/webwords2.png");
+    preloadImage("/theme/images/home/about1.png");
+    preloadImage("/theme/images/home/about2.png");
+    preloadImage("/theme/images/home/misc1.png");
+    preloadImage("/theme/images/home/misc2.png");
+    preloadImage("/theme/images/home/dreamlog1.png");
+    preloadImage("/theme/images/home/dreamlog2.png");
+    preloadImage("/theme/images/home/header.png");
+    preloadImage("/theme/images/home/header2.png");
+  </script>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% block content %}
+    {%- if category == "Games" -%}
+        {% include "gamelist.html" %}
+    {%- elif category == "Blog" -%}
+        {% include "blog.html" %}
+    {%- elif category == "Dream" -%}
+        {% include "dreamlog.html" %} 
+    {%- elif category == "Misc" -%}
+        {% include "misc.html" %}
+    {%- endif -%}
+{% endblock %}

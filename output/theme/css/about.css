@@ -1,0 +1,15 @@
+/* i forgot how css works here we go again */
+@font-face {
+  font-family: 'MS Gothic';
+  src: url('../font/MS Gothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MS PGothic';
+  src: url('../font/MS PGothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MingLiU-ExtB';
+  src: url('../font/mingliu.ttf') format('truetype');
+}

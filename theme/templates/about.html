@@ -1,0 +1,36 @@
+{% extends "default.html" %}
+{% from "macros.html" import default_back_link with context %}
+{% block title %}about{% endblock title %}
+{% block bg %}about{% endblock %}
+
+{% block header %}{{ page.title }}{% endblock header %}
+{% block article_body %}
+{{ page.content }}
+{% endblock article_body %}
+{% block footer %}
+<br>
+<div class="about-links">
+  <img class="about-image" alt="a picture of me" src="{{ HTML_SITEURL }}/theme/images/ivy2.png">
+
+  find me on other websites:
+  
+  <ul>
+    <li><a href="https://bsky.app/profile/ivysly.com">bluesky</a></li>
+    <li><a href="https://ivysly.itch.io">itch.io</a></li>
+    <li><a href="https://www.youtube.com/@ivysly">youtube</a></li>
+    <li><a href="https://ivysly.bandcamp.com">bandcamp</a></li>
+    <li><a href="https://soundcloud.com/ivysly">soundcloud</a></li>
+    <li><a href="https://www.backloggd.com/u/ivysly/">backloggd</a></li>
+  </ul>
+  
+
+  or contact me:
+  
+  <ul>
+    <li><a href="mailto:ivysly@protonmail.com">email</a></li>
+    <li>discord: @slybash</li>
+  </ul>
+
+  my rss feeds are <a href="{{ HTML_SITEURL }}/feeds/">here</a>.
+</div>
+{% endblock footer %}

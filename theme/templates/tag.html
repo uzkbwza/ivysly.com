@@ -1,0 +1,13 @@
+{% extends "dreamlog.html" %}
+
+{% block linktitle %}dreamtag: {{ tag.name }}{% endblock linktitle %}
+{% block title %}dreamtag: {{ tag.name }}{% endblock title %}
+
+{% block header %}
+<h1><a href="{{ HTML_SITEURL }}/dream.html">{{ tag.name.upper() }}</a></h1>
+{% endblock header %}
+
+{% block links %}
+<a href="{{ HTML_SITEURL }}/dream.html">browse all</a><br>
+{{ super() }}
+{% endblock links %}

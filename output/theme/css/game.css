@@ -1,0 +1,63 @@
+
+
+.game-image {
+  max-width: 50%;
+  /* height: auto; */
+  display: block;
+  margin: 0 auto;
+  float: left;
+  margin-bottom: 20px;
+  text-align: center;  border: 1px solid black;
+  margin-right: 25px;
+
+}
+
+.game-info {
+  /* text-align: center; */
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  font-weight: bold;
+}
+
+.article-body {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+
+}
+
+.header {
+  margin-bottom: 0px;
+}
+
+.links {
+  /* text-align: center; */
+  font-size: 18px;
+  /* font-weight: bold; */
+}
+
+.downloads {
+  /* text-align: center; */
+  font-size: 18px;
+
+  /* text-align: center; */
+  /* font-size: 24px; */
+  /* font-weight: bold; */
+}
+.download {
+  /* margin-right: 10px; */
+}
+
+.link {
+  /* margin-right: 10px; */
+}
+
+h2 {
+  text-align: center;
+}
+
+.back-link {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}

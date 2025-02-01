@@ -1,0 +1,17 @@
+{% extends "default.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/misc.css">
+{% endblock head %}
+
+{% block linktitle %}{{article.title|striptags}}{% endblock linktitle %}
+{% block title %}{{ article.title|striptags }}{% endblock title %}
+
+{% block bg %}misc{% endblock bg %}
+
+{% block header %}{{ article.title }}{% endblock header %}
+
+{% block article_body %}
+{{ article.content }}
+{% endblock article_body %}

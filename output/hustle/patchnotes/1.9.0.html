@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<!--I used Pelican to generate this website,
+so it may look a little funny on the inside-->
+<head>
+      <meta charset="UTF-8">
+    <link rel='stylesheet' type='text/css' href="/theme/css/default.css">
+
+
+    <meta name="keywords" content="gamedev, music, electronic">
+    <meta name="description" content="UI now explicitly tells you when you are in a combo vs when you are in neutral. Added UI info for current initiative state and which actions can use Initiative. Added a sound that plays when your time is running out. Hit particles should show up in the right place …">
+
+    <meta name="author" content="Ivy Sly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+
+    <meta name="language" content="English">
+    <meta name="title" content="ivysly.com - 1.9.0">
+
+    <meta property="og:title" content="ivysly.com - 1.9.0">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/theme/images/card.png">
+    <meta property="og:description" content="UI now explicitly tells you when you are in a combo vs when you are in neutral. Added UI info for current initiative state and which actions can use Initiative. Added a sound that plays when your time is running out. Hit particles should show up in the right place …">
+    
+    <meta name="twitter:site" content="@ivy_sly_">
+    <meta name="twitter:creator" content="@ivy_sly_">
+    <meta name="twitter:title" content="ivysly.com - 1.9.0">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="UI now explicitly tells you when you are in a combo vs when you are in neutral. Added UI info for current initiative state and which actions can use Initiative. Added a sound that plays when your time is running out. Hit particles should show up in the right place …">
+    <meta name="twitter:image" content="/theme/images/card.png">
+  
+    <link rel=apple-touch-icon sizes=180x180 href=/theme/images/apple-touch-icon.png>
+    <link rel=icon type=image/png sizes=16x16 href=/theme/images/favicon-16x16.png>
+    <link rel=icon type=image/png sizes=32x32 href=/theme/images/favicon-32x32.png>
+    <link rel=icon type=image/png sizes=192x192 href=/theme/images/android-chrome-192x192.png>
+    <link rel=icon type=image/png sizes=512x512 href=/theme/images/android-chrome-512x512.png>
+
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>ivysly.com - 1.9.0</title>
+
+
+
+
+
+  </head>
+
+<style>
+  html {
+    background-image: url(/theme/images/background/none.png);
+  }
+</style>
+<body>
+<div class="header-container">
+
+  <a href=/><img src="/theme/images/home/header.png" class="header-image"
+    onmouseover="this.src='/theme/images/home/header2.png'"
+    onmouseout="this.src='/theme/images/home/header.png'" ></a>
+
+</div>
+
+<div class="page"> 
+
+<div class="box">
+  <div class="nav-links top">
+      <span class="nav-link"><a href="/games.html">games</a></span>
+      <span class="nav-link"><a href="/music.html">music</a></span>
+      <span class="nav-link"><a href="/blog.html">blog</a></span>
+      <span class="nav-link"><a href="/dream.html">dreams</a></span>
+      <span class="nav-link"><a href="/misc.html">misc</a></span>
+      <span class="nav-link"><a href="/about.html">about</a></span>
+  </div>
+
+  <div class="content">
+      <h1 class="header">1.9.0</h1>
+      <div class="article-body">
+<ul>
+<li>UI now explicitly tells you when you are in a combo vs when you are in neutral.</li>
+<li>Added UI info for current initiative state and which actions can use Initiative.</li>
+<li>Added a sound that plays when your time is running out.</li>
+<li>Hit particles should show up in the right place now.</li>
+<li>Fixed prediction being off by 1 frame when hitcancelling against projectiles.</li>
+<li>Added limit to chat message history.</li>
+<li>Added option to mute chat sounds.<ul>
+<li>Lobby chat is always muted when entering a match now.</li>
+</ul>
+</li>
+<li>Enabled experimental ghost options for 2x speed (thanks to welt for giving tips on the implementation)</li>
+<li>Prediction speed setting is now saved.</li>
+<li>Added distinction in the prediction text for moves that are interrupted on the opponents' turn.</li>
+<li>Added parry timing indicator to prediction.</li>
+<li>Fixed bug causing characters to snap to the ground from high in the air in some situations.</li>
+<li>Fixed some asymmetries regarding projectile collision.</li>
+<li>Fixed hurtbox/collision boxes not always updating to face the right way.</li>
+<li>Added hit frame display in prediction.</li>
+<li>Experimental change to rematch button. Hopefully prevents crashing.</li>
+</ul>
+<h1>Character Loader update</h1>
+<ul>
+<li>I have (with permission) ported the critical parts of srPerez's character loader to the base game. You can unsubscribe from the Workshop mod. This shouldn't change much, but was needed as Mutant's inclusion broke character loader and the original mod is no longer actively maintained.</li>
+<li>This does NOT mean you will automatically download your opponent's characters, though this could be the case sometime in the future.</li>
+<li>The steam lobby UI has been updated to reflect this change. You can choose whether or not modded characters are enabled when creating a lobby, and you can see which lobbies have them.</li>
+<li>I have made some QOL adjustments to the character loader, including a more robust character select screen (and the ability to update it in the future). Characters are now loaded in a separate thread, which completely removes the unpleasant lag every time you start the game or go to the main menu. Overall, <strong>modded characters will now be an officially supported feature and further improvements will be made over time.</strong></li>
+</ul>
+<h1>Character Changes</h1>
+<h2>Mutant</h2>
+<ul>
+<li>New character, try it out!!!</li>
+<li>Extreme rushdown/mobility character with low health and damage but very oppressive neutral.</li>
+<li>Has a unique movement option, Juke, tied to a bar. 2 pips of juke bar can be used to shift Mutant in any direction without affecting momentum (usually), allowing for intensely deep rushdown and evasive movement strategies.</li>
+<li>Envenom is a special throw that applies a poison status effect to the opponent. Poisoned opponents will take damage over time, and hitting them with melee attacks causes hazardous acid bubbles to fly out.</li>
+</ul>
+<h2>All characters</h2>
+<ul>
+<li>Air options have been reduced by 1 in neutral. Starting a combo adds an extra air option.</li>
+<li>Low-health damage reduction (aka GUTS) has been removed.<ul>
+<li>The visual effect on the healthbar remains.</li>
+<li>This removes stupid tech like tax evasion (really) and overall just makes things easier to balance.</li>
+<li>Maximum health has been increased to 15,000 (from 10,000) to compensate.</li>
+<li>This is slightly higher than the old <em>effective</em> hp amount of about 14,000, after low-health damage reduction, which means matches will take slightly longer but will also be slightly less volatile (more skill-based), which was the other goal in adjusting the damage scaling.</li>
+</ul>
+</li>
+<li>Meter gain globally reduced by 15% to compensate for the low-health damage reduction changes increasing overall meter gain.</li>
+<li>Fixed a forbidden technique.</li>
+<li>Velocity-based meter gain is now reduced by 50% while airborne</li>
+<li>You can now hit projectiles and blocking opponents at the same time.</li>
+<li>Possibly removed framekill related to cancelling an attack after hitting the opponent when they recover before you.</li>
+<li>Hitstun now has a minimum of 1 frame (unless it was already 0 for some reason).</li>
+<li>Melee parries now properly disable all interruptibility.</li>
+<li>Moves that change IASA on hit no longer do so when hitting non-hitcancellable projectiles.</li>
+<li>Removed extra frame of hitlag when hitcancelling against projectiles. This should remove the invisible framekill.</li>
+<li>Removed unblockable involving projectiles hitting on the same frame as throw tech.</li>
+<li>Parrying projectiles no longer scales your combo.</li>
+<li>Slightly reduced knockdown hurtbox size.</li>
+<li>Fixed throw tech preventing projectiles from hitting each other.</li>
+<li>Fixed bug where all object interactions were being processed twice. Might cause other bugs, havent thoroughly tested.</li>
+<li>Parrying melee attacks always forces the opponent out of a free cancel.</li>
+<li>Fixed the parry damage scaling prediction error.</li>
+<li>
+<p>Fixed bug where hitting someone on the frame they would have exited hitstun removes the parry damage scaling.</p>
+</li>
+<li>
+<p>Burst (all variants)</p>
+<ul>
+<li>Burst meter now builds 75% as fast during neutral, and 50% as fast if you are aerial during neutral.</li>
+<li>No burst gain while Sadness is active.</li>
+<li>No longer flippable</li>
+<li>
+<p>Burst Cancel</p>
+</li>
+<li>
+<p>Using Burst Cancel will slow Burst regeneration to 25% until your combo ends.</p>
+</li>
+<li>No longer resets combo damage proration.</li>
+<li>
+<p>New move for Ninja, Mutant, and modded characters: Super Fall</p>
+</li>
+<li>
+<p>Similar to Super Dash and Super Jump. Air move with some startup that sends you flying downward.</p>
+</li>
+<li>
+<p>Whiff Cancel</p>
+</li>
+<li>
+<p>No longer prevents opponent parry.</p>
+</li>
+<li>
+<p>Landing</p>
+</li>
+<li>
+<p>Is now interruptible on the opponents' turn when 4f or shorter. Does not apply when you are getting comboed obviously.</p>
+</li>
+<li>
+<p>Throw</p>
+</li>
+<li>
+<p>Range is reduced across the cast.</p>
+</li>
+<li>IASA increased (15f -&gt; 16f)</li>
+<li>
+<p>Getup</p>
+</li>
+<li>
+<p>No longer flippable</p>
+</li>
+<li>No longer counts as a "hurt" state, fixing some small inconsistencies.</li>
+<li>
+<p>Jump</p>
+</li>
+<li>
+<p>Jump forward now has 1 frame of jump-squat before leaving the ground.</p>
+</li>
+<li>Full hop IASA increased (11f -&gt; 12f)</li>
+<li>
+<p>Block</p>
+</li>
+<li>
+<p>No longer causes sadness.</p>
+</li>
+<li>You can no longer double jump or use most other aerial options the turn after air-blocking.</li>
+<li>Experimental block startup change that should help with a lot of the weird hitstop shenanigans. Probably extremely buggy and probably reintroduces old bugs - LMK</li>
+<li>Blocking a melee attack no longer consumes an air option.</li>
+<li>Is no longer minus on whiff during combos.</li>
+<li>You can no longer parry melee attacks the turn after whiffing block. Guard breaks will be automatically softblocked.</li>
+<li>Is no longer -1 on whiffing block.</li>
+<li>Block timing is now shown on the previous move display.</li>
+<li>Blockstun is now applied additively instead of reset to new value.</li>
+<li>Fixed bug where interrupting on the same turn you block a non-block-cancellable move allows you to punish the opponent on block.</li>
+<li>This is done by outright disabling any interrupt that might have been triggered before blocking on the same frame, so bugs may ensue.</li>
+<li>Fixed bug that forced unblockables when blocking a projectile on the 20th frame. Might cause other problems, lmk</li>
+<li>
+<p>Push Block</p>
+</li>
+<li>
+<p>Increased pushback proc distance (110 -&gt; 220)</p>
+</li>
+<li>Fixed bug preventing push block after whiffed block.</li>
+<li>
+<p>Dash Backward</p>
+</li>
+<li>
+<p>Fixed incorrect prediction</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Ninja</h2>
+<ul>
+<li>
+<p>Fixed a lot of ground-to-air and air-to-ground situations that didnt let you cancel into anything.</p>
+</li>
+<li>
+<p>Caltrops</p>
+<ul>
+<li>Ninjas can hit their own caltrops and smack em around now. Thanks VineRaio :)</li>
+<li>Attack launch angle is influenced by DI.</li>
+<li>Hitting your own caltrops with a melee attack automatically free-cancels the attack.</li>
+<li>
+<p>Boost</p>
+</li>
+<li>
+<p>reduced parry hitstop penalty (20f -&gt; 10f)</p>
+</li>
+<li>You can now stack stored momentum.</li>
+<li>Can only store one Boost at a time.</li>
+<li>Stored speed is reduced by 10%.</li>
+<li>Stored speed is reduced every frame in neutral, more quickly at higher values.</li>
+<li>Stored speed is reduced by 3.0 every time Ninja blocks or is hit.</li>
+<li>
+<p>Air Dash</p>
+</li>
+<li>
+<p>Anti-gravity effect no longer resets when hitting the opponent.</p>
+</li>
+<li>
+<p>Jump Kick</p>
+</li>
+<li>
+<p>Projectile invulnerability startup increased (1f -&gt; 2f)</p>
+</li>
+<li>Projectile invulnerability is now on initiative only.</li>
+<li>Landing lag is now interruptible on the opponent's turn.</li>
+<li>Now interrupts properly on exiting the landing state</li>
+<li>Added subtle sfx</li>
+<li>
+<p>Uppercut (all versions)</p>
+</li>
+<li>
+<p>No longer combos.</p>
+</li>
+<li>Only the first hitbox is block punishable now.</li>
+<li>Blocking the first hit will make the 2nd block punishable as well.</li>
+<li>Aerial version now gets the block punishable change</li>
+<li>
+<p>Uppercut (aerial)</p>
+</li>
+<li>
+<p>2nd hit proration adjusted to match the 1st (0 -&gt; 2)</p>
+</li>
+<li>
+<p>Grappling Hook</p>
+</li>
+<li>
+<p>Friction is now applied normally to Ninja when throwing the hook in neutral.</p>
+</li>
+<li>Normalized attach position for all characters.</li>
+<li>Reduced projectile hook duration (300f -&gt; 120f).</li>
+<li>
+<p>Shuriken</p>
+</li>
+<li>
+<p>Falls to the ground after 120f.</p>
+</li>
+<li>Throwing your shurikens at each other causes them to form a powered up version.<ul>
+<li>The shuriken shrinks in size and damage (slightly) over time, until it disappears.</li>
+<li>You can swat the powered up version. This is affected by DI only when hit by the Ninja that spawned it. It also grants a free cancel for the attacker.</li>
+<li>Hitting the powered-up version with another shuriken increases its lifespan and size.</li>
+</ul>
+</li>
+<li>Increased aerial angle range.</li>
+<li>Grounded IASA increased (14f -&gt; 16f)</li>
+<li>
+<p>Summon (kunai)</p>
+</li>
+<li>
+<p>Kunai are now unparriable, no longer disappear on hit, and are projectile immune, but can be destroyed with melee attacks. Your melee attack automatically free-cancels when you hit one.</p>
+</li>
+<li>
+<p>Substitution</p>
+</li>
+<li>
+<p>Drastically reduced sadness penalty</p>
+</li>
+<li>Valid substitute distance from a projectile is determined by distance to the opponent instead of the player substituting, and the max horizontal distance is reduced (600px -&gt; 300px).</li>
+<li>Neutral IASA increased (10f -&gt; 15f)</li>
+<li>Is now interruptable starting on frame 10.</li>
+<li>Ninja now teleports to the center of the projectile instead of the very top.</li>
+<li>Now snaps to the ground when closer than 16 px.</li>
+<li>Now requires an air option during neutral.</li>
+<li>
+<p>Sticky Bomb</p>
+</li>
+<li>
+<p>Ninja no longer moves during the throw animation.</p>
+</li>
+<li>
+<p>Kick (aerial)</p>
+</li>
+<li>
+<p>Reduced IASA (40f -&gt; 22f)</p>
+</li>
+<li>
+<p>Slide Kick</p>
+</li>
+<li>
+<p>Projectile invulnerability is now on initiative only.</p>
+</li>
+<li>
+<p>Punch (grounded)</p>
+</li>
+<li>
+<p>Damage increased (300 -&gt; 350)</p>
+</li>
+<li>
+<p>Punch (aerial)</p>
+</li>
+<li>
+<p>Reduced IASA (22f -&gt; 16f)</p>
+</li>
+<li>Is now +0 on block (from +3)</li>
+<li>Can no longer be cancelled into itself.</li>
+<li>
+<p>Stomp</p>
+</li>
+<li>
+<p>Guard break damage proration adjusted (+1 -&gt; +3)</p>
+</li>
+<li>
+<p>Dive Kick (grounded)</p>
+</li>
+<li>
+<p>Now transitions into a little hop when hitting Ninja's own hittable projectiles. Only usable once before landing.</p>
+</li>
+<li>
+<p>Dive Kick (up versions)</p>
+</li>
+<li>
+<p>Moves faster.</p>
+</li>
+<li>
+<p>Nun Chuk</p>
+</li>
+<li>
+<p>Projectile block pushback dramatically increased (1.0x -&gt; 4.0x)</p>
+</li>
+<li>Projectile is now +2 on block (from +3)</li>
+<li>
+<p>Chuk Heavy</p>
+</li>
+<li>
+<p>Reduced startup (7f -&gt; 6f)</p>
+</li>
+<li>Increased IASA (16f -&gt; 19f)</li>
+<li>
+<p>Drop Kick</p>
+</li>
+<li>
+<p>Guard break is only on the first frame.</p>
+</li>
+<li>No longer block-punishable.</li>
+</ul>
+</li>
+<li>
+<p>Throws (grounded)</p>
+<ul>
+<li>IASA increased (15f -&gt; 19f)</li>
+<li>
+<p>Throws (aerial, front/back)</p>
+</li>
+<li>
+<p>Knockback angle sends more downward now.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Cowboy</h2>
+<ul>
+<li>
+<p>Draw Cancel</p>
+<ul>
+<li>Draw cancel disables hit cancelling on block (buff)</li>
+<li>All draw cancels are delayed by 2 frames except for grounded horiz. slash and stinger.</li>
+<li>
+<p>New toggle: Drift</p>
+</li>
+<li>
+<p>Cowboy can use his own future attacks.</p>
+</li>
+<li>Allows Cowboy to use grounded moves in the air or vice-versa, given a Foresight after-image is where Cowboy isn't.</li>
+<li>Requires 1 bar of super.</li>
+<li>if Cowboy uses a grounded move in the air, this always destroys the after-image.</li>
+<li>Scales your meter gain during combos like most other supers</li>
+<li>Reified freshmilk tech (pasteurized)</li>
+<li>
+<p>New toggle: Sight.</p>
+</li>
+<li>
+<p>Adds a toggle when no Foresight is out. This spawns Foresight on top of Cowboy.</p>
+</li>
+<li>Costs a bar of meter.</li>
+<li>
+<p>Shift</p>
+</li>
+<li>
+<p>Now preserves Cowboy's momentum</p>
+</li>
+<li>Holding block while shifting forces Wait.</li>
+<li>
+<p>Air Dash</p>
+</li>
+<li>
+<p>Back and down versions are now 12f IASA (from 10f).</p>
+</li>
+<li>Added 4f startup lag to back version.</li>
+<li>
+<p>Temporal Round</p>
+</li>
+<li>
+<p>Is now a level 2 super.</p>
+</li>
+<li>No longer uses a bullet.</li>
+<li>Can be triggered early by using Shoot.</li>
+<li>You can attack your own frozen round.</li>
+<li>Attacking the frozen round causes it to shoot instead of disappear.</li>
+<li>Increased IASA (10f -&gt; 13f)</li>
+<li>Hitting the frozen round with a melee attack automatically free-cancels the attack.</li>
+<li>Fast version is now hittable.</li>
+<li>Frozen bullet is no longer hittable from 2f before shooting.</li>
+<li>
+<p>Teleport</p>
+</li>
+<li>
+<p>Is now fully interruptible on the opponent's turn.</p>
+</li>
+<li>Increased IASA in neutral (10f -&gt; 13f)</li>
+<li>Teleport angles during neutral are the same on the ground as they are in the air now.</li>
+<li>
+<p>1000 Cuts</p>
+</li>
+<li>
+<p>IASA increased (12f -&gt; 13f)</p>
+</li>
+<li>Using Teleport or Impale will end this move.</li>
+<li>New move: Fatal Cut<ul>
+<li>Can end 1000 Cuts at any time with a fast, long-range hitbox.</li>
+</ul>
+</li>
+<li>New move: Time Splitter<ul>
+<li>End 1000 Cuts for 1 meter with a flashy teleport attack that hits from where you were to where you're going.</li>
+</ul>
+</li>
+<li>Is no longer a drain super. Works like it used to.</li>
+<li>3rd hitbox always sends airborne now.</li>
+<li>Will be reworked down the line to be more interesting.</li>
+<li>
+<p>Gun Throw</p>
+</li>
+<li>
+<p>Horizontal knockback direction is determined by velocity.</p>
+</li>
+<li>Gun hitbox is disabled when Cowboy enters hitstun.</li>
+<li>
+<p>Lasso</p>
+</li>
+<li>
+<p>No longer gets hit by other projectiles.</p>
+</li>
+<li>Fixed bug causing a crash when 2 cowboys lasso each other at the same time.</li>
+<li>
+<p>New move: Gun Pull</p>
+</li>
+<li>
+<p>When the gun is thrown, you can pull it back on command now. This refreshes the gun hitbox.</p>
+</li>
+<li>
+<p>3 Combo (down)</p>
+</li>
+<li>
+<p>Land cancel frame delayed (2f -&gt; 4f)</p>
+</li>
+<li>
+<p>Downward Cleave (aerial)</p>
+</li>
+<li>
+<p>Land cancel frame delayed from 1f to 2f</p>
+</li>
+<li>
+<p>Foresight</p>
+</li>
+<li>
+<p>No longer treated as an aerial movement option for cancel purposes.</p>
+</li>
+<li>Fixed infinite frozen bullet glitch (thanks VineRaio).</li>
+<li>
+<p>Impale</p>
+</li>
+<li>
+<p>Fixed the bug causing Cowboy to often turn around on hit</p>
+</li>
+<li>Fixed the 2nd hit sometimes not applying properly (i just made the hitbox huge)</li>
+<li>Only scales the combo once now.</li>
+<li>Increased 2nd hit damage in neutral (1450 -&gt; 1600)</li>
+<li>No longer hits projectiles.</li>
+<li>Damage proration adjusted (0 -&gt; 2)</li>
+<li>
+<p>Shoot</p>
+</li>
+<li>
+<p>Bullet decays in damage and hitstun by 15% on each bounce.</p>
+</li>
+<li>Can no longer be used from neutral stance after shooting.</li>
+<li>Added a holster toggle that lets you stay in gun stance after shooting.</li>
+<li>Removed temp round toggle.</li>
+<li>Bullets can now bounce off Foresight more than once.</li>
+<li>Bullets can bounce one more time.</li>
+<li>Bullets no longer randomly bounce off each other, and instead cancel each other out.</li>
+<li>Cowboy's body now gets a hitbox if hit by their own bullet. This consumes the bullet.</li>
+<li>Opponent no longer controls the bullet's ricochet angles after hitting it. DI still affects launch trajectory when hitting the bullet.</li>
+<li>Rifting a bullet returns ownership to the Cowboy who shot it.</li>
+<li>Fixed bullets losing their hitbox for long gaps when bouncing.</li>
+<li>Fixed bullets not hitting block under certain circumstances.</li>
+<li>Pushblocking any bullet causes causes it to freeze for 10f.</li>
+<li>
+<p>New move: Point Blank</p>
+</li>
+<li>
+<p>Usable from Draw Cancel/Quick Draw.</p>
+</li>
+<li>Unparriable.</li>
+<li>Melee-only move that consumes a bullet.</li>
+<li>Larger hitbox, +2 on block, still frame 4.</li>
+<li>5f active frames.</li>
+<li>High hitstun, low knockback. Easy combo starter.</li>
+<li>
+<p>Holster</p>
+</li>
+<li>
+<p>Increased IASA (10f -&gt; 13f)</p>
+</li>
+<li>
+<p>Quick Draw</p>
+</li>
+<li>
+<p>No longer becomes interruptible on the opponent's turn</p>
+</li>
+<li>IASA reduced (14f -&gt; 11f)</li>
+<li>
+<p>Spot Dodge</p>
+</li>
+<li>
+<p>No longer usable in gun stance.</p>
+</li>
+<li>IASA increased (10f -&gt; 11f)</li>
+<li>
+<p>Horiz. Slash (up)</p>
+</li>
+<li>
+<p>is now +1 on block (from -1)</p>
+</li>
+<li>Advances forward more.</li>
+<li>
+<p>Vert. Slash (aerial):</p>
+</li>
+<li>
+<p>Land cancel frame delayed (2f -&gt; 4f)</p>
+</li>
+<li>
+<p>Upward Swipe (all versions)</p>
+</li>
+<li>
+<p>No longer draw-cancellable.</p>
+</li>
+<li>Increased knockback (grounded 9 -&gt; 12, aerial 5 -&gt; 9)</li>
+<li>
+<p>Upward Swipe (aerial)</p>
+</li>
+<li>
+<p>Decreased hitstun (29f -&gt; 22f)</p>
+</li>
+<li>Fixed issue with this move always having upward momentum during combos.</li>
+<li>
+<p>Ankle Cutter</p>
+</li>
+<li>
+<p>It now pulls in just a little bit against block.</p>
+</li>
+<li>Low profiles a little now.</li>
+<li>
+<p>Pistol Whip</p>
+</li>
+<li>
+<p>Now guard breaks</p>
+</li>
+<li>Reduced DI nudge modifier when used from neutral (1.0x -&gt; 0.4x)</li>
+<li>Can't be Burst Cancelled from neutral.</li>
+<li>Added some forward momentum when grounded</li>
+<li>Is no longer draw-cancellable.</li>
+<li>Increased startup (9f -&gt; 11f)</li>
+<li>
+<p>Pommel</p>
+</li>
+<li>
+<p>Gravity is applied during bleaps.</p>
+</li>
+<li>
+<p>Stinger</p>
+</li>
+<li>
+<p>Increased knockback (11 -&gt; 13)</p>
+</li>
+<li>Hitstun reduced (inf -&gt; 40f)</li>
+<li>Victim hitstop increased in neutral (10f -&gt; 13f)</li>
+<li>Sends slightly lower now</li>
+<li>Widened hitbox</li>
+<li>Can be cancelled into foresight now.</li>
+<li>
+<p>New Move: Gun Trick</p>
+</li>
+<li>
+<p>Hustle out of Gun. Holding it ends the stance.</p>
+</li>
+<li>Not usable when Cowboy has initiative.</li>
+<li>Can't be followed up with Spot Dodge.</li>
+<li>
+<p>Throws (aerial, front/back)</p>
+</li>
+<li>
+<p>Knockback angle sends more downward now.</p>
+</li>
+<li>
+<p>Hustle</p>
+</li>
+<li>
+<p>Decreased startup (24f -&gt; 22f)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Wizard</h2>
+<ul>
+<li>Can no longer land-cancel while in Hover.</li>
+<li>Gravity has a bit less regeneration, and hover drains more.</li>
+<li>Gravity regeneration is dramatically reduced when depleted below the minimum amount required to use hover &amp; fast fall.</li>
+<li>
+<p>Now passively loses gravity while airborne.</p>
+</li>
+<li>
+<p>Block</p>
+<ul>
+<li>After blocking in the air, Wizard stops hovering and cannot hover or fast fall again until using a move other than Block.</li>
+<li>
+<p>Telekinesis</p>
+</li>
+<li>
+<p>Added stomp hitbox.</p>
+</li>
+<li>New followup: Redirect<ul>
+<li>Can use Launch again to alter a projectile's trajectory - costs 1 meter.</li>
+</ul>
+</li>
+<li>
+<p>Orb</p>
+</li>
+<li>
+<p>Can be swatted around by either player. This unlocks the orb's position as well.</p>
+</li>
+<li>Pushblocking any Orb projectiles unlocks the orb and strongly pushes it away.</li>
+<li>
+<p>Orb Portal</p>
+</li>
+<li>
+<p>Only usable when Wizard is less than 640px horizontally away from or 200px below the orb</p>
+</li>
+<li>
+<p>Launch/Redirect</p>
+</li>
+<li>
+<p>IASA increased (11f -&gt; 12f)</p>
+</li>
+<li>
+<p>Spark Bomb</p>
+</li>
+<li>
+<p>Wizard now takes 6f extra hitstop when parried during the Spark buff.</p>
+</li>
+<li>
+<p>Magic Dart</p>
+</li>
+<li>
+<p>Massively increased meter gain on parry</p>
+</li>
+<li>Reduced hitstop (7f -&gt; 4f)</li>
+<li>Now disappears after 240f.</li>
+<li>Landing this attack regains 1 Free Cancel.</li>
+<li>
+<p>Missile Form</p>
+</li>
+<li>
+<p>Vertical momentum gain is quartered if Wizard is fast falling.</p>
+</li>
+<li>Vertical momentum gain is reduced by 25% when Benji hopping in neutral.</li>
+<li>Headbutt hitbox is now +2 on block (from +1)</li>
+<li>
+<p>Geyser</p>
+</li>
+<li>
+<p>No longer gains droplets from landing Burst.</p>
+</li>
+<li>No longer deletes Caltrops.</li>
+<li>
+<p>Icicle (aerial, grounded down)</p>
+</li>
+<li>
+<p>Reduced hitbox size</p>
+</li>
+<li>
+<p>Icicle (grounded)</p>
+</li>
+<li>
+<p>Reduced pushback on block.</p>
+</li>
+<li>
+<p>Tome Slap</p>
+</li>
+<li>
+<p>Orb dart trigger frame adjusted (12f -&gt; 15f)</p>
+</li>
+<li>
+<p>Kick</p>
+</li>
+<li>
+<p>Increased move speed.</p>
+</li>
+<li>Reduced low profile.</li>
+<li>
+<p>Mana Strike</p>
+</li>
+<li>
+<p>Pulls a blocking opponent toward you if you hit behind them.</p>
+</li>
+<li>Orb dart trigger frame adjusted (13f -&gt; 19f)</li>
+<li>
+<p>Conjure Weapon</p>
+</li>
+<li>
+<p>Reduced damage (1400 -&gt; 1200)</p>
+</li>
+<li>Reduced pushback on block.</li>
+<li>
+<p>Confusing Touch</p>
+</li>
+<li>
+<p>Now gets beat by grabs on the same frame.</p>
+</li>
+<li>No longer scales your combo.</li>
+</ul>
+</li>
+</ul>
+<h2>Robot</h2>
+<ul>
+<li>I'm 40% Tungsten: Robot now takes 20% less knockback.</li>
+<li>Damage reduction has been adjusted to 10% (from 15%).</li>
+<li>
+<p>Now loses landing hitbox when an attack is blocked.</p>
+</li>
+<li>
+<p>Flight</p>
+<ul>
+<li>Replaced air options with a fuel meter. Attacking the opponent refills it, even on block. Passively refuels when grounded.</li>
+<li>Getting parried cancels flight.</li>
+<li>Flight is automatically toggled on when selecting a flight direction.</li>
+<li>Fall during Fly is now 11f IASA (from 10f)</li>
+<li>
+<p>Landing</p>
+</li>
+<li>
+<p>fixed this move having way more IASA than intended when the hitbox doesnt come out.</p>
+</li>
+<li>Launches Caltrops instead of deletes them.</li>
+<li>Melee hitbox is much smaller.</li>
+<li>Sends out a shockwave projectile on either side of Robot now. Move speed depends on Robot's move speed. Projectile loses hitstun over time.</li>
+<li>Fixed inconsistency on shockwave hitbox activating.</li>
+<li>Removed landing lag penalty.</li>
+<li>
+<p>Step</p>
+</li>
+<li>
+<p>Flipped step no longer has backward movement IASA penalty.</p>
+</li>
+<li>
+<p>Block</p>
+</li>
+<li>
+<p>After blocking in the air, Robot cannot fly until using a move other than Block.</p>
+</li>
+<li>
+<p>Super Dash</p>
+</li>
+<li>
+<p>Is now +0 (from +1)</p>
+</li>
+<li>
+<p>Propel</p>
+</li>
+<li>
+<p>IASA increased (12f -&gt; 13f)</p>
+</li>
+<li>Drive cancel IASA increased (12f -&gt; 14f)</li>
+<li>
+<p>Kill Process</p>
+</li>
+<li>
+<p>Invulnerability to melee attacks is now only on initiative. Robot keeps projectile invulnerability even without initiative, however.</p>
+</li>
+<li>Increased invulnerability frames (9f -&gt; 10f)</li>
+<li>Increased IASA (26f -&gt; 32f)</li>
+<li>Whiffing this resets Robot's momentum.</li>
+<li>Damage proration adjusted (0 -&gt; 9001)</li>
+<li>
+<p>LOIC</p>
+</li>
+<li>
+<p>Is now manually aimed (free action).</p>
+</li>
+<li>Massively increased active time (3f -&gt; variable (88f - 230f))</li>
+<li>No longer ignores projectile invulnerability</li>
+<li>Decreased LOIC meter gain.</li>
+<li>HUD Indicator doesn't beep until you are at 2 bars, fixing prior incorrect behavior</li>
+<li>
+<p>New Move: Launch</p>
+</li>
+<li>
+<p>Level 1 super.</p>
+</li>
+<li>Fires 3 missiles. Requires 1/2 of Robot's max fuel capacity. Does not hurt Robot.</li>
+<li>
+<p>New move: Magnetize</p>
+</li>
+<li>
+<p>Oh my god</p>
+</li>
+<li>It's back</li>
+<li>Robot now magnetizes the remote bomb :P</li>
+<li>Landing a magnetized bomb will magnetize the opponent too.</li>
+<li>Not a super anymore</li>
+<li>16f IASA, interruptible on the opponent's turn.</li>
+<li>Automatically ends when the bomb gets close enough</li>
+<li>
+<p>Thunder Clap</p>
+</li>
+<li>
+<p>Once-per-combo hitstop buff increased (10f -&gt; 15f)</p>
+</li>
+<li>Has some throw invulnerability, with the same window as Command: Grab.</li>
+<li>
+<p>Command: Grab</p>
+</li>
+<li>
+<p>Whiff IASA reduced (32f -&gt; 21f)</p>
+</li>
+<li>Added hurtbox on outstretched arm.</li>
+<li>Increased startup on close hitbox (5f -&gt; 7f)</li>
+<li>Reduced damage in neutral (2840 -&gt; 2360)</li>
+<li>Adjusted hitbox to beat low-profile moves</li>
+<li>Extended throw invulnerability window to cover the hitbox.</li>
+<li>Damage proration adjusted (+0 -&gt; +12) lol?</li>
+<li>Is no longer free-cancellable.</li>
+<li>Grounds the opponent one frame sooner.</li>
+<li>
+<p>Overflow</p>
+</li>
+<li>
+<p>Hitstun increased (15f -&gt; 20f)</p>
+</li>
+<li>Reduced damage (1650 -&gt; 1300)</li>
+<li>Damage proration adjusted (1 -&gt; 0)</li>
+<li>Is now a hitgrab, thus can be blocked.</li>
+<li>Is now a guard break, thus usually won't be blocked.</li>
+<li>Is otherwise +1 on block.</li>
+<li>
+<p>Bounds Check</p>
+</li>
+<li>
+<p>Is now a hitgrab, thus can be blocked.</p>
+</li>
+<li>Is now a guard break, thus usually won't be blocked.</li>
+<li>Is otherwise -1 on block.</li>
+<li>Fixed bug preventing Robot from flipping moves after whiffing this.</li>
+<li>You can once again fly during this move, but horizontal fly directions are nullified.</li>
+<li>Increased active frames (10f -&gt; 13f)</li>
+<li>Removed projectile armor. Wait was this in the stable version or just unstable?</li>
+<li>
+<p>Remote Bomb</p>
+</li>
+<li>
+<p>Can be shot downward when airborne</p>
+</li>
+<li>Launch speed increased</li>
+<li>Projectile starts with hitbox active</li>
+<li>Fixed the hitbox on the projectile mistakenly being set to default hitbox parameters when unarmed. here are the important changes:<ul>
+<li>Actually does damage on hit now (0 -&gt; 800)</li>
+<li>Reduced hitstun (30f -&gt; 14f)</li>
+<li>Reduced knockback (10 -&gt; 8)</li>
+</ul>
+</li>
+<li>Some hitbox changes to make this not make robot's combos completely insane now that he activates the hitbox immediately:<ul>
+<li>Reduced projectile damage in combos (800 -&gt; 500)</li>
+<li>Reduced projectile hitstun further in combos (14f -&gt; 5f) (trust me it's fine)</li>
+</ul>
+</li>
+<li>No longer hitcancellable in neutral.</li>
+<li>Bomb becomes unparrpiable on detonate toggle a little later (1f -&gt; 4f)</li>
+<li>Will not explode while the opponent is grabbed (HUGE BUFF???)</li>
+<li>Hitting this projectile with a melee attack automatically free-cancels the attack.</li>
+<li>
+<p>Try-Catch</p>
+</li>
+<li>
+<p>Is now a hitgrab, thus can be blocked.</p>
+</li>
+<li>Now pulls in the opponent on block.</li>
+<li>Is +1 on block.</li>
+<li>Increased IASA on landing back toggle version (50f -&gt; 57f)</li>
+<li>Is actually 9f in neutral now (from 7f; this is a buff to parry timing mixups).</li>
+<li>
+<p>Vacuum</p>
+</li>
+<li>
+<p>Far hitbox no longer hitcancels on block (buff).</p>
+</li>
+<li>Increased startup (12f -&gt; 13f)</li>
+<li>Now pulls the opponent in when blocking the far hitbox.</li>
+<li>Reduced windbox pull strength</li>
+<li>Reduced hitbox distance<ul>
+<li>Removed deadzone</li>
+</ul>
+</li>
+<li>Is now +2 on block (from -2).</li>
+<li>Demoted from special attack to normal attack.</li>
+<li>
+<p>New move: Keypunch</p>
+</li>
+<li>
+<p>new 4f jab to replace Spin Cycle as Robot's fastest normal.</p>
+</li>
+<li>
+<p>Concussive Blast</p>
+</li>
+<li>
+<p>Is now +1 on block (from +0)</p>
+</li>
+<li>Can hit-cancel into itself once again.</li>
+<li>Adjusted proration (+0 -&gt; +1)</li>
+<li>
+<p>Ping</p>
+</li>
+<li>
+<p>reduced IASA (18 -&gt; 15)</p>
+</li>
+<li>Now pulls in the opponent on block.</li>
+<li>Is now +2 on block (from +0)</li>
+<li>Adjusted damage proration (1 -&gt; 0)</li>
+<li>
+<p>Crash</p>
+</li>
+<li>
+<p>No longer hitcancels on block.</p>
+</li>
+<li>Reduced block pushback.</li>
+<li>
+<p>Earthquake</p>
+</li>
+<li>
+<p>No longer throws the wrong way when hitting from behind.</p>
+</li>
+<li>
+<p>Spin Cycle</p>
+</li>
+<li>
+<p>Initiative effect: Becomes invulnerable to aerial attacks frames 5-15.</p>
+</li>
+<li>Increased startup (4f -&gt; 7f)</li>
+<li>Adjusted hitbox to hit slightly lower (catches Mutant low profile dash).</li>
+<li>Is now +0 on block (from -2).</li>
+<li>Reduced IASA (30f -&gt; 20f)</li>
+<li>Increased hitstun (21f -&gt; 26f)</li>
+<li>Damage proration adjusted (2 -&gt; 1)</li>
+<li>Always sends the opponent airborne.</li>
+<li>Hitboxes now match the animation (reduced active frames on each 4f -&gt; 3f)</li>
+<li>
+<p>Kick User</p>
+</li>
+<li>
+<p>Reduced damage (1050 -&gt; 950)</p>
+</li>
+<li>
+<p>Optical Beam (aerial)</p>
+</li>
+<li>
+<p>Reduced hitstun (30f -&gt; 25f)</p>
+</li>
+<li>Knockback sends slightly higher and further</li>
+<li>
+<p>Optical Beam (both versions)</p>
+</li>
+<li>
+<p>Adjusted damage (600, 900 -&gt; 550, 800)</p>
+</li>
+<li>
+<p>Throws (all)</p>
+</li>
+<li>
+<p>Adjusted damage from neutral (1700 -&gt; 1500)</p>
+</li>
+<li>Reduced hitstun (30f -&gt; 22f)</li>
+<li>
+<p>Throws (grounded)</p>
+</li>
+<li>
+<p>No longer ground bounce, you can have some oki now as a treat.</p>
+</li>
+<li>Increased knockback (14f -&gt; 26f)</li>
+<li>
+<p>Throws (aerial)</p>
+</li>
+<li>
+<p>No longer ground bounce in neutral.</p>
+</li>
+<li>Reduced damage in combos (950 -&gt; 750)</li>
+<li>
+<p>Drive</p>
+</li>
+<li>
+<p>No longer low-profiles so severely</p>
+</li>
+<li>Boost<ul>
+<li>Is now +0 on block.</li>
+<li>Increased startup (5f -&gt; 6f) (buff to parry timing mixup)</li>
+<li>Invulnerability starts on frame 2 now, and requires initiative.</li>
+</ul>
+</li>
+<li>Forward<ul>
+<li>Increased IASA (10f -&gt; 12f)</li>
+<li>Is now punishable on parry</li>
+<li>Sustains 3f extra hitstop on parry</li>
+<li>Reduced velocity-based meter gain modifier (1.0x -&gt; 0.80x)</li>
+<li>Using this after Backward causes Robot to stall for a bit (resets momentum, +6f startup)</li>
+<li>Fixed particle</li>
+</ul>
+</li>
+<li>Backward<ul>
+<li>Increased IASA (10f -&gt; 12f)</li>
+</ul>
+</li>
+<li>Flip<ul>
+<li>Renamed to Jump Start</li>
+<li>Increased startup (4f -&gt; 5f)</li>
+</ul>
+</li>
+<li>Clutch<ul>
+<li>Increased startup (4f -&gt; 6f)</li>
+<li>Adjusted damage proration (0 -&gt; 2)</li>
+<li>Added new icon</li>
+</ul>
+</li>
+<li>Drift<ul>
+<li>Is now hit-cancellable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+      </div>
+      <div class="footer"></div>
+  </div>
+
+</div>
+
+</div>
+</body>
+<script src="/theme/js/relativetime.js"></script>
+
+</html>

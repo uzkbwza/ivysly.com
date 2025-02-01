@@ -1,0 +1,13 @@
+{%- if category == "Games" -%}
+  {% include "game.html" %}
+{%- elif category == "Blog" -%}
+  {% include "blog.html" %}
+{%- elif category == "Dream" -%}
+  {% include "dream.html" %} 
+{%- elif category == "Hustle" -%}
+  {% include "patchnotes.html" %}
+{%- elif category == "Misc" -%}
+  {% include "miscentry.html" %}
+{%- else -%}
+  {% include "blogpost.html" %}
+{%- endif -%}

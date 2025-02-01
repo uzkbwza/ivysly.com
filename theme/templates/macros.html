@@ -1,0 +1,9 @@
+
+{% macro default_back_link(back_url, show_default_back_link=false) %}
+<div class="back-link">
+  {% if show_default_back_link == true %}
+    <a href="{{ back_url }}">back</a> /
+  {% endif %}
+  <a href="{{ SITEHOME }}">home</a>
+</div>
+{% endmacro %}

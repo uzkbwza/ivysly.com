@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<!--I used Pelican to generate this website,
+so it may look a little funny on the inside-->
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/{% block style %}mainstyle{% endblock style %}.css">
+    {% block head_extra %}{% endblock %}
+
+
+    <meta name="keywords" content="gamedev, music, electronic">
+    <meta name="description" content="{% block description %}{% if article %}{{ article.summary|striptags }}{% elif page %}{{ page.summary|striptags }}{% else %}ivy sly webzone{% endif %}{% endblock description %}">
+
+    <meta name="author" content="Ivy Sly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+
+    <meta name="language" content="English">
+    <meta name="title" content="ivysly.com - {% block linktitle %}Ivy Sly{% endblock linktitle %}">
+
+    <meta property="og:title" content="ivysly.com - {{ self.linktitle() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ HTML_SITEURL }}/theme/images/card.png">
+    <meta property="og:description" content="{{ self.description() }}">
+    
+    <meta name="twitter:site" content="@ivy_sly_">
+    <meta name="twitter:creator" content="@ivy_sly_">
+    <meta name="twitter:title" content="ivysly.com - {{ self.linktitle() }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{{ self.description() }}">
+    <meta name="twitter:image" content="{{ HTML_SITEURL }}/theme/images/card.png">
+  
+    <link rel=apple-touch-icon sizes=180x180 href={{ HTML_SITEURL }}/theme/images/apple-touch-icon.png>
+    <link rel=icon type=image/png sizes=16x16 href={{ HTML_SITEURL }}/theme/images/favicon-16x16.png>
+    <link rel=icon type=image/png sizes=32x32 href={{ HTML_SITEURL }}/theme/images/favicon-32x32.png>
+    <link rel=icon type=image/png sizes=192x192 href={{ HTML_SITEURL }}/theme/images/android-chrome-192x192.png>
+    <link rel=icon type=image/png sizes=512x512 href={{ HTML_SITEURL }}/theme/images/android-chrome-512x512.png>
+
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>ivysly.com - {% block title %}{{ SITENAME }}{% endblock title %}</title>
+    {% endblock head %}
+  </head>
+
+{% block style_block %}
+{% endblock style_block %}
+<body>
+  {% block content_container %}
+  {% block content %}{% endblock %}
+  {% endblock content_container %}
+</body>
+<script src="{{ HTML_SITEURL }}/theme/js/relativetime.js"></script>
+
+</html>

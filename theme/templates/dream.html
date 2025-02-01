@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block style %}dream{% endblock style %}
+{% set date = (article.date.strftime('%d %b %Y')) %}
+{% set title = article.title + " (" + article.date.strftime('%d %b %Y') + ")" %}
+{% block linktitle %}dream: {{title.lower()|striptags}}{% endblock linktitle %}
+{% block title %}dream: {{ title.lower()|striptags }}{% endblock title %}
+{% block head %}
+
+  {{ super() }}
+
+  
+  {% import 'translations.html' as translations with context %}
+  {% if translations.entry_hreflang(article) %}
+    {{ translations.entry_hreflang(article) }}
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+<div class="dream-container">
+<div class="header-container">
+
+  {% if article.prev_article_in_category %}
+  <a href="{{ HTML_SITEURL }}/{{ article.prev_article_in_category.url}}" class="header-link-left">⯬</a>{% endif %}
+  {% if article.next_article_in_category %}
+  <a href="{{ HTML_SITEURL }}/{{ article.next_article_in_category.url}}" class="header-link-right">⯮</a>{% endif %}
+  <h1><a href="{{ HTML_SITEURL }}/{{ article.url }}">{{ date.upper() }}</a>
+
+</div>
+
+<span class="header-title">{{ article.title }}</span>
+
+</h1>
+<!-- <h4>{{ article.title }}</h4> -->
+
+<div class="dream-content">
+    {{ article.content }}
+    
+  <hr>
+  </div>
+
+
+<div class="bottom-links">
+  <br><br><br>
+  <span style = "padding-right: 200px;">*</span>
+  <br><br><br><br><br>
+
+
+  <span style = "padding-right: 100px;">.</span>
+  <br><br><br>
+  <img src="{{ HTML_SITEURL }}/theme/images/sleeper.png" class="sleeper">
+
+
+  <br><br><br>
+
+  <p class="dream-tags">
+    {% for tag in article.tags %}
+    <a href="{{ HTML_SITEURL }}/tag/{{ tag }}.html" class="dream-tag">{{ tag }}</a>
+    {% endfor %}</p>
+  <p>
+  <a href="{{ HTML_SITEURL }}/dream.html">browse</a> *
+  <a href="{{ SITEHOME }}">wake up</a></p>
+</div></div>   
+{% endblock content %}

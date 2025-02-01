@@ -1,0 +1,28 @@
+{% extends "default.html" %}
+
+{% block linktitle %}{{article.title|striptags}}{% endblock linktitle %}
+{% block title %}{{ article.title|striptags }}{% endblock title %}
+
+{% block head %}
+  {{ super() }}
+
+  {% import 'translations.html' as translations with context %}
+  {% if translations.entry_hreflang(article) %}
+    {{ translations.entry_hreflang(article) }}
+  {% endif %}
+
+  {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block header %}{{ article.title }}{% endblock header %}
+
+{% block article_body %}
+{{ article.content }}
+{% endblock %} 
