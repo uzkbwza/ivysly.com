@@ -1,4 +1,3 @@
-Title: For+
-Date: 2025-01-25
-Tags: underground, dev, travel, real-person, real-place, roller-coaster
-some kind of rollercoaster through a cave. R wants to take a trip to Mexico. later I'm programming with for+ loops. I'm unsure what the + does then I notice it increments the first element in whatever youre iterating. well that's useless.
+version https://git-lfs.github.com/spec/v1
+oid sha256:da1c5074fab3c1f756c2c0c1cb54358ee1e7dcd1ae4d2fa5ec04bfe33c8d81b5
+size 344

@@ -1,5 +1,3 @@
-Title: Tiger Man
-Date: 2020-04-25
-Tags: pop-culture, rubber-suit, music, video-game
-
-Talking tiger turns out to be rapper dressed in rubber costume, in order to attract female party-goers. I have to uncover all the (covered) furniture as a minigame. Little suitcases that self-consciously shut themselves when you look at them are "points" I want to collect.
+version https://git-lfs.github.com/spec/v1
+oid sha256:7c3746da42657774017d3c27eec2f3e8f22b3652bd51b10a2c7a71c0a66ef3f4
+size 362

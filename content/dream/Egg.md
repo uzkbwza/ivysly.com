@@ -1,5 +1,3 @@
-Title: Egg
-Date: 2025-01-21
-Tags: child, mask, egg, sex
-
-I am a child or multiple children. the children don't want to play the game where everyone wears these unsettling ceramic masks. mine looks somewhere in between a wailing ape and a gas mask. it's red with flesh colored ridges, thick and polished. we're in a dark place. feels like a game of tag but worse. there's a giant floating ovoid object that feels foreboding and erotic. everything fades away except this shape. it is awful and beautiful. pink with circular inlets of white. white text on it, alien script. looks like a giant keychain ornament, soft but not smooth, like silicone. I want to take it. I think I take it.
+version https://git-lfs.github.com/spec/v1
+oid sha256:25015706cbb117296b80c4b537e21afd4b0fcfc7469aecc444c38e19a157b039
+size 686

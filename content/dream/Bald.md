@@ -1,5 +1,3 @@
-Title: Bald
-Date: 2021-07-20
-Tags: bald, pop-culture
-
-guy in my dream shaves his head bald because he wants to be more intimidating. "every villain in every movie is bald!" he's got a figure that looks exactly like him, but in evil robes
+version https://git-lfs.github.com/spec/v1
+oid sha256:829698f63f6c4ed7599517314beac1c85490d0587f40685bc118f76740bbb4a7
+size 241

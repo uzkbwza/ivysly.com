@@ -1,5 +1,3 @@
-Title: Rubber Suit
-Date: 2020-06-23
-Tags: school, rubber-suit, self-costume
-
-As a homework assignment, I made a rubber suit of myself with help from friends. But when the due date comes, I forget to bring it.
+version https://git-lfs.github.com/spec/v1
+oid sha256:7121a8eac50b31c25f6bdd296c5ec022cb13bf831ab3f1e217fca642b9ff0f34
+size 224

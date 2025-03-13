@@ -1,5 +1,3 @@
-Title: Baby
-Date: 2025-01-14 
-Tags: baby, body-horror, eating
-
-we grow our baby out of an orange pepper plant. it feels wrong to cook him on the stove until he's nicely browned and fragrant but that's just what you have to do, he won't remember it anyway
+version https://git-lfs.github.com/spec/v1
+oid sha256:83a0f95e7a731a8f1a6f285271a62d0df64b35c948ad87744fcacc4bf3c91078
+size 258

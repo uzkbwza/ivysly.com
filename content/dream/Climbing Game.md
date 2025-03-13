@@ -1,5 +1,3 @@
-Title: Climbing Game
-Date: 2024-12-30
-Tags: dev, climbing, forest, video-game
-
-I've made a climbing game set in a misty forest. you climb these thin vertical slabs of rock embedded in a hill arranged in a U shape. when you reach the top you let go and look toward the open side. you are presented with what would be a nice view, but it is occluded by fog.
+version https://git-lfs.github.com/spec/v1
+oid sha256:f42e5f59a9c33d8ce2a1bc633cea16d9c79194c4ef961fa424d2285ec72691d0
+size 359

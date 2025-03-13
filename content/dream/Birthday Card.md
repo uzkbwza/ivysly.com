@@ -1,5 +1,3 @@
-Title: Birthday Card
-Date: 2022-02-07
-Tags: birthday, family, real-person
-
-aunt C(?) sends me a birthday card and it makes me cry
+version https://git-lfs.github.com/spec/v1
+oid sha256:8130eba69eb0f1720070069e7666de83336eaafd30ecd572abc2db09e7d65329
+size 123

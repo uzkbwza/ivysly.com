@@ -1,5 +1,3 @@
-Title: Cambodian Boat Sim
-Date: 2020-05-17
-Tags: video-game, real-place, boat
-
-I learn all about different kinds of boating games, from realistic to "arcade." In Cambodia, boat games will have a blue energy wall if you stray too far. Some people have similar boating game setups to those car sim rigs with steering wheels and such.
+version https://git-lfs.github.com/spec/v1
+oid sha256:a95376245c3d69466e3cb331104930f9bf37dd3c20edf5d9651a3d30c8a55ee1
+size 335

@@ -1,5 +1,3 @@
-Title: Magic Horse
-Date: 2025-01-24
-Tags: video-game, dev, animal, magic
-
-I'm making a game where when you close your eyes you see (in monochrome, wide angle lens) through the eyes of your magic horse.
+version https://git-lfs.github.com/spec/v1
+oid sha256:29ecef5d92e2f84caca5365abeac0534431cccad19bbacd5048ce78166b51ba9
+size 205

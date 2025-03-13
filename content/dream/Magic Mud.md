@@ -1,5 +1,3 @@
-Title: Magic Mud
-Date: 2022-03-07
-Tags: oregon, rock, magic
-
-small town in Oregon. built on an incline. surrounding it are giant beautiful hills/mountains and a thick layer of mist. gravity is skewed. nearby "dirt pits" where mud and dirt shifts and floats around in strange shapes. there's a mountain shaped hill, at the top there is a crater shaped inlet with labyrinthine patterns of mud. from it a heavy vibration occurs periodically.
+version https://git-lfs.github.com/spec/v1
+oid sha256:6f597d38431ae67b0cd94ecbed4703717eec9d5a291d8507c11ade3fb2f2fe63
+size 442

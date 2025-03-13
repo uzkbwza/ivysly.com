@@ -1,5 +1,3 @@
-Title: Homer
-Date: 2024-07-11
-Tags: robot, escape, pop-culture
-
-homer simpson discovers art in a corn field, and finds an artifact that lets him engineer with an extra dimension (writer's note: i don't remember what that is supposed to mean). a robot breaks out of his facility looking for him.
+version https://git-lfs.github.com/spec/v1
+oid sha256:9f4b47f4581c871615750e727cfef0f08098042ba0fd6bde64532ae2bcf3a9d6
+size 298

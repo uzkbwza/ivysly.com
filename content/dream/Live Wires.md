@@ -1,5 +1,3 @@
-Title: Live Wires
-Date: 2021-04-28
-Tags: robot, fighting, danger
-
-I'm fighting another robot. we fight by throwing live wires from our bodies onto each other's main processing unit
+version https://git-lfs.github.com/spec/v1
+oid sha256:85486b307fe162c68b4f5a476a32a6e3a1b4c26374ca3122779407563bde13b3
+size 181

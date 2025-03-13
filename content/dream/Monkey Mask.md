@@ -1,5 +1,3 @@
-Title: Monkey Mask
-Date: 2024-05-11
-Tags: mask, serial-killer, television, monkey
-
-an actress is interviewed about her scene in a horror movie where she reacts to the serial killer wearing a freaky looking skin mask that gave him this weird big simian mouth
+version https://git-lfs.github.com/spec/v1
+oid sha256:eed4d57fe9f82403ede3d6888ea9ea9a277d65931e9f3512131111fae67a6195
+size 261

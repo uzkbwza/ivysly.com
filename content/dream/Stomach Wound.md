@@ -1,5 +1,3 @@
-Title: Stomach Wound
-Date: 2021-08-12
-Tags: accident
-
-I shot myself in the stomach by accident. nobody will take me to the hospital
+version https://git-lfs.github.com/spec/v1
+oid sha256:6a147d33975d71b9be3b511716aa861f98741e4f9c5cfe93a17274b1f50603e9
+size 143

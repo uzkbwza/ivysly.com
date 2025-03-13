@@ -1,5 +1,3 @@
-Title: Oxygen
-Date: 2021-05-21
-Tags: family, escape, danger, real-person, body-horror
-
-I'm jumping around in low gravity at a gathering with my family, somewhere in the city, in a strange large building. I forgot to get my oxygen device so I'm holding my breath jumping around trying to find the exit, and I do just in time. I find my cousin C, who tells me he has been "de-brained and re-brained." I don't want to go back inside, because I'm covered in sweat.
+version https://git-lfs.github.com/spec/v1
+oid sha256:865e67408f201095b53e1086b095d742cc23c832d9b3ace6ed763953a90ab80e
+size 476

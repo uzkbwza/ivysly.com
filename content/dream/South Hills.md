@@ -1,5 +1,3 @@
-Title: South Hills
-Date: 2024-11-10
-Tags: car, forest, escape, trapped, accident, oregon, eugene
-
-saw a guy get hit by like 3 cars kinda like that scene in the postal movie. he (or i? ambiguously written) walked around and left. I found him in some guys basement, he tried to trap us there. I ran away? whole thing took place on a road in the hills surrounded by firs.
+version https://git-lfs.github.com/spec/v1
+oid sha256:c78577fcd1aff10c3943a68e80ded7c61c56c4a9ce59a4b8061594669f3c9d9a
+size 379

@@ -1,5 +1,3 @@
-Title: Hotel
-Date: 2025-01-23
-Tags: real-person, family, eating
-
-at a hotel with B. eating at a diner booth table with him and his mom. I'm counting blocks of table on either side to make sure it's properly asymmetrical. his mom is asked about the beds, it's confusing and we lose the opportunity once we realize they are asking if we want to switch them out. 
+version https://git-lfs.github.com/spec/v1
+oid sha256:ed6be54bb27202a853a290f03c562b5f583802de488873f369f8ba45da95c8ee
+size 371
