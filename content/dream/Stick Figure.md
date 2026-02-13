@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90dcf6c5f5593f4cb575e430bc8029529a1520b42ca99f30c06c509870121de4
-size 899
+Title: Stick Figure
+Date: 2025-01-29
+Tags: house, love, real-person, sex, stick-figure
+
+G and I enter room #1 in the attic. the first one with a stick figure. it's arranged like a living room. then we continue into room #2, with another stick figure. the light is off, it's like a garage, with a short step down to the concrete floor. I'm very scared to enter it. G leaves out the back door, but I stay in room #2 with the stick figure. it's posed like it's sitting. from outside the door G makes fun of me, suggests I'm in love with it or that I'm sexually attracted to it. I return to room #1. R is in there, and she has to leave. she comes back in. she can't see me because of copyright law, so we play a game of hide and seek. I see her slowly walking around the room trying to find me. her eyes dart around exaggeratedly and it disturbs me. she can't see me at all, even with her eyes open.

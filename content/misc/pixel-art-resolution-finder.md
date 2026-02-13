@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77d03bed27bca4699ec0376771edf4e7bfa6225c6849345d36da3d5b9a9da301
-size 212
+Title: pixel game resolution finder
+ShortTitle: resolutions
+Slug: pixel-game-resolution-finder
+Sortorder: 30
+Date: 1970-01-01
+Summary: a tool to help you find the optimal resolution for your pixel art game

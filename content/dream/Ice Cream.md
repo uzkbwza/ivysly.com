@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb363396754c6fe1dded7dc8cc5105855fe12753cbe4a988c0bcac7aef970219
-size 297
+Title: Ice Cream
+Date: 2025-02-18
+Tags: bus, car, eating, family, real-person, real-place, travel
+
+on the bus. then I'm at yia-yia's house from my childhood. everyone is speaking in German. i execute a scheme to get everyone to leave using spicy food. yia-yia offers me ice cream. I'm touched.

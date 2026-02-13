@@ -7,8 +7,9 @@
 
 {% block bg %}games{% endblock bg %}
 {% block title %}games{% endblock title %}
+{% block linktitle %}video games{% endblock linktitle %}
 
-{% block header %}game time{% endblock header %}
+{% block header %}video games{% endblock header %}
 
 {% block description %}
 welcome to game world
@@ -17,45 +18,49 @@ welcome to game world
 {% block article_body %}
 <p>here are more or less all of the published games i made. most of these are windows-only, some gotta be played in the browser, nearly all of them are free, and there may eventually be more of them. isn't that neat!</p>
 
+<h2>featured games</h2>
+
 <div class="game-grid">
-  {% for article in articles if not article.nondevcredit %}
-
-
+  {% for article in articles if article.featured and not article.nondevcredit %}
   <div class="game-box">
-
     <a href="{{ HTML_SITEURL }}/{{ article.url }}">
       <div class="game-image">
         <img src="{{ article.cover }}" alt="{{ article.title }}">
         <div class="game-image-overlay"></div>
       </div>
-
     </a>
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
 
-<!-- 
-<br>
-<h2>and others'...</h2>
-<p>below are games i did not develop but contributed to:</p>
-
+<h2>jam games etc</h2>
 <div class="game-grid">
-{% for article in articles if article.nondevcredit %}
-
-
-
+  {% for article in articles if not article.featured and not article.nondevcredit %}
   <div class="game-box">
-
     <a href="{{ HTML_SITEURL }}/{{ article.url }}">
       <div class="game-image">
         <img src="{{ article.cover }}" alt="{{ article.title }}">
         <div class="game-image-overlay"></div>
       </div>
-
     </a>
   </div>
-{% endfor %}
-</div> -->
+  {% endfor %}
+</div>
+
+<h2>games i contributed to</h2>
+
+<div class="game-grid">
+  {% for article in articles if article.nondevcredit %}
+  <div class="game-box">
+    <a href="{{ HTML_SITEURL }}/{{ article.url }}">
+      <div class="game-image">
+        <img src="{{ article.cover }}" alt="{{ article.title }}">
+        <div class="game-image-overlay"></div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
 
 
 {% endblock article_body %}

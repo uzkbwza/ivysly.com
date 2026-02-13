@@ -9,6 +9,7 @@ Windows: ../static/games/Famulus/Famulus-win64.zip
 Love: ../static/games/Famulus/Famulus.love
 Image: ../static/games/Famulus/screenshot.png
 Cover: ./static/games/Famulus/famulus.png
+Comments: 3ldrk5y5md224
 
 Famulus is a short, retro-style shoot-em-up-and-down adventure game about kebabs made by me (programming, sounds, graphics) in about 2 weeks for Sewer Jam 5. 
 

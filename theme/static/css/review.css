@@ -1,0 +1,53 @@
+.review-sidebar {
+  float: right;
+  max-width: 50%;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.review-image {
+  width: 100%;
+  display: block;
+  border: 1px solid black;
+}
+
+.review-info {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-top: 0px;
+}
+
+.review-year {
+  font-weight: normal;
+  text-align: center;
+}
+
+.review-content {
+  clear: both;
+}
+
+.review-links {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.blog-info {
+  font-size: 16px;
+  padding-top: 0px;
+  font-weight: bold;
+}
+
+.header {
+  margin-bottom: 0px;
+}
+
+.header h1 {
+  margin-bottom: 0px;
+}
+
+.article-body {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}

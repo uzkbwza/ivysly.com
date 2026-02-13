@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:622e87fb5eb72a0405cfddf33a161cc05daa928013fa59d5ab389a114284a55b
-size 51
+.box {
+
+  max-width: 1600px;
+  width: auto;
+
+}

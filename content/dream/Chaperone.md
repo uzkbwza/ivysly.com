@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:36a6084bcf031eaf8dafe74cbe91781e0f6138a1ea154b84560523c9085e55c2
-size 300
+Title: Chaperone
+Date: 2025-02-20
+Tags: airplane, mall, school, travel
+
+in a plane on a school trip. our chaperone is power tripping and loudly, aggressively going over all his rules for the trip. we are at the mall/airport when I get sick of it and tell him to shut up we are all trying to study

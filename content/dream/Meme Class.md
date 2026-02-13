@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5514fea46b1d3026cdfecd208b4dca11324520cd52f8fa7e4d90c782abd9c15c
-size 206
+Title: Meme Class
+Date: 2021-06-12
+Tags: meme, pop-culture, real-person, school
+
+in high school. we're learning about memes in social studies. D keeps entering the room but realizes it's not his class

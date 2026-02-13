@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a88f281edc41a63d0c014b7eeb44954ec28e98b806823437888cf46972a5e23
-size 286
+Title: Cover
+Date: 2025-02-05
+Tags: pop-culture, video-game, wish-fulfillment
+
+I am commissioned to do the cover art for Yoshi's Island. the result is a sea of eggs, with baby Mario sitting in the center slightly off to the right looking a little confused and staring at the viewer.

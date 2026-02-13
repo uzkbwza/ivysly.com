@@ -1,0 +1,14 @@
+[Unit]
+Description=Dream Watcher Discord Bot
+After=network.target
+RequiresMountsFor=/run/media/sly/LUSCA
+
+[Service]
+Type=simple
+WorkingDirectory=/run/media/sly/LUSCA/Code/ivysly.com
+ExecStart=/run/media/sly/LUSCA/Code/ivysly.com/.venv/bin/python /run/media/sly/LUSCA/Code/ivysly.com/dream_watcher.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

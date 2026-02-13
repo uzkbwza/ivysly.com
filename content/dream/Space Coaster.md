@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d1c2f71af89eb8b08e1266a7e8321bfd92410aa390fdb0924b6e9e979635ae0f
-size 342
+Title: Space Coaster
+Date: 2025-01-26
+Tags: pop-culture, roller-coaster, space
+
+Beavis and Butthead get on a roller coaster that takes them to space. I'm Beavis. the way we get off the spacecraft onto earth is a long orange extendable tube that you have to climb down. I get on it wrong and hit my head on the ground and everyone laughs. 

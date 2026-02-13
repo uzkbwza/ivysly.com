@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f8e4579553c4cf5d9eae310639f0fe95f134eab6261122f15965c83a476129f
-size 342
+{%- if category == "Games" -%}
+  {% include "game.html" %}
+{%- elif category == "Blog" -%}
+{% include "blogpost.html" %}
+{%- elif category == "Dream" -%}
+  {% include "dream.html" %} 
+{%- elif category == "Hustle" -%}
+  {% include "patchnotes.html" %}
+{%- elif category == "Reviews" -%}
+  {% include "review.html" %}
+{%- elif category == "Misc" -%}
+  {% include "miscentry.html" %}
+
+{%- endif -%}

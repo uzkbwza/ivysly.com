@@ -8,6 +8,7 @@ Itch: https://ivysly.itch.io/angree-face
 Windows: ../static/games/AnGreeFace/AnGreeFace.zip
 Image: ../static/games/AnGreeFace/screenshot.png
 Cover: ./static/games/AnGreeFace/cover.png
+Comments: 3mctfxvvons2i
 
 Cast a spell made from two words. The first word affects your projectile, the second affects your fire pattern. Pick words up off enemies and find them around the arena. Words are lost when you're hit. If you're hit with no words, you die. Rack up the kills!
 

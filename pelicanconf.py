@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83648358da6bdc503190963776ab0a9f358dab05fab7f69867cd40a191d4c91f
-size 1502
+import os
+print()
+AUTHOR = 'ivy sly'
+SITENAME = 'ivysly.com'
+HTML_SITEURL = os.getcwd().replace("\\", "/") + "/output"
+SITEHOME = HTML_SITEURL + "/index.html"
+SITEURL = os.getcwd().replace("\\", "/") + "/output"
+from functools import partial
+
+PATH = "content"
+
+TIMEZONE = 'America/Los_Angeles'
+
+DEFAULT_LANG = 'English'
+
+THEME="theme"
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+DELETE_OUTPUT_DIRECTORY = True
+OUTPUT_RETENTION = ["static"]	
+USE_FOLDER_AS_CATEGORY = True
+RELATIVE_URLS = False
+
+ARTICLE_URL = '{category}/{slug}.html'
+ARTICLE_SAVE_AS = '{category}/{slug}.html'
+TAG_SAVE_AS = 'tag/{slug}.html'
+
+CATEGORY_URL = '{slug}.html'
+CATEGORY_SAVE_AS = '{slug}.html'
+
+
+PAGE_URL = '{slug}.html'
+PAGE_SAVE_AS = '{slug}.html'
+
+NAVIGATION_LINKS = [
+    ("games", "games.html"),
+    ("music", "music.html"),
+    ("blog", "blog.html"),
+    ("dreams", "dream.html"),
+    ("misc", "misc.html"),
+    ("about", "about.html"),
+    # ("feeds", "feeds")
+    ]
+
+TEMPLATE_PAGES = {
+    "home.html": "index.html",
+    "friends.html": "misc/friends.html",
+    "pixel-game-resolution-finder.html": "misc/pixel-game-resolution-finder.html",
+    }
+
+JINJA_FILTERS = {
+    'sort_by_article_count': partial(
+        sorted,
+        key=lambda tags: len(tags[1]),
+        reverse=True)} # reversed for descending order
+
+
+
+DEFAULT_PAGINATION = False

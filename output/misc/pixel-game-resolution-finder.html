@@ -1,3 +1,943 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3bc5d2802f0fc5f10761b1a3706036d554157bfa719a8c22dea44e06efea9227
-size 31505
+<!DOCTYPE html>
+<html>
+<!-- 🦔 -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel='stylesheet' type='text/css' href="/theme/css/default.css">
+    <link rel='stylesheet' type='text/css' href="/theme/css/codestyles.css">
+
+    
+
+
+    <meta name="keywords" content="gamedev, music, electronic">
+    <meta name="description" content="a tool to help you find the optimal resolution for your pixel art game">
+
+
+    <meta name="author" content="Ivy Sly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+
+    <meta name="language" content="English">
+    <meta name="title" content="ivysly.com - pixel game resolution finder">
+
+    <meta property="og:title" content="ivysly.com - pixel game resolution finder">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/theme/images/card.png">
+    <meta property="og:description" content="a tool to help you find the optimal resolution for your pixel art game">
+    
+    <meta name="twitter:site" content="@ivy_sly_">
+    <meta name="twitter:creator" content="@ivy_sly_">
+    <meta name="twitter:title" content="ivysly.com - pixel game resolution finder">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="a tool to help you find the optimal resolution for your pixel art game">
+    <meta name="twitter:image" content="/theme/images/card.png">
+  
+
+
+    <link rel=apple-touch-icon sizes=180x180 href=/theme/images/apple-touch-icon.png>
+    <link rel=icon type=image/png sizes=16x16 href=/theme/images/favicon-16x16.png>
+    <link rel=icon type=image/png sizes=32x32 href=/theme/images/favicon-32x32.png>
+    <link rel=icon type=image/png sizes=192x192 href=/theme/images/android-chrome-192x192.png>
+    <link rel=icon type=image/png sizes=512x512 href=/theme/images/android-chrome-512x512.png>
+
+    <link rel="alternate" type="application/rss+xml" title="allfeeds" href="https://ivysly.com/feeds/all.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="blog" href="https://ivysly.com/feeds/blog.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="dream" href="https://ivysly.com/feeds/dream.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="games" href="https://ivysly.com/feeds/games.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="hustle" href="https://ivysly.com/feeds/hustle.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="misc" href="https://ivysly.com/feeds/misc.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="reviews" href="https://ivysly.com/feeds/reviews.rss.xml">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>ivysly.com - pixel game resolution finder</title>
+    
+  <link rel="stylesheet" type="text/css" href="/theme/css/misc.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/resolution-finder.css">
+
+
+
+
+<style>
+  html {
+    background-image: url(/theme/images/background/misc.png);
+  }
+</style>
+
+  </head>
+
+
+<body>
+  
+<div class="header-container">
+
+  <a href=/index.html><img src="/theme/images/home/header.png" class="header-image"
+    onmouseover="this.src='/theme/images/home/header2.png'"
+    onmouseout="this.src='/theme/images/home/header.png'" ></a>
+
+</div>
+
+<div class="page"> 
+
+
+<div class="box">
+  <div class="nav-links top">
+    
+      <span class="nav-link"><a href="/games.html">games</a></span>
+    
+      <span class="nav-link"><a href="/music.html">music</a></span>
+    
+      <span class="nav-link"><a href="/blog.html">blog</a></span>
+    
+      <span class="nav-link"><a href="/dream.html">dreams</a></span>
+    
+      <span class="nav-link"><a href="/misc.html">misc</a></span>
+    
+      <span class="nav-link"><a href="/about.html">about</a></span>
+    
+  </div>
+
+  <div class="content">
+    
+      
+      <h1 class="header">pixel game resolution finder</h1>
+      
+      <div class="article-body">
+      
+<p>
+  i was tired of trying to figure out which resolutions i should use for my games via trial-and-error, so i made this tool.
+  if you are making a pixel-art game with integer scaling, this should help you find game screen sizes that either exactly match common resolutions or match close enough that the screen borders are acceptably small.
+  this tool takes an aspect ratio, finds every resolution near that ratio, checks to see what it neatly scales into, and tabulates the info below.
+  enter your desired parameters and click “generate.”
+</p>
+
+
+<style>
+  /* --- Basic Parameter Styles --- */
+  .paramBlock {
+    margin-bottom: 1em;
+  }
+  label {
+    display: inline-block;
+    width: 180px;
+    font-weight: bold;
+  }
+  input, select {
+    margin-right: 1em;
+  }
+
+  /* --- Table Styles for Generated Results --- */
+  .ratioTable {
+    border-collapse: collapse;
+    margin: 0.5em 0 2em 1em;
+    font-family: sans-serif;
+    background-color: white;
+  }
+  .ratioTable th, .ratioTable td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .ratioTable th {
+    background-color: #f0f0f0;
+  }
+
+  /* --- Details/Collapsible Styles --- */
+  details {
+    margin-bottom: 1em;
+    border: 1px solid #000;
+
+    padding: 0.5em;
+  }
+
+  details[open] {
+    border-color: #000;
+    background-color: #fdfdfd;
+  }
+
+
+  details summary {
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    margin-bottom: 0.4em;
+
+  }
+
+  /* --- Scale Target Colors --- */
+  .superCommon {
+    /* Base style for super common */
+    font-weight: bold;
+  }
+  .exactScale {
+    color: blue;
+  }
+  .exactScale a {
+    color: blue !important;
+    text-decoration: none;
+  }
+  .exactScale a:hover {
+    color: blue !important;
+    text-decoration: underline;
+  }
+  .nearScale {
+    color: orange;
+    font-style: italic;
+    font-weight: normal;
+  }
+  .nearScale a {
+    color: orange !important;
+    text-decoration: none;
+  }
+  .nearScale a:hover {
+    color: orange !important;
+    text-decoration: underline;
+  }
+  /* More specific rules for super common targets: */
+  .superCommon.exactScale {
+    color: magenta !important;
+  }
+  .superCommon.nearScale {
+    color: salmon !important;
+  }
+  .superCommon a {
+    color: inherit !important;
+    text-decoration: none;
+  }
+  .exactTag {
+    font-weight: bold;
+    color: blue;
+  }
+  .closeTag {
+    color: green;
+    font-weight: bold;
+  }
+
+  /* --- Column Text Colors --- */
+  .col-widthheight { color: teal; }
+  .col-ratiodec    { color: salmon; }
+  .col-ratio       { color: navy; }
+  .col-diff        { color: maroon; }
+  .col-maxdiv      { color: goldenrod; }
+
+  /* --- Common Resolutions Table --- */
+  .commonResTable {
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-family: sans-serif;
+  }
+  .commonResTable th, .commonResTable td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: left;
+  }
+  .commonResTable th {
+    background-color: #f0f0f0;
+  }
+  tr:target {
+    background-color: #fffdcc;
+  }
+
+  /* --- Filter Layout Styles --- */
+  .filtersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 1em;
+    margin-left: 1em;
+  }
+  .filterColumn {
+    min-width: 200px;
+  }
+  .filterColumn label {
+    display: inline-block;
+    width: auto;
+    font-weight: normal;
+    margin-right: 0.4em;
+  }
+  /* Increase the height of the "Scales to" checkboxes container */
+  #filterScalesToCheckboxes {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    max-height: 10em;
+    overflow-y: auto;
+  }
+  /* Divisor selects (single‑select) placed side by side */
+  .filterColumn select.single {
+    width: 48%;
+    margin-right: 2%;
+  }
+  .divisorContainer {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .filterColumn input[type="text"] {
+    width: 100%;
+  }
+  /* Style the checkboxes for "Scales to" so that the whole line is clickable and changes background on hover and when checked */
+#filterScalesToCheckboxes label {
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* On hover, change the background */
+#filterScalesToCheckboxes label:hover {
+  background-color: #e0e0e0;
+}
+
+/* When the checkbox inside the label is checked, change the background.
+   Note: The :has() pseudo-class is supported in modern browsers. */
+#filterScalesToCheckboxes label:has(input:checked) {
+  background-color: #c0e0ff;
+}
+</style>
+
+<!-- --- Parameter Input Form --- -->
+<div style="margin-left: 1em;">
+  <div class="paramBlock">
+    <label>Aspect Ratio(s) (W:H):</label>
+    <!-- Default: just "16:9" -->
+    <input type="text" id="aspectRatios" value="16:9" />
+    <small>Enter one or more aspect ratios (W:H), comma‑separated.</small>
+  </div>
+  <div class="paramBlock">
+    <label>Width/Height Step:</label>
+    <input type="number" id="pixelInterval" value="8" />
+    <label>Allowed Ratio Error:</label>
+    <input type="number" step="0.001" id="errorProportional" value="0.005" />
+    <small>e.g. 0.005 = ±0.5%</small>
+  </div>
+  <div class="paramBlock">
+    <label>Minimum Width:</label>
+    <input type="number" id="minWidth" value="32" />
+    <label>Minimum Height:</label>
+    <input type="number" id="minHeight" value="32" />
+  </div>
+  <div class="paramBlock">
+    <label>Maximum Width:</label>
+    <input type="number" id="maxWidth" value="1024" />
+    <label>Maximum Height:</label>
+    <input type="number" id="maxHeight" value="1024" />
+  </div>
+  <div class="paramBlock">
+    <label>Max Reduced Ratio Part:</label>
+    <input type="number" id="maxComponent" value="99" />
+    <label>Near-Scale Tolerance:</label>
+    <!-- Default set to 0.01 -->
+    <input type="number" step="0.001" id="nearTol" value="0.01" />
+    <small>This tolerance helps detect "close" multiples.</small>
+  </div>
+</div>
+<!-- --- Filters Section --- -->
+<details id="filterSection" open style="margin-left: 1em;">
+  <summary>Filters</summary>
+  <div class="filtersContainer">
+    <!-- Column: "Scales to" and Exact Ratio Only -->
+    <div class="filterColumn">
+      <label>
+        <input type="checkbox" id="filterExactOnly" />
+        Integer scale matches only
+      </label>
+      <br/>
+      <label>Scales to:</label><br/>
+      <!-- Instead of a multi-select, we use a container for checkboxes -->
+      <div id="filterScalesToCheckboxes"></div>
+      <br/>
+      <label for="customScales"><strong>Custom Scale Targets (W×H):</strong></label>
+      <input type="text" id="customScales" placeholder="Comma‑separated e.g. 1920x1440,1600x1000" />
+    </div>
+    <!-- Column: Largest Divisor (W/H) on one line -->
+    <div class="filterColumn">
+      <label>Largest Divisor (W/H):</label><br/>
+      <div class="divisorContainer">
+        <select id="filterMaxDivW" class="single">
+          <!-- Options populated via updateDivisorSelects() -->
+        </select>
+        <select id="filterMaxDivH" class="single">
+          <!-- Options populated via updateDivisorSelects() -->
+        </select>
+      </div>
+      <small>(Select "Any" for no filtering)</small>
+    </div>
+  </div>
+</details>
+<!-- --- Generate Button --- -->
+<div style="margin: 1em; margin-left: 1em;">
+  <button onclick="generateResults()">Generate</button>
+</div>
+
+
+<!-- --- Generated Results --- -->
+<div id="results"></div>
+
+
+<!-- --- Common Resolutions Table (starts collapsed) --- -->
+<details>
+  <summary>List of Common Resolutions</summary>
+  <div id="commonResTable"></div>
+</details>
+
+<script>
+/* ==================== COMMON_RESOLUTIONS Database ==================== */
+const COMMON_RESOLUTIONS = [
+  // 16:9
+  [640, 360, "nHD", "16:9"],
+  [960, 540, "qHD (540p)", "16:9"],
+  [1280, 720, "720p", "16:9"],
+  [1366, 768, "WXGA", "16:9"],
+  [1600, 900, "HD+ (900p)", "16:9"],
+  [1920, 1080, "1080p", "16:9"],
+  [2560, 1440, "1440p (QHD)", "16:9"],
+  [3200, 1800, "QHD+", "16:9"],
+  [3840, 2160, "4K", "16:9"],
+  [5120, 2880, "5K", "16:9"],
+  [7680, 4320, "8K", "16:9"],
+  // 16:10
+  [1280, 800, "WXGA", "16:10"],
+  [1440, 900, "WXGA+", "16:10"],
+  [1680, 1050, "WSXGA+", "16:10"],
+  [1920, 1200, "WUXGA", "16:10"],
+  [2560, 1600, "WQXGA", "16:10"],
+  [2880, 1800, "Retina", "16:10"],
+  [3840, 2400, "WQUXGA", "16:10"],
+  [5120, 3200, "5K (16:10)", "16:10"],
+  [7680, 4800, "8K (16:10)", "16:10"],
+  // 21:9
+  [2560, 1080, "UW-FHD", "21:9"],
+  [3440, 1440, "UW-QHD", "21:9"],
+  [5120, 2160, "5K UW", "21:9"],
+  [6880, 2880, "6K UW", "21:9"],
+  // 4:3
+  [640, 480, "VGA", "4:3"],
+  [800, 600, "SVGA", "4:3"],
+  [1024, 768, "XGA", "4:3"],
+  [1152, 864, "XGA+", "4:3"],
+  [1280, 960, "SXGA–?", "4:3"],
+  [1400, 1050, "SXGA+", "4:3"],
+  [1600, 1200, "UXGA", "4:3"],
+  [2048, 1536, "QXGA", "4:3"],
+  [2560, 1920, "QSXGA?", "4:3"],
+  [3200, 2400, "QUXGA?", "4:3"],
+  [4096, 3072, "4K (4:3)", "4:3"],
+  [5120, 3840, "5K (4:3)", "4:3"],
+  [7680, 5760, "8K (4:3)", "4:3"],
+  // 5:4
+  [1280, 1024, "SXGA", "5:4"],
+  // 3:2
+  [960, 640, "iPhone 4 era", "3:2"],
+  [1440, 960, "3:2 (1440×960)", "3:2"],
+  [2160, 1440, "Surface (12\")", "3:2"],
+  [3000, 2000, "3K (3:2)", "3:2"],
+  [3240, 2160, "3.2K (rare)", "3:2"],
+  // 1:1
+  [512, 512, "512²", "1:1"],
+  [1024, 1024, "1K×1K", "1:1"],
+  [2048, 2048, "2K×2K", "1:1"],
+  [4096, 4096, "4K×4K", "1:1"],
+];
+
+/* --- For Internal Linking --- */
+const resolutionIdMap = {};
+COMMON_RESOLUTIONS.forEach(([w, h, name]) => {
+  const id = `res-${w}-${h}`;
+  resolutionIdMap[`${w}x${h}`] = id;
+});
+
+/* --- Determine if a Resolution is "Super Common" --- */
+function isSuperCommon(cw, ch) {
+  return (
+    (cw === 1280 && ch === 720) ||
+    (cw === 1920 && ch === 1080) ||
+    (cw === 2560 && ch === 1440) ||
+    (cw === 3840 && ch === 2160)
+  );
+}
+
+/* --- Basic Math Helpers --- */
+function round(n) { return Math.floor(n + 0.5); }
+function gcd(a, b) {
+  a = round(a); b = round(b);
+  while (b !== 0) { const temp = b; b = a % b; a = temp; }
+  return a;
+}
+function integerDimensionsToRatio(w, h) {
+  const g = gcd(w, h);
+  return [Math.floor(w/g), Math.floor(h/g)];
+}
+function stepify(val, step) {
+  return Math.floor((val/step) + 0.5) * step;
+}
+
+/* --- Scale Factor Functions --- */
+function integerScaleFactor(w, h, cw, ch) {
+  if (cw % w === 0 && ch % h === 0) {
+    const sW = Math.floor(cw / w), sH = Math.floor(ch / h);
+    if (sW === sH) return sW;
+  }
+  return null;
+}
+function nearScaleFactor(w, h, cw, ch, tolerance) {
+  const scaleW = cw / w, scaleH = ch / h;
+  const avgScale = (scaleW + scaleH) / 2;
+  const sRound = Math.floor(avgScale + 0.5);
+  if (sRound <= 0 || avgScale <= sRound) return null;
+  const diffRound = Math.abs(avgScale - sRound) / sRound;
+  const diffW = Math.abs(scaleW - avgScale) / avgScale;
+  const diffH = Math.abs(scaleH - avgScale) / avgScale;
+  if (diffRound <= tolerance && diffW <= tolerance && diffH <= tolerance) {
+    return avgScale;
+  }
+  return null;
+}
+function fmtFloat(val, decimals) { return val.toFixed(decimals || 5); }
+
+/* --- Global Storage for Generated Results --- */
+let originalResults = [];
+
+/* --- Utility: Get Checkbox Values from a Container --- */
+function getCheckboxValues(containerId) {
+  const container = document.getElementById(containerId);
+  const checkboxes = container.querySelectorAll("input[type='checkbox']");
+  const values = [];
+  checkboxes.forEach(cb => {
+    if (cb.checked) values.push(cb.value);
+  });
+  return values;
+}
+
+/* --- Initialize Filter UI on Page Load --- */
+function initFilterUI() {
+  // Populate "Scales to" checkboxes with super common resolutions at the top.
+  const container = document.getElementById("filterScalesToCheckboxes");
+  if (container && container.innerHTML.trim() === "") {
+    let names = Array.from(new Set(COMMON_RESOLUTIONS.map(r => r[2])));
+    const superCommonOrder = ["720p", "1080p", "1440p (QHD)", "4K"];
+    names.sort((a, b) => {
+      const aIsSuper = superCommonOrder.indexOf(a);
+      const bIsSuper = superCommonOrder.indexOf(b);
+      if (aIsSuper !== -1 && bIsSuper !== -1) {
+        return aIsSuper - bIsSuper;
+      } else if (aIsSuper !== -1) {
+        return -1;
+      } else if (bIsSuper !== -1) {
+        return 1;
+      } else {
+        return a.localeCompare(b);
+      }
+    });
+    // Create a label (with an embedded checkbox) for each option.
+    names.forEach(name => {
+      const label = document.createElement("label");
+      // The entire label is clickable.
+      label.innerHTML = `<input type="checkbox" value="${name}" /> ${name}`;
+      container.appendChild(label);
+    });
+  }
+  updateDivisorSelects();
+}
+/* --- Update Divisor Selects (with "Any" option) --- */
+function updateDivisorSelects() {
+  const pixelInterval = parseInt(document.getElementById("pixelInterval").value, 10);
+  const divisors = [];
+  for (let i = 0; i < 30; i++) {
+    const d = pixelInterval * Math.pow(2, i);
+    if (d > 1000000) break;
+    divisors.push(d);
+  }
+  // Update Largest W Divisor (single-select)
+  const selDivW = document.getElementById("filterMaxDivW");
+  const currentWValue = selDivW.value;
+  selDivW.innerHTML = "";
+  const anyOptW = document.createElement("option");
+  anyOptW.value = "";
+  anyOptW.textContent = "Any";
+  selDivW.appendChild(anyOptW);
+  divisors.forEach(divVal => {
+    const opt = document.createElement("option");
+    opt.value = divVal;
+    opt.textContent = divVal;
+    if (divVal.toString() === currentWValue) { opt.selected = true; }
+    selDivW.appendChild(opt);
+  });
+  // Update Largest H Divisor (single-select)
+  const selDivH = document.getElementById("filterMaxDivH");
+  const currentHValue = selDivH.value;
+  selDivH.innerHTML = "";
+  const anyOptH = document.createElement("option");
+  anyOptH.value = "";
+  anyOptH.textContent = "Any";
+  selDivH.appendChild(anyOptH);
+  divisors.forEach(divVal => {
+    const opt = document.createElement("option");
+    opt.value = divVal;
+    opt.textContent = divVal;
+    if (divVal.toString() === currentHValue) { opt.selected = true; }
+    selDivH.appendChild(opt);
+  });
+}
+
+/* --- Main Generation Function --- */
+function generateResults() {
+  const aspectRatiosStr = document.getElementById("aspectRatios").value;
+  const pixelInterval = parseInt(document.getElementById("pixelInterval").value, 10);
+  const errorProp = parseFloat(document.getElementById("errorProportional").value);
+  const minWidth = parseInt(document.getElementById("minWidth").value, 10);
+  const maxWidth = parseInt(document.getElementById("maxWidth").value, 10);
+  const minHeight = parseInt(document.getElementById("minHeight").value, 10);
+  const maxHeight = parseInt(document.getElementById("maxHeight").value, 10);
+  const maxComponent = parseInt(document.getElementById("maxComponent").value, 10);
+  const nearTol = parseFloat(document.getElementById("nearTol").value);
+
+  // Parse aspect ratios ("W:H", comma‑separated)
+  const aspectPairs = [];
+  aspectRatiosStr.split(",").forEach(str => {
+    const trimmed = str.trim();
+    const parts = trimmed.split(":");
+    if (parts.length === 2) {
+      const wAR = parseInt(parts[0], 10);
+      const hAR = parseInt(parts[1], 10);
+      if (wAR > 0 && hAR > 0) aspectPairs.push([wAR, hAR]);
+    }
+  });
+
+  // Build divisors based on pixelInterval.
+  const divisors = [];
+  for (let i = 0; i < 30; i++) {
+    const d = pixelInterval * Math.pow(2, i);
+    if (d > 1000000) break;
+    divisors.push(d);
+  }
+
+  // Parse custom scale targets (e.g. "1920x1440,1600x1000")
+  const customStr = document.getElementById("customScales").value.trim();
+  const customResList = parseCustomResolutionList(customStr);
+
+  const newResults = [];
+  aspectPairs.forEach(([widthAR, heightAR]) => {
+    const referenceRatio = widthAR / heightAR;
+    const aspectRatioString = `${widthAR}:${heightAR}`;
+    const aspectEntry = { aspectRatioString, referenceRatio, resolutions: [] };
+
+    const lowRatio = referenceRatio - referenceRatio * errorProp;
+    const highRatio = referenceRatio + referenceRatio * errorProp;
+
+    for (let w = stepify(minWidth, pixelInterval); w <= stepify(maxWidth, pixelInterval); w += pixelInterval) {
+      const minHFromRatio = w / highRatio;
+      const maxHFromRatio = w / lowRatio;
+      let lowH = Math.max(minHeight, minHFromRatio);
+      let highH = Math.min(maxHeight, maxHFromRatio);
+      lowH = stepify(lowH, pixelInterval);
+      highH = stepify(highH, pixelInterval);
+      if (lowH > highH) continue;
+
+      for (let h = lowH; h <= highH; h += pixelInterval) {
+        const ratioDecimal = w / h;
+        const [ratioW, ratioH] = integerDimensionsToRatio(w, h);
+        if (ratioW > maxComponent || ratioH > maxComponent) continue;
+        const diff = ratioDecimal - referenceRatio;
+        const isPerfect = {
+          perfect: Math.abs(diff) < 0.0001,
+          close: Math.abs(diff) < 0.005
+        };
+
+        let maxDivW = 1, maxDivH = 1;
+        divisors.forEach(d => {
+          if (w % d === 0 && d > maxDivW) maxDivW = d;
+          if (h % d === 0 && d > maxDivH) maxDivH = d;
+        });
+
+        // Build arrays of scaling targets.
+        const exactList = [];
+        const nearList = [];
+        COMMON_RESOLUTIONS.forEach(cr => {
+          const [cw, ch, resName] = cr;
+          const sInt = integerScaleFactor(w, h, cw, ch);
+          if (sInt !== null) {
+            exactList.push({ name: resName, factor: sInt, cw, ch });
+          } else {
+            const sNear = nearScaleFactor(w, h, cw, ch, nearTol);
+            if (sNear !== null) {
+              nearList.push({ name: resName, factor: sNear, cw, ch });
+            }
+          }
+        });
+        customResList.forEach(({ cw, ch }) => {
+          const sInt = integerScaleFactor(w, h, cw, ch);
+          if (sInt !== null) {
+            exactList.push({ name: `${cw}x${ch}`, factor: sInt, cw, ch });
+          } else {
+            const sNear = nearScaleFactor(w, h, cw, ch, nearTol);
+            if (sNear !== null) {
+              nearList.push({ name: `${cw}x${ch}`, factor: sNear, cw, ch });
+            }
+          }
+        });
+
+        // Build scale target objects.
+        const scaleTargets = [];
+        exactList.forEach(item => {
+          scaleTargets.push({ 
+            name: item.name, 
+            factor: Number.isInteger(item.factor) ? item.factor : item.factor.toFixed(2),
+            cw: item.cw, 
+            ch: item.ch, 
+            isExact: true 
+          });
+        });
+        nearList.forEach(item => {
+          scaleTargets.push({ 
+            name: item.name, 
+            factor: Number.isInteger(item.factor) ? item.factor : item.factor.toFixed(2),
+            cw: item.cw, 
+            ch: item.ch, 
+            isExact: false 
+          });
+        });
+
+        // Build plain array of names for filtering.
+        const allScaleNames = exactList.map(item => item.name)
+                               .concat(nearList.map(item => item.name));
+
+        aspectEntry.resolutions.push({
+          width: w, height: h,
+          ratioDecimal, ratioW, ratioH,
+          diff, isPerfect,
+          maxDivW, maxDivH,
+          exactNames: exactList.map(item => item.name),
+          nearNames: nearList.map(item => item.name),
+          scaleNames: allScaleNames,
+          scaleTargets: scaleTargets
+        });
+      }
+    }
+    newResults.push(aspectEntry);
+  });
+
+  originalResults = newResults;
+  // Automatically apply filtering as part of generation.
+  applyFilters();
+}
+
+/* --- Build the Results Table HTML --- */
+function buildHTML(resultsToRender) {
+  // Retrieve current scales-to filter selections from checkboxes.
+  var chosenScaleNames = getCheckboxValues("filterScalesToCheckboxes");
+  // Also get custom targets from the custom box (e.g. "1920x1440")
+  var customStrForFilter = document.getElementById("customScales").value.trim();
+  var customFilterTargets = [];
+  if(customStrForFilter.length > 0) {
+    const parsed = parseCustomResolutionList(customStrForFilter);
+    customFilterTargets = parsed.map(x => `${x.cw}x${x.ch}`);
+  }
+  var allChosenTargets = chosenScaleNames.concat(customFilterTargets);
+
+  let html = "";
+  resultsToRender.forEach(aspect => {
+    const summaryTxt = `Aspect Ratio: ${aspect.aspectRatioString} (${aspect.referenceRatio.toFixed(5)}) - Found Resolutions: ${aspect.resolutions.length}`;
+    html += `<details open><summary>${summaryTxt}</summary>`;
+    if (aspect.resolutions.length === 0) {
+      html += `<p><em>No matching resolutions found.</em></p>`;
+    } else {
+      html += `<table class="ratioTable">
+                <thead>
+                  <tr>
+                    <th>Resolution (W×H)</th>
+                    <th>Decimal Ratio</th>
+                    <th>Reduced Ratio</th>
+                    <th>Ratio Diff</th>
+                    <th>Accuracy</th>
+                    <th>Largest W Divisor</th>
+                    <th>Largest H Divisor</th>
+                    <th>Scales To</th>
+                  </tr>
+                </thead>
+                <tbody>`;
+      aspect.resolutions.forEach(res => {
+        const ratioStr = `${res.ratioW}:${res.ratioH}`;
+        let accuracyString = "";
+        if (res.isPerfect.perfect) {
+          accuracyString = `<span class="exactTag">EXACT RATIO</span>`;
+        }
+        // Build the "Scales To" cell by iterating over the scaleTargets array.
+        let scalesHTML = "";
+        res.scaleTargets.forEach(target => {
+          // Determine opacity: if there is at least one filter target and the target's name is not in allChosenTargets, reduce opacity.
+          let opacityStyle = "";
+          if(allChosenTargets.length > 0 && allChosenTargets.indexOf(target.name) === -1) {
+            opacityStyle = "opacity:0.3;";
+          }
+          let classes = target.isExact ? "exactScale" : "nearScale";
+          if(isSuperCommon(target.cw, target.ch)) {
+            classes = "superCommon " + classes;
+          }
+          // For near scale, prefix with a tilde.
+          let displayName = target.isExact ? target.name : ("~" + target.name);
+          let linkId = resolutionIdMap[`${target.cw}x${target.ch}`] || "";
+          let link = linkId
+            ? `<a href="#${linkId}">${displayName}(x${target.factor})</a>`
+            : `${displayName}(x${target.factor})`;
+          scalesHTML += `<span class="${classes}" style="${opacityStyle}">${link}</span>, `;
+        });
+        if(scalesHTML.endsWith(", ")) {
+          scalesHTML = scalesHTML.slice(0, -2);
+        }
+        html += `<tr>
+                   <td class="col-widthheight">${res.width}x${res.height}</td>
+                   <td class="col-ratiodec">${fmtFloat(res.ratioDecimal, 5)}</td>
+                   <td class="col-ratio">${ratioStr}</td>
+                   <td class="col-diff">${fmtFloat(res.diff, 5)}</td>
+                   <td>${accuracyString}</td>
+                   <td class="col-maxdiv">${res.maxDivW}</td>
+                   <td class="col-maxdiv">${res.maxDivH}</td>
+                   <td>${scalesHTML}</td>
+                 </tr>`;
+      });
+      html += `</tbody></table>`;
+    }
+    html += `</details>`;
+  });
+  return html;
+}
+
+/* --- Apply Selected Filters (integrated into generation) --- */
+function applyFilters() {
+  const filterExactOnly = document.getElementById("filterExactOnly").checked;
+  // Retrieve checkboxes from the "Scales to" container.
+  const chosenScaleNames = getCheckboxValues("filterScalesToCheckboxes");
+  // Also get custom targets from the custom box (e.g. "1920x1440")
+  const customStrForFilter = document.getElementById("customScales").value.trim();
+  let customFilterTargets = [];
+  if(customStrForFilter.length > 0) {
+    const parsed = parseCustomResolutionList(customStrForFilter);
+    customFilterTargets = parsed.map(x => `${x.cw}x${x.ch}`);
+  }
+  const allChosenTargets = chosenScaleNames.concat(customFilterTargets);
+  
+  // If no scales-to selection is made and Exact Ratio Only is checked,
+  // require that the resolution have at least one integer scale factor.
+  const filteredResults = JSON.parse(JSON.stringify(originalResults))
+    .map(aspect => {
+      const filteredRes = aspect.resolutions.filter(r => {
+        if (allChosenTargets.length > 0) {
+          for (const name of allChosenTargets) {
+            if (filterExactOnly) {
+              if (!r.exactNames.includes(name)) return false;
+            } else {
+              if (!r.scaleNames.includes(name)) return false;
+            }
+          }
+        } else if (filterExactOnly && r.exactNames.length === 0) {
+          return false;
+        }
+        // Divisor filters (single-select)
+        const selDivW = document.getElementById("filterMaxDivW");
+        const chosenDivW = selDivW.value ? parseInt(selDivW.value, 10) : null;
+        const selDivH = document.getElementById("filterMaxDivH");
+        const chosenDivH = selDivH.value ? parseInt(selDivH.value, 10) : null;
+        if (chosenDivW !== null && r.maxDivW !== chosenDivW) return false;
+        if (chosenDivH !== null && r.maxDivH !== chosenDivH) return false;
+        return true;
+      });
+      return { ...aspect, resolutions: filteredRes };
+    })
+    .filter(a => a.resolutions.length > 0);
+    
+  document.getElementById("results").innerHTML = buildHTML(filteredResults);
+}
+
+/* --- Utility: Get Checkbox Values from a Container --- */
+function getCheckboxValues(containerId) {
+  const container = document.getElementById(containerId);
+  const checkboxes = container.querySelectorAll("input[type='checkbox']");
+  const values = [];
+  checkboxes.forEach(cb => {
+    if (cb.checked) values.push(cb.value);
+  });
+  return values;
+}
+
+/* --- Parse Custom Resolution Strings (e.g. "1920x1440,1600x1000") --- */
+function parseCustomResolutionList(str) {
+  const results = [];
+  const parts = str.split(",");
+  parts.forEach(token => {
+    const trimmed = token.trim();
+    if (!trimmed) return;
+    const match = trimmed.match(/^(\d+)x(\d+)$/);
+    if (match) {
+      const cw = parseInt(match[1], 10);
+      const ch = parseInt(match[2], 10);
+      if (cw > 0 && ch > 0) results.push({ cw, ch });
+    }
+  });
+  return results;
+}
+
+/* --- Look up (cw,ch) from a Resolution Name --- */
+function getWidthHeightFromName(name) {
+  const cr = COMMON_RESOLUTIONS.find(([cw, ch, nm]) => nm === name);
+  if (cr) return [cr[0], cr[1]];
+  const match = name.match(/^(\d+)x(\d+)$/);
+  if (match) return [parseInt(match[1], 10), parseInt(match[2], 10)];
+  return [null, null];
+}
+
+/* --- Build the "Common Resolutions" Table --- */
+function buildCommonResTable() {
+  let html = `<table class="commonResTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Width×Height</th>
+                    <th>Aspect</th>
+                  </tr>
+                </thead>
+                <tbody>`;
+  COMMON_RESOLUTIONS.forEach(([w, h, name, aspect]) => {
+    const rowId = resolutionIdMap[`${w}x${h}`];
+    html += `<tr id="${rowId}">
+               <td>${name}</td>
+               <td>${w}×${h}</td>
+               <td>${aspect}</td>
+             </tr>`;
+  });
+  html += `</tbody></table>`;
+  return html;
+}
+
+/* --- Event Listeners --- */
+// Update divisor selects when "Width/Height Step" changes.
+document.getElementById("pixelInterval").addEventListener("change", updateDivisorSelects);
+
+// On page load: build common resolutions table and initialize filters.
+// (No auto-generation on startup.)
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("commonResTable").innerHTML = buildCommonResTable();
+  initFilterUI();
+});
+</script>
+
+      </div>
+      <div class="footer"></div>
+
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+</body>
+
+
+    <script src="/theme/js/relativetime.js"></script>
+</html>

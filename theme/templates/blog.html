@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f71c55f6d7a5aed69b59e1e2673f1c91a058a5933a822b7c93ed8ca039e8560
-size 859
+{% extends "default.html" %}
+{% block title %}blog{% endblock title %}
+{% block linktitle %}blog{% endblock linktitle %}
+{% block bg %}blog{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/blog.css">
+{% endblock head %}
+
+{% block header %}blog{% endblock header %}
+{% block article_body %}
+<p>thoughts that were too long or precious for throwaway social media posts. entries may touch on sensitive or explicit topics not suitable for all ages.</p>
+<h3>view <a href="{{ HTML_SITEURL }}/reviews.html">{% for c in "GAME REVIEWS" %}<span class="rainbow-letter" style="animation-delay: {{ loop.index0 * -0.25 }}s">{{ '&nbsp;' if c == ' ' else c }}</span>{% endfor %}</a> here.</h3>
+
+{% for article in articles_page.object_list %}
+<div class="article-entry">
+    <span class="article-entry-title"><a href="{{ article.url }}">{{ article.title }}</a></span> <span class="blog-info">{{ article.date.strftime('%b %d, %Y') }}</span>
+    <div class="article-summary">{{ article.summary|striptags }}</div>
+</div>
+
+
+
+{% endfor %}
+{% endblock article_body %}
+ 

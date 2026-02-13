@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6060ca1bc2286c3f4e9ba512e739f545e5ffac4446ec752b2d78c094b6f0841a
-size 845
+Title: Dog Trail
+Date: 2025-02-18
+Tags: animal, bus, danger, dog, family, real-person, real-place
+
+on a walk with dennis. I let him roam around the trail off leash. I decided to get on the bus and then meet up with him further along the trail, but I get distracted and a bunch of things go wrong. eventually I decide R probably found him and took him home. I bus home, and when I get there, a bunch of other white dogs are there but not dennis. these dogs belong to R's dad who is visiting. I panic and run back outside leaving all the doors open. I begin yelling his name and other people do too, the whole neighborhood wants to find him. there are lots of other dogs being walked today. eventually I see him being walked around by someone else. Dennis is wearing a t shirt. I get the attention of the person who has him and I take him back home

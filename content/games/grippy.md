@@ -12,6 +12,7 @@ Mac: ../static/games/Grippy/grippy_osx.zip
 Rpi: ../static/games/Grippy/grippy_raspi.zip
 Cover: ./static/games/Grippy/grippy.png
 Image: ../static/games/Grippy/grippy.png
+Comments: 3mctg2s3hac2i
 
 
 

@@ -8,6 +8,7 @@ Itch: https://ivysly.itch.io/defy-godwin
 Windows: ../static/games/DefyGodwin/DefyGodwin.zip
 Image: ../static/games/DefyGodwin/screenshot.png
 Cover: ./static/games/DefyGodwin/cover.png
+Comments: 3mctg25sjmc2i
 
 Defy Godwin is a comedic work of interactive fiction and a realistic forum simulator.
 

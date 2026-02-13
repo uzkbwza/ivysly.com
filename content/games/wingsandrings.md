@@ -6,6 +6,7 @@ Cover: ./static/games/WingsAndRings/cover.png
 Link: true
 Itch: https://chanoc.itch.io/wings-and-rings
 NonDevCredit: true
+Comments: 3mctmyzn4q22w
 
 Wings & Rings is an arcade style game where your objective is to maximize your score by flying through rings, all while surviving endless waves of enemies. 
 

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecbd974aa99dce866f7cfd1e20b0383a99140d6e60eee78f6eb9d240c67580ff
-size 177
+Title: Mask Girl
+Date: 2024-06-21
+Tags: love, mask, rejection, school, self-costume
+
+my new gf got mad when I couldn't tell she came to school wearing a mask of her own face

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0af7c0b6d49116cb472ae726e8eeca558dd09f506059265e6fd97e88a74e3738
-size 231
+Title: Missing School
+Date: 2021-06-03
+Tags: bus, love, real-person, school, sex
+
+I am about to go to school, but decide to miss the bus and have sex with R instead. we are interrupted because she is hungry(?) and needs to eat.

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5a270d7c88dd1180bca2e07c1352ebf419f04c532edcdc59f1ffe74a5fe8d17f
-size 688
+{% extends "dreamlog.html" %}
+
+{% block linktitle %}tags{% endblock linktitle %}
+{% block title %}tags{% endblock title %}
+
+{% block header %}
+<h1><a href="{{ HTML_SITEURL }}/dream.html">TAGS</a></h1>
+{% endblock header %}
+
+{% block tagcount %}
+{% endblock tagcount %}
+
+{% block dreamlog_entry_count %}
+{% endblock dreamlog_entry_count %}
+
+{% block dreamlog_body %}
+{% for tag, articles in tags|sort_by_article_count %}
+  <a href="{{ HTML_SITEURL }}/dream/tag/{{ tag }}.html">{{ tag }}</a> ({{ articles|length }})
+{% endfor %}
+{% endblock dreamlog_body %}
+
+{% block links %}
+<a href="{{ HTML_SITEURL }}/dream.html">browse all</a><br>
+{{ super() }}
+{% endblock links %}

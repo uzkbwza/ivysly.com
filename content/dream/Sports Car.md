@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a0fed2bafa9c3c34168df7ae12318613998d0a720216af9a2476b8fc5a58780
-size 423
+Title: Sports Car 
+Date: 2025-01-10
+Tags: accident, car, danger, real-person, train
+
+sports car on the train tracks. it gets run over, people cheer because they hate sports cars. a woman exits the car looking confused. when I get closer and the paramedics arrive I realize it's R. she seems like maybe she had brain damage or something. the paramedic asks her to tie her shoes and she starts sucking on her own big toe.

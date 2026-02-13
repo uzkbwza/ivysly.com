@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<!-- 🦔 -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel='stylesheet' type='text/css' href="/theme/css/default.css">
+    <link rel='stylesheet' type='text/css' href="/theme/css/codestyles.css">
+
+    
+
+
+    <meta name="keywords" content="gamedev, music, electronic">
+    <meta name="description" content="this last month or so i have been using the Fennel programming language, a Lisp dialect that transpiles to Lua. if you want the quick pitch: it’s a fast, imperative-oriented Lisp with macros that i...">
+
+
+    <meta name="author" content="Ivy Sly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+
+    <meta name="language" content="English">
+    <meta name="title" content="ivysly.com - solo gamedev with lisp">
+
+    <meta property="og:title" content="ivysly.com - solo gamedev with lisp">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/theme/images/card.png">
+    <meta property="og:description" content="this last month or so i have been using the Fennel programming language, a Lisp dialect that transpiles to Lua. if you want the quick pitch: it’s a fast, imperative-oriented Lisp with macros that i...">
+    
+    <meta name="twitter:site" content="@ivy_sly_">
+    <meta name="twitter:creator" content="@ivy_sly_">
+    <meta name="twitter:title" content="ivysly.com - solo gamedev with lisp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="this last month or so i have been using the Fennel programming language, a Lisp dialect that transpiles to Lua. if you want the quick pitch: it’s a fast, imperative-oriented Lisp with macros that i...">
+    <meta name="twitter:image" content="/theme/images/card.png">
+  
+
+
+    <link rel=apple-touch-icon sizes=180x180 href=/theme/images/apple-touch-icon.png>
+    <link rel=icon type=image/png sizes=16x16 href=/theme/images/favicon-16x16.png>
+    <link rel=icon type=image/png sizes=32x32 href=/theme/images/favicon-32x32.png>
+    <link rel=icon type=image/png sizes=192x192 href=/theme/images/android-chrome-192x192.png>
+    <link rel=icon type=image/png sizes=512x512 href=/theme/images/android-chrome-512x512.png>
+
+    <link rel="alternate" type="application/rss+xml" title="allfeeds" href="https://ivysly.com/feeds/all.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="blog" href="https://ivysly.com/feeds/blog.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="dream" href="https://ivysly.com/feeds/dream.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="games" href="https://ivysly.com/feeds/games.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="hustle" href="https://ivysly.com/feeds/hustle.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="misc" href="https://ivysly.com/feeds/misc.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="reviews" href="https://ivysly.com/feeds/reviews.rss.xml">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>ivysly.com - solo gamedev with lisp</title>
+    
+
+  
+  
+
+  
+
+  
+
+  <link rel='stylesheet' type='text/css' href="/theme/css/blog.css">
+
+  <link rel='stylesheet' type='text/css' href="/theme/css/comments.css">
+
+  <script src="/theme/js/comments.js"></script>
+
+
+
+
+
+<style>
+  html {
+    background-image: url(/theme/images/background/blog.png);
+  }
+</style>
+
+  </head>
+
+
+<body>
+  
+<div class="header-container">
+
+  <a href=/index.html><img src="/theme/images/home/header.png" class="header-image"
+    onmouseover="this.src='/theme/images/home/header2.png'"
+    onmouseout="this.src='/theme/images/home/header.png'" ></a>
+
+</div>
+
+<div class="page"> 
+
+
+<div class="box">
+  <div class="nav-links top">
+    
+      <span class="nav-link"><a href="/games.html">games</a></span>
+    
+      <span class="nav-link"><a href="/music.html">music</a></span>
+    
+      <span class="nav-link"><a href="/blog.html">blog</a></span>
+    
+      <span class="nav-link"><a href="/dream.html">dreams</a></span>
+    
+      <span class="nav-link"><a href="/misc.html">misc</a></span>
+    
+      <span class="nav-link"><a href="/about.html">about</a></span>
+    
+  </div>
+
+  <div class="content">
+    
+      
+<div class="header">
+  <h1>solo gamedev with lisp</h1>
+  <div class="blog-info">
+    <a href="/blog/there-is-no-grass-to-touch-anymore.html" class="nav-arrow">&lt;&lt;</a>
+    14 Dec 2025
+    <a href="/blog/ice.html" class="nav-arrow">&gt;&gt;</a>
+  </div>
+</div>
+
+      <div class="article-body">
+      
+
+
+<p>this last month or so i have been using the <a href="https://fennel-lang.org/">Fennel programming language</a>, a Lisp dialect that transpiles to Lua. if you want the quick pitch: it&rsquo;s a fast, imperative-oriented Lisp with macros that i think is perfectly suited to solo indie gamedev. i love it for all the reasons <a href="https://ivysly.com/blog/daydreaming-with-lua.html">i love Lua</a> and more.</p>
+<p>i had been interested in using a Lisp for some time—actually, had i the option, i would have probably picked a hypothetical LuaJIT With Macros first—but it always felt like there were hurdles and gotchas that prevented me from using it productively in game development. first is that the ecosystem is obviously pretty tiny for many Lisps. tooling, build systems and libraries can be a bit DIY, especially if you are not using Emacs (i might give it another go, now). Fennel circumvents much of this by just being Lua. <a href="https://marketplace.visualstudio.com/items?itemName=JarodWright.strict-paredit-fennel">paredit</a> + <a href="https://marketplace.visualstudio.com/items?itemName=eduarddyckman.vscode-parinfer">parinfer</a> with VS Code does the job of removing the parentheses pain well enough. this is the lesser issue. the bigger barrier is that Lisps are generally regarded as being on the functional side of programming languages, which, in the gamedev universe, means unknown, treacherous waters. games are highly stateful, highly imperative systems. it can be onerous trying to squeeze the slippery shape of a game into <a href="https://prog21.dadgum.com/23.html">the result of a pure function</a>. not to say that functional techniques have no place in gamedev, just that i find it difficult to apply them at the structural level. while some people are happy to take on such a challenge, i feel it is more practical for me to work in a perspective i&rsquo;m familiar with. Fennel just so happens to feel exactly like Lua with a different syntax, because it is. i&rsquo;m essentially doing the same things i was doing before, with a few trade-offs. this led me to a breakthrough: Lisp doesn&rsquo;t have to be anything. there are very few limits on what they <em>can</em> be. a Lisp has become in my mind solely defined as a direct representation of an AST made of <a href="https://igor.io/2012/12/06/sexpr">s-expressions</a>. you&rsquo;ve probably seen s-expressions before. they&rsquo;re just hiding in JSONs and <a href="https://defmacro.org/ramblings/lisp.html">XMLs</a>. you can write a Lisp with all the features of another language. it doesn&rsquo;t even need to have a linked list data structure (Fennel&rsquo;s lists only exist at compile time—even then, you spend most of your time just interfacing with Lua tables, with lists themselves in fact just being tables with some metadata). any other preconceptions you have about Lisp, you can safely let them go. <a href="https://srfi.schemers.org/srfi-49/srfi-49.html">Lisps don&rsquo;t even need to have parentheses</a>.</p>
+<p>Fennel is not really at all a pure-functional or declarative language. due to the severe restriction of being a zero-overhead Lua transpiler, the Fennel language doesn&rsquo;t even ship with any of its own functions. what it does have is access to all of Lua&rsquo;s built-in functions and table operations, many of which are good old imperative, stateful operations. you very well <em>could</em> turn Fennel into a pure, declarative language, or you could do something completely different. that&rsquo;s because Fennel (and Lisp) isn&rsquo;t really anything at all but a syntax. it doesn&rsquo;t have to be anything until you make it something, and you are given carte blanche to do so with macros.</p>
+<p>with macros, a Lisp essentially becomes an extension of the programmer&rsquo;s mental model of the program. it&rsquo;s amazing how simple it is. you should probably exercise more prudence in teams, but as a solo developer, it&rsquo;s pretty amazing to be able to freely add my own natural-language constructs to the language with no runtime overhead. for example, one of the most common mathematical operations i tend to do in game dev is dividing things by two. <code>somevar / 2</code> shows up hundreds or thousands of times in my typical code bases. in Fennel (and most other Lisps), it&rsquo;s dead simple to introduce a macro <code>(half somevar)</code> that compiles to the same thing, both reducing symbol noise and increasing clarity of intent. there&rsquo;s no function call overhead, so the only reason not to use it is when semantically it wouldn&rsquo;t make sense. this i think is an incredible feature for idiosyncratic solo devs like me, because while you might make your code <a href="https://marktarver.com/bipolar.html">unreadable for anyone but you</a>, it can become highly readable <em>for you</em>, and even more so quickly writeable. again, a Lisp can be <em>anything</em>. this means it can be exactly what you want out of a programming language, with technically no concessions except that you might have to put in the work to get it there (there is a reason most DSLs written in Lisp tend to look a lot like Lisp).</p>
+<p>Fennel and <a href="https://love2d.org/">LÖVE</a> go very well together. i have found that plugging into my existing codebase was very easy. even getting an in-game REPL going only took a few minutes, and already i can sense the crazy amount of power it gives me to tweak things on the fly. and since it&rsquo;s just Lua, it might be one of the faster Lisps when JITted with a great incremental garbage collector, very well suited to gamedev. being a solo dev, for me, means writing stuff quickly without spending too much time on tedious bookkeeping and careful structuring one might need to do in a larger team. for the lone gamedev, i think a controlled amount of yolo-coding is how you get shit made. this is a huge strength of Lisp.</p>
+<p>one funny problem with the switch from Lua is that now my engine uses three naming conventions; camelCase for the <code>love</code> namespace, snake_case for my own preferred identifier style in Lua, and now kebab-case for all the symbols in Lisp. things can get pretty hairy when writing code that interfaces with all of these. nothing i can&rsquo;t fix by rewriting my whole engine in Fennel of course.</p>
+<p>another small pain point is the notation for arithmetic. it&rsquo;s just not as intuitive to read <code>a * b + c + d - e - f</code> in the prefix notated form <code>(+ (* a b) c (- d e f))</code>, but i suspect it could eventually end up being just about so, and i&rsquo;m already developing adequate proficiency anyway. disregarding Lisp for this reason feels about as arbitrary and nitpicky as dismissing Lua for starting array indices at 1. you get used to it.</p>
+<p>as of writing i have only one completed project in Fennel. i just released a <a href="../games/fishbone.html">jam game</a> i made largely with Fennel, plugged in to my Lua LÖVE engine. i suspect my opinion will change in various ways as i continue to use it.</p>
+<p>anyway with my main theses out of the way i am excited to just jabber more about the ridiculous utility of macros. the real pervert crap. it&rsquo;s often the case that you want to repeat the same complicated logic on multiple values across multiple lines, but introducing a lambda (in Lua, at least) may add an unacceptable performance overhead, and putting it somewhere else in the program restricts its utility as a closure. on the contrary, inline macros let you capture the context like a closure and duplicate logic without polluting your code with a bunch of repeated procedures (which could easily break should you forget to update all of them when you need to change it), with none of the overhead of creating and calling an actual function. as a very minimal example, imagine this naive code, in the input handling function for the player somewhere:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;up&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="p">(</span><span class="k">- </span><span class="nv">speed</span><span class="p">)</span><span class="w"> </span><span class="nv">delta</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;down&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;left&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="p">(</span><span class="k">- </span><span class="nv">speed</span><span class="p">)</span><span class="w"> </span><span class="nv">delta</span><span class="p">)</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;right&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+
+<p>in this example, it would be overkill to introduce a local function to simplify the logic, and is currently a lot of noise to repeat the logic for each direction. a macro can combine the best of both options while making the important logic much more clear. plus it keeps all relevant code in the same place without you needing to search for another function that exists somewhere else. it does all this with no runtime overhead, as the following snippet compiles to code roughly equivalent to the previous block:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">macro </span><span class="nv">player-input-move!</span><span class="w"> </span><span class="p">[</span><span class="nv">...</span><span class="p">]</span>
+<span class="err">`</span><span class="p">(</span><span class="k">do </span>,<span class="p">(</span><span class="nv">unpack</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">fcollect</span><span class="w"> </span><span class="p">[</span><span class="nv">i</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="nb">select </span><span class="nv">:</span><span class="k"># </span><span class="nv">...</span><span class="p">)</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<span class="w">    </span><span class="p">(</span><span class="k">let </span><span class="p">[(</span><span class="nv">input</span><span class="w"> </span><span class="nv">dirx</span><span class="w"> </span><span class="nv">diry</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">select </span><span class="nv">i</span><span class="w"> </span><span class="nv">...</span><span class="p">)]</span>
+<span class="w">      </span><span class="err">`</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span>,<span class="nv">input</span><span class="p">)</span>
+<span class="w">          </span><span class="p">(</span><span class="nv">move-player!</span>
+<span class="w">          </span><span class="p">(</span><span class="k">* </span>,<span class="nv">dirx</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)</span>
+<span class="w">          </span><span class="p">(</span><span class="k">* </span>,<span class="nv">diry</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">))))))))</span>
+
+<span class="p">(</span><span class="nv">player-input-move!</span>
+<span class="w">  </span><span class="s">&quot;up&quot;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">-1</span>
+<span class="w">  </span><span class="s">&quot;down&quot;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="s">&quot;left&quot;</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="s">&quot;right&quot;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+<p>this compiles to:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">do</span>
+<span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;up&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">0</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">-1</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;down&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">0</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">1</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;left&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">-1</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">0</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nv">input-held?</span><span class="w"> </span><span class="s">&quot;right&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nv">move-player!</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">1</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">* </span><span class="mi">0</span><span class="w"> </span><span class="nv">speed</span><span class="w"> </span><span class="nv">delta</span><span class="p">))))</span>
+</code></pre></div>
+
+<p>the only meaningful difference being a few extra (cheap) multiplications, which could easily be refactored out as needed. i&rsquo;d bet money that LuaJIT ignores multiplications by zero literal on hot loops anyway. when performance isn&rsquo;t a concern, it usually will be cleaner to simply write a function, of course, but game dev performance is often death by a thousand cuts, with lots and lots of little inefficiencies that pile up. macros in Fennel allow you to define behavior <em>anywhere</em> free of risk.</p>
+<p>you can get a lot more complicated than this too. i wrote DSLs for defining object classes and state machines. the latter only took an afternoon. I&rsquo;ll leave you with what i am calling the <a href="https://bsky.app/profile/ivysly.com/post/3m7jtgmthek2c">brohoof operator</a>: a macro that divides two values in the opposite order they are passed:</p>
+<div class="highlight"><pre><span></span><code>(macro \ [lhs rhs]
+  `(/ ,rhs ,lhs))
+
+(\ 2 1)
+&gt;&gt; 0.5
+</code></pre></div>
+
+ 
+
+<input type="hidden"  id="enrolled_comments_link" value="3m7yveicck226">
+
+<div id="comments-container"></div>
+<script>
+  var comments = document.querySelector('#enrolled_comments_link').value;
+
+  comments = ("at://did:plc:4woruw474t2bm5qjow6wr3ad/app.bsky.feed.post/").concat(comments)
+
+  console.log(comments)
+
+  loadComments(comments)
+  
+
+</script>
+
+
+
+
+      </div>
+      <div class="footer"></div>
+
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+
+
+    <script src="/theme/js/relativetime.js"></script>
+</html>

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d47f663b631c47876dc688aaf53787fbd9e44e926c954848153006bb6774b75a
-size 280
+Title: Hatch
+Date: 2022-02-03
+Tags: apartment, noise, police, trapped
+
+there is a hatch outside my apartment that I want locked to keep someone out, but it won't close all the way. the police and some construction guy show up and we talk about it. everyone is being too loud

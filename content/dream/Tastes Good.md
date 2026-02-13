@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a1bf105349c99b9ed0ef3881b385502b25bcd3d441699e587a4f4cdd8f3438d
-size 159
+Title: Tastes Good
+Date: 2022-02-09
+Tags: pop-culture, sex, wish-fulfillment
+
+I'm giving oral to [REDACTED FICTIONAL CHARACTER] and she tastes really good.

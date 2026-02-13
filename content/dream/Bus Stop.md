@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f2d88098055b3ed58a559af80312f484ba5f9fe21b2d61a6f938731a0307cb0
-size 239
+Title: Bus Stop
+Date: 2021-08-11
+Tags: bus, dad, family, forgetting, real-person
+
+dad, brother, grandparents, aunt and uncle all waiting at the bus stop to go to a wedding. Dad and I realize we forgot our wedding attire, so we run back

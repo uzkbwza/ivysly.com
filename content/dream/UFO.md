@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b8e4f6a5d74426c649d66c0ed0829d8811e3b310f5fe4931a5e884c34ca23ff
-size 129
+Title: UFO
+Date: 2020-05-19
+Tags: alien, car, forest, highway
+
+I am in a taxi cab car on the highway in a forest. I vividly see a UFO.

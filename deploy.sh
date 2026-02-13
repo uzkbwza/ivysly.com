@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f03857922b73cc94ecfeeac85dba1ef67f9b479b35fda96b76aee1a1b75f5b8
-size 179
+#!/bin/bash
+cd "$(dirname "$0")"
+echo "rebuilding site..."
+./venv/bin/python -m ivygen build
+echo "deploying site..."
+sshpass -p "REDACTED" rsync -avp output/* root@168.235.86.185:/var/www/ivysly.com/public_html --delete

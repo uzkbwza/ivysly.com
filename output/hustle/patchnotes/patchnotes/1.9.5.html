@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<!-- 🦔 -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel='stylesheet' type='text/css' href="/theme/css/default.css">
+    <link rel='stylesheet' type='text/css' href="/theme/css/codestyles.css">
+
+    
+
+
+    <meta name="keywords" content="gamedev, music, electronic">
+    <meta name="description" content="Lobbies now wait for characters to load, this should fix the “mod mismatch” issue Adjusted sound effect for all level-1 supers (think of them like EX moves…) Added some global freeze frames on...">
+
+
+    <meta name="author" content="Ivy Sly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+
+    <meta name="language" content="English">
+    <meta name="title" content="ivysly.com - 1.9.5">
+
+    <meta property="og:title" content="ivysly.com - 1.9.5">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/theme/images/card.png">
+    <meta property="og:description" content="Lobbies now wait for characters to load, this should fix the “mod mismatch” issue Adjusted sound effect for all level-1 supers (think of them like EX moves…) Added some global freeze frames on...">
+    
+    <meta name="twitter:site" content="@ivy_sly_">
+    <meta name="twitter:creator" content="@ivy_sly_">
+    <meta name="twitter:title" content="ivysly.com - 1.9.5">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Lobbies now wait for characters to load, this should fix the “mod mismatch” issue Adjusted sound effect for all level-1 supers (think of them like EX moves…) Added some global freeze frames on...">
+    <meta name="twitter:image" content="/theme/images/card.png">
+  
+
+
+    <link rel=apple-touch-icon sizes=180x180 href=/theme/images/apple-touch-icon.png>
+    <link rel=icon type=image/png sizes=16x16 href=/theme/images/favicon-16x16.png>
+    <link rel=icon type=image/png sizes=32x32 href=/theme/images/favicon-32x32.png>
+    <link rel=icon type=image/png sizes=192x192 href=/theme/images/android-chrome-192x192.png>
+    <link rel=icon type=image/png sizes=512x512 href=/theme/images/android-chrome-512x512.png>
+
+    <link rel="alternate" type="application/rss+xml" title="allfeeds" href="https://ivysly.com/feeds/all.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="blog" href="https://ivysly.com/feeds/blog.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="dream" href="https://ivysly.com/feeds/dream.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="games" href="https://ivysly.com/feeds/games.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="hustle" href="https://ivysly.com/feeds/hustle.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="misc" href="https://ivysly.com/feeds/misc.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="reviews" href="https://ivysly.com/feeds/reviews.rss.xml">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>ivysly.com - 1.9.5</title>
+    
+
+  
+  
+
+  
+
+  
+
+
+
+
+
+<style>
+  html {
+    background-image: url(/theme/images/background/none.png);
+  }
+</style>
+
+  </head>
+
+
+<body>
+  
+<div class="header-container">
+
+  <a href=/index.html><img src="/theme/images/home/header.png" class="header-image"
+    onmouseover="this.src='/theme/images/home/header2.png'"
+    onmouseout="this.src='/theme/images/home/header.png'" ></a>
+
+</div>
+
+<div class="page"> 
+
+
+<div class="box">
+  <div class="nav-links top">
+    
+      <span class="nav-link"><a href="/games.html">games</a></span>
+    
+      <span class="nav-link"><a href="/music.html">music</a></span>
+    
+      <span class="nav-link"><a href="/blog.html">blog</a></span>
+    
+      <span class="nav-link"><a href="/dream.html">dreams</a></span>
+    
+      <span class="nav-link"><a href="/misc.html">misc</a></span>
+    
+      <span class="nav-link"><a href="/about.html">about</a></span>
+    
+  </div>
+
+  <div class="content">
+    
+      
+      <h1 class="header">1.9.5</h1>
+      
+      <div class="article-body">
+      
+<ul>
+<li>Lobbies now wait for characters to load, this should fix the &ldquo;mod mismatch&rdquo; issue</li>
+<li>Adjusted sound effect for all level-1 supers (think of them like EX moves&hellip;)</li>
+<li>
+<p>Added some global freeze frames on hit/block. Shouldn&rsquo;t affect gameplay at all. The goal is to make full-speed replays a little more watchable and satisfying.</p>
+<ul>
+<li>You can turn it off in the options if you want, for now.</li>
+<li>Might break some modded character cutscenes?</li>
+</ul>
+</li>
+</ul>
+<h1>Character Changes</h1>
+<h2>All Characters</h2>
+<ul>
+<li>
+<p>Moves that don&rsquo;t scale combos should no longer be resetting proration on the 2nd hit. probably introduces new bugs</p>
+</li>
+<li>
+<p>Dash Grab</p>
+<ul>
+<li>Forward momentum is delayed to the 2nd frame.</li>
+<li>
+<p>Whiff Cancel / Instant Cancel</p>
+</li>
+<li>
+<p>Changed FX</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Ninja</h2>
+<ul>
+<li>
+<p>Boost</p>
+<ul>
+<li>Decreased parry penalty to 10f (from 20f)</li>
+<li>Updated SFX</li>
+<li>
+<p>Back Sway</p>
+</li>
+<li>
+<p>Invulnerability now starts on frame 3 (from frame 1)</p>
+</li>
+<li>Now automatically follows into Palm Strike on hold.</li>
+<li>
+<p>Jump Kick</p>
+</li>
+<li>
+<p>Reduced landing lag (15f -&gt; 8f)</p>
+</li>
+<li>
+<p>Uppercut (grounded)</p>
+</li>
+<li>
+<p>Now is interruptible into all movement options after recovering.</p>
+</li>
+<li>
+<p>Uppercut (aerial)</p>
+</li>
+<li>
+<p>Now is interruptible into all movement options after recovering.</p>
+</li>
+<li>First hitbox no longer is block-punishable.</li>
+<li>
+<p>Shuriken</p>
+</li>
+<li>
+<p>Powered-up shuriken is no longer affected by Gust and Zephyr.</p>
+</li>
+<li>
+<p>Chuk Heavy</p>
+</li>
+<li>
+<p>IASA reduced (19f -&gt; 16f)</p>
+</li>
+<li>Added 4f extra hitstop on parry</li>
+<li>
+<p>Kick (aerial)</p>
+</li>
+<li>
+<p>Fixed no-impact land hitcancel having fewer options</p>
+</li>
+<li>
+<p>Dive Kick</p>
+</li>
+<li>
+<p>Upward versions hitcancel on block.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Wizard</h2>
+<ul>
+<li>Orb<ul>
+<li>Fixed pushblocking Orb Dart not unlocking the orb.</li>
+</ul>
+</li>
+</ul>
+<h2>Cowboy</h2>
+<ul>
+<li>Can no longer use Rift, Shift, Drift, or Sight toggles when blocking.</li>
+<li>
+<p>Draw Cancel IASA has been increased by 1f across the board.</p>
+</li>
+<li>
+<p>Time Splitter</p>
+<ul>
+<li>Reduced startup (11f -&gt; 6f)</li>
+<li>
+<p>Lightning Slice</p>
+</li>
+<li>
+<p>Now sends airborne.</p>
+</li>
+<li>
+<p>Quick Draw</p>
+</li>
+<li>
+<p>Increased IASA (11f -&gt; 12f)</p>
+</li>
+<li>
+<p>Upward Swipe</p>
+</li>
+<li>
+<p>No longer draw-cancellable.</p>
+</li>
+<li>
+<p>Pistol Whip</p>
+</li>
+<li>
+<p>Is now draw cancellable.</p>
+</li>
+<li>Can no longer be free-cancelled (or draw-cancelled) from Quick Draw.</li>
+</ul>
+</li>
+</ul>
+<h2>Robot</h2>
+<ul>
+<li>
+<p>Launch</p>
+<ul>
+<li>Now uses 1/4 fuel (from 1/2)</li>
+<li>
+<p>LOIC</p>
+</li>
+<li>
+<p>Is now +2 on block (from +1)</p>
+</li>
+<li>Increased active time</li>
+<li>
+<p>Crash</p>
+</li>
+<li>
+<p>Added 4f hitstop when this move gets parried.</p>
+</li>
+<li>
+<p>Landing</p>
+</li>
+<li>
+<p>Shockwave is now unparriable for the first 6 frames.</p>
+</li>
+<li>Shockwave is no longer affected by Gust or Zephyr.</li>
+<li>
+<p>Remote Bomb</p>
+</li>
+<li>
+<p>Di nudge disabled when armed (prevents double-SDI issue)</p>
+</li>
+<li>Explosion changes<ul>
+<li>Increased explosion hitstop (8f -&gt; 10f)</li>
+<li>Explosion no longer incurs hitstop on the explosion hitbox itself (lol)</li>
+<li>Reduced knockback on explosion (10 -&gt; 0.9)</li>
+</ul>
+</li>
+<li>
+<p>Ping</p>
+</li>
+<li>
+<p>Drive cancel happens 3 frames earlier</p>
+</li>
+<li>
+<p>Drive</p>
+</li>
+<li>
+<p>Fixed this move being punishable on block. Oops!!!!!!!!!!</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Mutant</h2>
+<ul>
+<li>
+<p>Mutant has some stalling issues so most of these changes are made to address that.</p>
+<ul>
+<li>Slightly increased typical passive sadness gain<ul>
+<li>Flavor: Mutant has a bloodlust that makes him more sad than typical characters when he&rsquo;s not fighting.</li>
+</ul>
+</li>
+<li>
+<p>Jump</p>
+</li>
+<li>
+<p>Increased sadness penalty on jumping backward.</p>
+</li>
+<li>
+<p>Dash Back</p>
+</li>
+<li>
+<p>Increased sadness penalty.</p>
+</li>
+<li>
+<p>Super Dash</p>
+</li>
+<li>
+<p>Gives a juke pip once Mutant starts moving and another later on.</p>
+</li>
+<li>
+<p>Dash</p>
+</li>
+<li>
+<p>Mutant gains a pip of juke when using 100 dash (does not work for repeated dashes).</p>
+</li>
+<li>
+<p>Caustic Barrage</p>
+</li>
+<li>
+<p>Decreased first-hit damage (800 -&gt; 500)</p>
+</li>
+<li>
+<p>Caustic Spike</p>
+</li>
+<li>
+<p>Initiative startup reduction is now a combo-only bonus and still only happens while airborne.</p>
+</li>
+<li>
+<p>Pounce</p>
+</li>
+<li>
+<p>Is now +2 on block (from +1)</p>
+</li>
+<li>If you miss with this move, Mutant becomes vulnerable. :fefe:</li>
+<li>
+<p>Envenom</p>
+</li>
+<li>
+<p>Adjusted damage proration (+0 -&gt; +3)</p>
+</li>
+<li>
+<p>Leap Slash</p>
+</li>
+<li>
+<p>Adjusted hurtbox.</p>
+</li>
+<li>Added some limb hurtboxes.</li>
+<li>Can&rsquo;t clash anymore.</li>
+<li>
+<p>Shred</p>
+</li>
+<li>
+<p>Grounded version now has projectile invulnerability once Mutant leaves the ground.</p>
+</li>
+<li>Increased hitbox size.</li>
+<li>Landing hitbox doesn&rsquo;t trigger until the aerial hitbox comes out.</li>
+<li>
+<p>Low Swipe</p>
+</li>
+<li>
+<p>Reduced low-profile</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      <div class="footer"></div>
+
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+</body>
+
+
+    <script src="/theme/js/relativetime.js"></script>
+</html>

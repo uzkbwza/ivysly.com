@@ -1,0 +1,74 @@
+{% extends "default.html" %}
+
+{% block bg %}blog{% endblock %}
+
+{% block linktitle %}Review: {{article.title|striptags}}{% endblock linktitle %}
+{% block title %}Review: {{ article.title|striptags }}{% endblock title %}
+
+{% block card_image %}{% if article.banner %}{{ SITEURL }}/{{ article.banner[2:] }}{% elif article.cover %}{{ SITEURL }}/{{ article.cover[2:] }}{% else %}{{ SITEURL }}/theme/images/card.png{% endif %}{% endblock card_image %}
+
+{% block head %}
+  {{ super() }}
+
+  {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+  {% endif %}
+
+  <link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/review.css">
+  <link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/comments.css">
+  <script src="{{ HTML_SITEURL }}/theme/js/comments.js"></script>
+{% endblock %}
+
+{% block header_container %}
+<p style="margin-bottom: 0;"><a href="{{ HTML_SITEURL }}/reviews.html">&lt;&lt; back to reviews</a></p>
+<h1 class="header">{% block header %}Review: {{ article.title }}{% endblock header %}</h1>
+{% endblock header_container %}
+
+{% block article_body %}
+<div class="review-info">
+  {% if article.prev_article_in_category %}<a href="{{ HTML_SITEURL }}/{{ article.prev_article_in_category.url }}" class="nav-arrow">&lt;&lt;</a>{% endif %}
+  {{ article.date.strftime('%d %b %Y') }}
+  {% if article.next_article_in_category %}<a href="{{ HTML_SITEURL }}/{{ article.next_article_in_category.url }}" class="nav-arrow">&gt;&gt;</a>{% endif %}
+
+</div>
+
+{% if article.banner or article.cover %}
+<div class="review-sidebar">
+  {% if article.banner %}
+    <img src="{{ HTML_SITEURL }}/{{ article.banner[2:] }}" alt="{{ article.title }}" class="review-image">
+  {% elif article.cover %}
+    <img src="{{ HTML_SITEURL }}/{{ article.cover[2:] }}" alt="{{ article.title }}" class="review-image">
+  {% endif %}
+  {% if article.released %}<div class="review-year">Released: <b>{{ article.released|strftime('%d %b %Y') }}</b></div>{% endif %}
+</div>
+{% elif article.released %}
+<div class="review-year">Released: <b>{{ article.released|strftime('%d %b %Y') }}</b></div>
+{% endif %}
+
+<div class="description">
+{{ article.content }}
+</div>
+{% endblock article_body %}
+
+{% block footer %}
+{% if article.link %}
+<div class="review-links">
+  <a href="{{ article.link }}" target="_blank">link to game</a>
+</div>
+{% endif %}
+{% if article.backloggd %}
+<div class="review-links">
+  <a href="{{ article.backloggd }}" target="_blank">view post on backloggd</a>
+</div>
+{% endif %}
+
+{% if article.comments %}
+<input type="hidden" id="enrolled_comments_link" value="{{ article.comments }}">
+<div id="comments-container"></div>
+<script>
+  var comments = document.querySelector('#enrolled_comments_link').value;
+  comments = ("at://did:plc:4woruw474t2bm5qjow6wr3ad/app.bsky.feed.post/").concat(comments)
+  loadComments(comments)
+</script>
+{% endif %}
+{% endblock footer %}

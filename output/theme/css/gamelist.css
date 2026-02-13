@@ -1,3 +1,60 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c7a740f954f23a8e53db6a2180c8ba4b6a7b7c641cd8a86a733f22d67ca76be
-size 1151
+:root {
+  --link-color: #d02547;
+  --link-hover-color: white;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 33.333333333% 33.333333333% 33.333333333%;
+}
+
+.game-image {
+  /* The aspect ratio you want (e.g., 16:9) */
+  aspect-ratio: 4 / 3;
+
+  width: 100%;
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid black;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+.game-image:hover {
+}
+
+.game-image-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.game-image-overlay:hover {
+  box-sizing: border-box;
+  border: 6px solid var(--link-color);
+}
+
+.game-box {
+  padding: 4px;
+  /* margin-bottom: 6px; */
+  /* max-width: 245px; */
+  text-overflow: clip;
+}
+
+.game-title {
+  font-size: 20px;
+  /* height: 20px; */
+  font-weight: bold;
+  text-align: center;
+  /* overflow: hidden; */
+}

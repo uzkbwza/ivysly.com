@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1068edd09be33970f2b28be2fcd1816f8fec6d37aa515629535ca55aa64e8f6a
-size 405
+Title: Roll
+Date: 2020-05-07
+Tags: apartment, school, sex, video-game
+
+I'm in a relationship with R from school, and we live in an apartment with a few others. I'm in bed with him. The apartment is trashed. His roommates mention he's kind of a creep. I didn't believe them until he says (which appears in a FF style text box),
+
+"Rolllllllll, Rooooooollll retard *laughs*
+
+roooooollllll retard...."

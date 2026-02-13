@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efcd52709ab169e174b648d02bfe67e937b6d0dca401ae6b3b38c948675d580e
-size 252
+Title: Astronauts
+Date: 2024-05-12
+Tags: danger, escape, love, real-person, space, wish-fulfillment
+
+Gf and I are astronauts. I eject right at the furthest point I can, for safety concerns. she follows and compliments my initiative and observation.

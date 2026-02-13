@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67637b84eba6c0f1fa3215bfac2eb6cbcd823706d0ca78d09ac195d3f16ee3e2
-size 260
+Title: Shopping Cart
+Date: 2025-01-31
+Tags: car, escalator, mall
+
+I'm pushing a shopping cart the wrong way through marked pathways in a mall, even going down the up escalators (the flat kind) and vice versa. mechanics are talking about their cars in the background. 

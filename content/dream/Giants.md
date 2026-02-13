@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4cf555afb2079c437338c8fa9e54f51781ff1a8d364ce163966b6fa3d2edbe3e
-size 529
+Title: Giants
+Date: 2025-02-12
+Tags: animal, danger, escape, farm, forest, gun, monkey, monster
+
+giant animatronic animals roam the forest trails, most notably and dangerously the giant cymbal banging monkey. if they see you they will try to eat you, running through everything in their path, even rewriting history to get rid of anything in their way, even the trees. I find myself on the property of a slave owner's ranch. it looks like he's made a bad deal with someone, and now people have shown up to shoot and kill him.

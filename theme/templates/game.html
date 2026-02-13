@@ -1,3 +1,150 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56e1036fe7e29197212b54cef25888553ed3c958eb81531e5cfb9560c0384e27
-size 2784
+{% extends "default.html" %}
+  
+{% macro download(platform, url, newtab) %}
+{% if url %}
+  {% if newtab %}
+    <span class="download"><a href="{{ url }}" target="_blank">{{ platform }}</a></span>
+    {% else %}
+    <span class="download"><a href="{{ url }}">{{ platform }}</a></span>
+  {% endif %}
+{% endif %}
+{% endmacro %}
+
+{% macro link(platform, url) %}
+{% if url %}
+<span class="link"><a href="{{ url }}" target="_blank">{{ platform }}</a></span>
+{% endif %}
+{% endmacro %}
+
+
+{% if article.cover %}
+{% block card_image %}{{SITEURL}}/{{ article.cover[2:] }}{% endblock card_image %}
+{% endif %}
+
+
+
+{% block linktitle %}{{article.title|striptags}}{% endblock linktitle %}
+{% block title %}{{ article.title|striptags }}{% endblock title %}
+
+{% block bg %}games{% endblock bg %}
+
+{% block head %}
+  {{ super() }}
+
+  {% import 'translations.html' as translations with context %}
+  {% if translations.entry_hreflang(article) %}
+    {{ translations.entry_hreflang(article) }}
+  {% endif %}
+
+  {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+  {% endfor %}
+
+  <link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/game.css">
+  <link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/comments.css">
+  <script src="{{ HTML_SITEURL }}/theme/js/comments.js"></script>
+
+{% endblock %}
+
+{% block header %}
+{{ article.title }}
+{% endblock header %}
+
+{% block article_body %}
+<div class="middle">
+
+
+  <div class="game-info">
+    {% if article.prev_article_in_category %}<a href="{{ HTML_SITEURL }}/{{ article.prev_article_in_category.url }}" class="nav-arrow">&lt;&lt;</a>{% endif %}
+    {% if article.datetext %}
+    {{ article.datetext }}
+    {% else %}
+    {{ article.date.strftime('%d %b %Y') }}
+    {% endif %}
+    {% if article.next_article_in_category %}<a href="{{ HTML_SITEURL }}/{{ article.next_article_in_category.url }}" class="nav-arrow">&gt;&gt;</a>{% endif %}
+  </div>
+
+  {% if article.image %}
+    <img src="{{ article.image }}" alt="{{ article.title }}" class="game-image">
+  {% endif %}
+
+
+  <div class="description">
+    {{ article.content }}
+  </div>
+
+</div>
+{% endblock article_body %}
+
+
+{% block footer %}
+<div class="game-info">
+  Made with {{ article.madewith }}
+
+  {% if article.download %}
+    <div class="downloads">
+      download
+      {% if article.windows %}
+      - {{ download("windows", article.windows) }}
+      {% endif %}
+
+      {% if article.linux %}
+      - {{ download("linux", article.linux) }}
+      {% endif %}
+
+      {% if article.mac %}
+      - {{ download("mac", article.mac) }}
+      {% endif %}
+
+      {% if article.rpi %}
+      - {{ download("raspberry pi", article.rpi) }}
+      {% endif %}
+
+      {% if article.love %}
+      - {{ download("love", article.love) }}
+      {% endif %}
+
+      {% if article.oldversions %}
+      - {{ download("old versions", article.oldversions, true) }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+
+  {% if article.link %}
+  <div class="links">
+    link
+    {% if article.steam %}
+    - {{ link("steam", article.steam) }}
+    {% endif %}
+
+    {% if article.itch %}
+    - {{ link("itch.io", article.itch) }}
+    {% endif %}
+
+    {% if article.lexaloffle %}
+    - {{ link("lexaloffle", article.lexaloffle) }}
+    {% endif %}
+
+    {% if article.discord %}
+    - {{ link("discord", article.discord) }}
+    {% endif %}
+
+  </div>
+  {% endif %}
+</div>
+
+{% if article.comments %}
+<input type="hidden" id="enrolled_comments_link" value="{{ article.comments }}">
+<div id="comments-container"></div>
+<script>
+  var comments = document.querySelector('#enrolled_comments_link').value;
+  comments = ("at://did:plc:4woruw474t2bm5qjow6wr3ad/app.bsky.feed.post/").concat(comments)
+  loadComments(comments)
+</script>
+{% endif %}
+{% endblock footer %}

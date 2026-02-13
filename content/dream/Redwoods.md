@@ -1,0 +1,7 @@
+Title: Redwoods
+Date: 2025-09-05
+Tags: body-horror, car, forest, insect, monster, real-place, travel
+
+We're in Northern California, at the redwoods. I'm with my friend who is a Japanese salaryman on vacation. We're on a dirt road surrounded by massive beautiful sequoias. Nearby is the largest monster truck ramp in the world. My friend suggests we jump it, but I think we should start with a smaller ramp.
+
+At a hardware store. It's just me and my friend. I see something that interests me, a sort of bent glass tube behind a display case, and I press the button to summon an employee. An older man walks over in a dirty grey shirt, baseball cap and denim shorts. he asks if I want the item, but I changed my mind and say I only accidentally pressed the button. as I walk away, my friend presses it too. the employee walks to him, and his head twists all the way around, and a different face on the back of his head talks to him in japanese. I look to a hallway and see another person has entered, an overweight woman dressed like an Egyptian pharaoh. her fingers are bent in an impossible shape, like the claws of a bird or the body of a spider, but perfectly round such that they could cradle an apple in their resting position. I get the impression these people are human mascots.

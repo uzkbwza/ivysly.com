@@ -1,0 +1,7 @@
+Title: Scientology
+Date: 2026-01-04
+Tags: music, pop-culture, religion, roller-coaster, theme-park, video-game
+
+We were at an indoor Scientologist theme park of sorts, very 90s. Verdict was that they were not terrible at designing rides and games. They had this "key" system where you'd earn these strange items by completing rides and learning scientology related lessons. they snuck these keys into real video games (one I remember was Myst) and they had their own little motif that played when you found one. they weren't really keys but a sort of oblong red polyhedron with a golden wireframe shape extruding from the long end, like an abstract key already stuck in a lock.
+
+One of the rides near the beginning (which to us was the end, as we went backward through the park) was the "gay straight bar". it was like a caged  carousel with a bar in the center. they had an advertisement playing, with shitty 90s advertisement hip hop, and it explained the ride. the song went "gay bar!" and the riders booed. then it went "straight bar!" and the riders cheered, followed by a repeating "gay bar straight bar gay bar straight bar ..." as the ride sped up the bargoers all stood up and held hands. it struck me as unusually progressive for a 90s theme park ride to address such topics

@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:294b00fc03b91838bb7e6cf5cf5c4855377a084f24d4495ff05433808cf96415
-size 953
+{% extends "default.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/misc.css">
+{% endblock head %}
+
+{% block linktitle %}junk drawer{% endblock linktitle %}
+{% block title %}junk drawer{% endblock title %}
+{% block bg %}misc{% endblock bg %}
+
+
+{% block header %}junk drawer{% endblock header %}
+
+{% block description %}
+a bunch of stuff that doesn't fit anywhere else
+{% endblock description %}
+
+{% block article_body %}
+
+
+<div class="misc">
+
+
+  <div class="misc-article">
+  {% for article in articles|sort(attribute='sortorder') %}
+
+    <span class="misc-entry"><a href="{{ HTML_SITEURL }}/{{ article.url }}">{% if article.shorttitle %}{{ article.shorttitle }}{% else %}{{ article.title }}{% endif %}</a></span>
+
+
+
+    {% if not loop.last %} .................... {% endif %}
+    {% endfor %}
+    .................... <a href="{{ HTML_SITEURL }}/feeds/">rss</a> .................... ???
+  </div>
+</div>
+
+
+{% endblock article_body %}

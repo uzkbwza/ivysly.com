@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9faa182a1b856f189dd6bcd2c9182c9f8e1a8a02f2be213cdc2c4217e307db94
-size 205
+Title: Hair
+Date: 2021-06-06
+Tags: body-horror, hair
+
+I had huge dyed scene hair and bangs. when I look in the mirror I have terrible dandruff and my scalp starts to separate from my head like a wig.

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e8aeedc0c974dcb8f1b89d68045ffdb76b69d2928770a9903da28a918afe66d
-size 276
+Title: Nude Restaurant
+Date: 2021-10-27
+Tags: eating, naked, real-person
+
+I, R and another girl(?) sit naked at a restaurant. the other girl goes into the empty kitchen and makes us food using her breast milk. T shows up, wearing makeup, gives me a weird look, and leaves.

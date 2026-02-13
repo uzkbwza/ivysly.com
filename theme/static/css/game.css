@@ -1,3 +1,60 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c146ba53d23fa4f18b6c2a953ea1380bbf1303bf26a02d557800f980e4a3d2e6
-size 925
+
+
+.game-image {
+  max-width: 50%;
+  display: block;
+  float: right;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  margin-left: 25px;
+}
+
+.game-info {
+  /* text-align: center; */
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  font-weight: bold;
+}
+
+.article-body {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+
+}
+
+.header {
+  margin-bottom: 0px;
+}
+
+.links {
+  /* text-align: center; */
+  font-size: 18px;
+  /* font-weight: bold; */
+}
+
+.downloads {
+  /* text-align: center; */
+  font-size: 18px;
+
+  /* text-align: center; */
+  /* font-size: 24px; */
+  /* font-weight: bold; */
+}
+.download {
+  /* margin-right: 10px; */
+}
+
+.link {
+  /* margin-right: 10px; */
+}
+
+h2 {
+  text-align: center;
+}
+
+.back-link {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}

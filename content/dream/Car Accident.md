@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f09b8c1a0251bba4395f90e3e4b264b37513a747b0a6e2e1c894331e1b7c1560
-size 173
+Title: Car Accident
+Date: 2021-11-01
+Tags: accident, car, danger, family, mom, real-person
+
+N has a mental break, gets my mom involved, and is injured in a car accident.

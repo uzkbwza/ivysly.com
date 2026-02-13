@@ -1,3 +1,283 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:539da779de3f951a47af2680c09ed3a6938ed88237c1c18b852b981b1a30b447
-size 4910
+/* i forgot how css works here we go again */
+@font-face {
+  font-family: 'MS Gothic';
+  src: url('../font/MS Gothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MS PGothic';
+  src: url('../font/MS PGothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MingLiU-ExtB';
+  src: url('../font/mingliu.ttf') format('truetype');
+}
+
+:root {
+  --link-color: #9cb4f0;
+  --link-color-hover: #fff;
+}
+
+body {
+  font-family: 'MS Gothic', sans-serif;
+
+  background-color: #000;
+  /* background: linear-gradient(to bottom, #111122 0%, hsl(246, 33%, 8%) 100%); */
+
+  color: white;
+  /* width: 100%; */
+  /* background-image: url('../images/dreambg.png'); */
+  /* padding-left: 50px; */
+}
+
+.content {
+  height: 100%;
+  margin: 0;
+  font-size: 18px; 
+  text-align: center;
+}
+
+
+h1 {
+  font-family: 'MS Gothic', sans-serif;
+  /* text-align: center; */
+  text-align: center;
+
+  color: black;
+  margin: 0 auto;
+  font-size: 42px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 20px; */
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+.dreamlog-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+
+  padding-top: 20px;
+}
+
+.dreamlog-image {
+  max-width: 100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: -30px;
+}
+
+a {
+color: var(--link-color);
+}
+
+a:hover {
+color: var(--link-color-hover);
+
+}
+
+div.header-container {
+position: relative;
+width: 200px;
+margin: 0 auto;
+
+font-size: 48px;
+}
+
+.header-link-left {
+position: absolute;
+left: -80px; 
+top: 20px;
+text-decoration: none;
+
+
+}
+
+.header-link-right {
+position: absolute;
+right: -80px;
+top: 20px;
+text-decoration: none;
+
+
+}
+
+div.dream-content {
+/* width: 770px; */
+min-height: 50px;
+text-align: justify;
+/* align the text to the bottom */
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+
+margin: 0 auto; /* This centers the div horizontally */
+}
+
+div.links {
+padding-bottom: 10px;
+padding-top: 10px;
+line-height: 1.5;
+/* text-align: center; */
+}
+
+.dream-entry {
+/* min-height: 55px; */
+}
+
+.dream-table {
+/* width: 100%; */
+max-width: 600px;
+margin: 0 auto;
+/* border-radius: 8px; */
+/* overflow-x: auto; */
+font-size: 20px;
+
+
+/* padding-bottom: 24px; */
+
+}
+
+hr {
+  margin-top: 22px;
+}
+
+.dream-row {
+  /* position: relative;      So children can be absolutely positioned */
+  width: 100%;            
+  white-space: nowrap;
+  text-align: left;
+  margin: 0px 0;
+}
+
+.dream-title {
+/* font-family: 'MS PGothic', sans-serif; */
+font-family: 'MingLiU-ExtB', serif;
+font-weight: 100;
+color: rgba(255, 255, 255, 0.781);
+/* color: #888; */
+/* position: absolute; */
+/* right: calc(50% + 7ch);              Right edge is at the halfway line of the parent */
+text-align: right;
+/* opacity: 0.8; */
+width: 100%;
+
+font-size: 20px;
+padding-right: 2px;
+
+/* font-weight: 900; */
+}
+
+.dream-date {
+font-family: 'MS Gothic', sans-serif;
+/* border: 1px solid rgba(0,128,255,0.1); */
+
+font-size: 24px;
+
+/* position: absolute; */
+/* left: 50%; */
+/* transform: translateX(-50%);  */
+/* text-align: left; */
+/* 
+background: linear-gradient(to bottom, 
+  rgba(0,0,0,0) 0%,
+  rgba(0,128,255,0.1) 100%
+); */
+}
+
+.dream-date a {
+/* text-decoration: none; */
+/* width: 100%; */
+/* height: 100%; */
+/* text-decoration: none; */
+
+}
+
+.dream-date a:hover {
+background: linear-gradient(to bottom, 
+  rgba(0,0,0,0) 0%,
+  rgba(0, 80, 255, 0.2) 100%
+);
+}
+
+.dream-tags {
+/* border: 1px solid rgba(0,128,255,0.1); */
+/* position: absolute; */
+text-align: left;
+/* left: calc(50% + 7ch); */
+/* transform: translateX(-50%);  */
+max-width: 500px;
+/* padding-bottom: 12px; */
+}
+
+.dream-tag {
+/* display: inline-block; */
+font-size: 14px;
+padding: 2px 4px;
+margin: 0 2px;
+border-radius: 0px;
+/* background: rgba(0, 80, 255, 0.1); */
+/* color: var(--link-color); */
+color: rgba(255, 255, 255, 0.5);
+}
+
+.dream-tag a {
+  color: rgba(255, 255, 255, 0.171);
+  text-decoration: none;
+
+}
+
+.dream-tag  a:hover {
+  color: white;
+  background: rgba(0, 80, 255, 0.2);
+}
+.dream-tag:hover {
+  background: rgba(0, 80, 255, 0.2);
+}
+
+.disclaimer {
+  font-size: 14px;
+  text-align: center;
+  /* color: rgba(255, 255, 255, 0.5); */
+}
+
+
+.nav-links {
+  text-align: center;
+  padding: 0px 5px;
+  /* width: 100%; */
+  font-size: 32px;
+  padding: 10px 0px;
+  font-weight: bold;
+
+  /* outline: 6px solid white; */
+  /* background-color: white; */
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'MingLiU-ExtB', sans-serif;
+
+}
+
+.nav-links.top {
+  /* border-bottom: 1px solid black; */
+}
+
+.nav-links.bottom {
+  /* border-top: 6px solid black; */
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 0px 10px;
+
+}
+
+.nav-link a {
+  text-decoration: none;
+}

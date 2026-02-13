@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10e0acf00ef6ba712ac8e8e0cdda4b55710b172e546e0b87e1834495f090a7aa
-size 341
+Title: Dragon
+Date: 2025-01-28
+Tags: monster, travel
+
+on a sail boat, we encounter a dragon from the white dragon clan (though he is light red). we strike a deal with him, and he agrees to help us on our vacation by having thousands of tiny dragons gather in the form of a translucent, bouncy VW beetle. we use it to drive to the beach

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82fbcfdede8184edcb18276ec85dd5e87eca21c43563750b5b56818426e65102
-size 148
+Title: Twitter Death
+Date: 2021-07-18
+Tags: death, real-person, twitter
+
+twitter user @B died and i learned from the account via a family member

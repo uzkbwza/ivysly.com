@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d1cd7d36f70c4d5128a6834e0141a547f829a17cd98ea263f68bfcf30505e85
-size 171
+Title: Mummies
+Date: 2022-01-20
+Tags: climbing, eating, monster
+
+mummies have spikes on the side so you can climb into their mouths which are at the top of their heads

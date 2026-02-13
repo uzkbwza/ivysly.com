@@ -1,0 +1,33 @@
+{% extends "default.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel='stylesheet' type='text/css' href="{{ HTML_SITEURL }}/theme/css/reviewlist.css">
+{% endblock head %}
+
+{% block bg %}blog{% endblock bg %}
+{% block title %}reviews{% endblock title %}
+{% block linktitle %}game reviews{% endblock linktitle %}
+
+{% block header_container %}
+<p style="margin-bottom: 0;"><a href="{{ HTML_SITEURL }}/blog.html">&lt;&lt; back to blog</a></p>
+<h1 class="header">{% block header %}game reviews{% endblock header %}</h1>
+{% endblock header_container %}
+
+{% block article_body %}
+
+<p>also on <a href="https://backloggd.com/u/ivysly/reviews/" target="_blank">backloggd</a>.</p>
+
+<div class="game-grid">
+  {% for article in articles_page.object_list %}
+  <div class="game-box">
+    <a href="{{ HTML_SITEURL }}/{{ article.url }}">
+      <div class="game-image">
+        <img src="{{ article.cover }}" alt="{{ article.title }}">
+        <div class="game-image-overlay"></div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock article_body %}

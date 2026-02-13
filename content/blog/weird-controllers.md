@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1fc719db215cbb52fd2b8e6e08a7f5e97e5371797dbe8bd079039ede36e7c8e1
-size 322
+Title: weird controllers could be so back
+Slug: weird-controllers
+Date: 2025-02-05
+Status: draft
+
+but i don't expect it to ever happen. *content warning: brands*. 
+
+the other week atari revealed their [upcoming handheld console](https://www.espn.com/gaming/story/_/id/43274100/atari-gamestation-go-handheld-reveal) 

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f50da3211da56645648b07ef084af83f615b8ed1cc8ecb8742b8155818cdba56
-size 169
+Title: Facility
+Date: 2022-08-24
+Tags: danger, escape
+
+trying to work together with another guy to escape a facility with a sneaky, strong guy trying to kill us both

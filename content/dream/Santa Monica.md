@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1424e33660daa3edc04e739e8b7eed92cc988fe3b90f4427a36de217c37c8d0b
-size 330
+Title: Santa Monica
+Date: 2020-04-30
+Tags: falling, real-place, sport
+
+At a gymnastics convention/competition. I enter an event which involves diving from very high in the air onto solid ground. I don't stick the landing, but I'm alright. I get a participation trophy. I think the convention was held at the Santa Monica pier.

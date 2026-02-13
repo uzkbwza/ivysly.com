@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2afcbc6a3fe09ef61a88531cfceca728b44dd77e43dbaa9fde26c1d08ed401d9
-size 241
+Title: Invader
+Date: 2021-06-19
+Tags: danger, video-game
+
+playing a game like dark souls. I beat an invader who is wielding a whip. there is an enemy who looks like a smiling witch with a big head. I'm in some kind of a run-down cottage.

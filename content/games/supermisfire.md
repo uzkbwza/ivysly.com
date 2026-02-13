@@ -7,6 +7,7 @@ Link: true
 Itch: https://ivysly.itch.io/super-misfire
 Image: ../static/games/SuperMisfire/misfire.png
 Cover: ./static/games/SuperMisfire/title.png
+Comments: 3mctfzwtczs2i
 
 🏆 #1 for "Fun" in ludum dare 49 compo
 

@@ -9,5 +9,6 @@ Windows: ../static/games/RocketSword/rocketsword.exe
 Linux: ../static/games/RocketSword/rocketsword.x86_64
 Image: ../static/games/RocketSword/rocketsword.png
 Cover: ./static/games/RocketSword/cover.png
+Comments: 3mctg2ld3fs2i
 
 This is a silly, fast-paced, 2.5D slash-'em-up game where you are a guy with a big rocket-propelled sword. It was too ambitious so I never finished it, but I credit it with a multitude of lessons learned. You can play with all the content I made for it, but there will probably never be more.

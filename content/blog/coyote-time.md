@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d462dddc5787c4876ae20c79883a2b9f5a26f576fe56ff9bfe1800ef6b1c992
-size 4491
+Title: super mario world 2: yoshi's island does not have coyote time
+Slug: coyote-time
+Date: 2025-02-10
+Status: draft
+
+recently i had a conversation in a voice chat with other game artists that helped reify one of my simmering discomforts about contemporary game design into full-blown thoughts. someone brought up [coyote time](https://en.wiktionary.org/wiki/coyote_time), the quintessential no-brainer mechanic one always should implement in any game where you jump off surfaces, a modern day quality-of-life improvement which designers of antiquity would obviously have utilized across the board if only they possessed our technology and hindsight. but any time anyone says "you should always put this in your game", i instantly develop an aversion to the idea that i might ever in a million years put that fucking thing in my game.
+
+i would like to make this neurosis useful, so i will first start by examining another modern indie game design cliche: imagine a level-based action roguelite where, at the end of each level, the player must stop the action and enter a menu to choose between a handful of randomly selected, permanent upgrades to their character. if you play indie games, you likely have in mind an existing example.
+
+this system accomplishes a lot for something so simple. an arcade-style action game with a high intensity curve can quickly leave a player overwhelmed, exhausted and unable to think beyond the primary gameplay. the "choose-a-random-upgrade" moment provides a resting point, an essential downtime to allow the player to engage in higher level strategization beyond "do i pick up the powerup now or not". it gives the player a greater capacity to make interesting decisions in the form of character building. it deals with idioms of progression players already know, so the average player will understand the system and take advantage of its benefits with little friction.
+
+but man does it bore me to death! i suspect others might feel the same way by now. despite my efforts i currently find it difficult to argue any inherent faults in the design itself, but with how often i see it pasted into new indie games i consider it one of those creativity-stifling infohazards. often enough amateur game artists (like myself) will utilize a popular and simple system without a ton of forethought or mutation of the source material. i understand how easily a designer would look at an elegant and successful design and assume that it will unconditionally improve their game, but what if you actually did think a little more about it first? i can complain about this design trope all day, but in fact i really love it for all its potential: consider the [Rift Wizard](https://store.steampowered.com/app/2058570/Rift_Wizard_2/) games, a very much not-action like-with-a-k roguelike series that seems to have stumbled upon a very similar pattern through parallel thinking. 
+
+essentially, completing a level in Rift Wizard grants the player a choice of entering one of three portals. through each portal you can see the entire map on the other side including all its enemies, upgrades, consumables, etc.. once you enter, you can't go back. this complements nicely with the game's character progression system (which otherwise does not make use of any randomness) by forcing the player to ask far more interesting questions than the typical choose-a-random-upgrade mechanic. do i risk losing my whole run just to get an upgrade, or do i pick the safer level with worse pickups but weaker enemies my build can handle? i don't actually think the Rift Wizard developer intended this mechanic as an evolution of the action roguelite, but it nonetheless shows what you could achieve by taking the time to contemplate even the smallest lateral tweaks to an existing design. i also find this sort of non-modal strategy gameplay more satisfying to my personal taste in the context of a roguelike-like experience. 
+
+anyway let's talk a little more about coyote time. essentially
+
+-- bring it back to yoshis island and coyote time. examine how yoshi's island is better for not using it, and how including it could make it worse. show how coyote time simply moves the "jump zone" further to the edge and doesn't actually make anything easier than if you were to just have narrower gaps.
+
+-- thesis: think about things before putting them in your game. can you change them to better fit your mechanics? who says what is quality of life? todo: link kayin's post

@@ -8,6 +8,7 @@ Itch: https://ivysly.itch.io/lil-zuddy
 Windows: ../static/games/LilZuddy/LILZUDDY.zip
 Image: ../static/games/LilZuddy/screenshot.png
 Cover: ./static/games/LilZuddy/cover.png
+Comments: 3mctfyadicc2i
 
 LIL' ZUDDY is a virtual pet akin to Tamagotchi in which you can hatch and raise your very own Zuddy, a tiny bug with a big heart.
 
