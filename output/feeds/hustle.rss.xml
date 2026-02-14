@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel><title>ivysly.com - patchnotes</title><link /><description>patchnotes feed</description><lastBuildDate>Thu, 12 Feb 2026 21:13:00 +0000</lastBuildDate><item><title>1.8.0</title><link>/hustle/patchnotes/patchnotes/1.8.0.html</link><description>&lt;ul&gt;
+<rss version="2.0"><channel><title>ivysly.com - patchnotes</title><link>https://ivysly.com</link><description>patchnotes feed</description><lastBuildDate>Sat, 14 Feb 2026 10:39:57 +0000</lastBuildDate><item><title>1.8.0</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.0</link><description>&lt;ul&gt;
 &lt;li&gt;Added new experimental performance optimization code. Should improve prediction performance but might cause prediction (and other) errors. Let me know!&lt;/li&gt;
 &lt;li&gt;Free Cancel is now enabled by default (with option to turn this off.)&lt;/li&gt;
 &lt;li&gt;Uncapped FPS (does not affect gameplay logic)&lt;/li&gt;
@@ -1217,7 +1217,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;my god! absolutely HEAPS OF CHANGES to YOUR FAVORITE CHARACTER! what the heck? YOUR MAIN is now bottom tier and WIZARD is &lt;strong&gt;&lt;em&gt;SSSS++++&lt;/em&gt;&lt;/strong&gt;??? be not afraid&amp;hellip;&lt;/p&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.8.0.html</guid></item><item><title>1.8.16</title><link>/hustle/patchnotes/patchnotes/1.8.16.html</link><description>&lt;ul&gt;
+&lt;p&gt;my god! absolutely HEAPS OF CHANGES to YOUR FAVORITE CHARACTER! what the heck? YOUR MAIN is now bottom tier and WIZARD is &lt;strong&gt;&lt;em&gt;SSSS++++&lt;/em&gt;&lt;/strong&gt;??? be not afraid&amp;hellip;&lt;/p&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.0</guid></item><item><title>1.8.16</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.16</link><description>&lt;ul&gt;
 &lt;li&gt;Fixed character info containers (cowboy&amp;rsquo;s cylinder, wiz gravity, etc) moving around on the screen based on the matchup (this will hopefully fix some problems with mods). They&amp;rsquo;re also slightly more compact.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;All Characters&lt;/h2&gt;
@@ -1292,7 +1292,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.8.16.html</guid></item><item><title>1.8.23</title><link>/hustle/patchnotes/patchnotes/1.8.23.html</link><description>&lt;ul&gt;
+&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.16</guid></item><item><title>1.8.23</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.23</link><description>&lt;ul&gt;
 &lt;li&gt;Emergency adjustments&lt;/li&gt;
 &lt;li&gt;I didn&amp;rsquo;t want to make any more changes before Olympus, but many of the top players (of all characters, including Wiz) have alerted me of a massively overpowered strategy that allows for Wizard to win while taking no risks. This was demonstrated at today&amp;rsquo;s Protocol tournament where 6 of top 8 were Wizards, some of whom weren&amp;rsquo;t normally even Wizard players. These were their suggested changes that should help alleviate the issue. I have chosen these changes because they are relatively minor adjustments and should not substantially impact typical Wizard strategies that aren&amp;rsquo;t stalling.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1322,7 +1322,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.8.23.html</guid></item><item><title>1.8.5</title><link>/hustle/patchnotes/patchnotes/1.8.5.html</link><description>&lt;ul&gt;
+&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.23</guid></item><item><title>1.8.5</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.5</link><description>&lt;ul&gt;
 &lt;li&gt;Just a quick bugfix and small balance update to tackle some of the bigger more obvious problems.&lt;/li&gt;
 &lt;li&gt;Possibly fixed landing-related prediction errors. This might cause some changes to landing IASA.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1477,7 +1477,7 @@
 &lt;li&gt;Reduced damage per hit (480 -&amp;gt; 300)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.8.5.html</guid></item><item><title>1.8.9</title><link>/hustle/patchnotes/patchnotes/1.8.9.html</link><description>&lt;h2&gt;All Characters&lt;/h2&gt;
+&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.5</guid></item><item><title>1.8.9</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.9</link><description>&lt;h2&gt;All Characters&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Push Block&lt;ul&gt;
 &lt;li&gt;Push Block after normal block works against projectiles now.&lt;/li&gt;
@@ -1519,7 +1519,7 @@
 &lt;li&gt;Delayed throw invulnerability startup (1f -&amp;gt; 3f)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.8.9.html</guid></item><item><title>1.9.0</title><link>/hustle/patchnotes/patchnotes/1.9.0.html</link><description>&lt;ul&gt;
+&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.8.9</guid></item><item><title>1.9.0</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.9.0</link><description>&lt;ul&gt;
 &lt;li&gt;UI now explicitly tells you when you are in a combo vs when you are in neutral.&lt;/li&gt;
 &lt;li&gt;Added UI info for current initiative state and which actions can use Initiative.&lt;/li&gt;
 &lt;li&gt;Added a sound that plays when your time is running out.&lt;/li&gt;
@@ -2544,7 +2544,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.9.0.html</guid></item><item><title>1.9.19</title><link>/hustle/patchnotes/patchnotes/1.9.19.html</link><description>&lt;ul&gt;
+&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.9.0</guid></item><item><title>1.9.19</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.9.19</link><description>&lt;ul&gt;
 &lt;li&gt;Lobbies no longer default to custom characters being enabled. This is to promote a similar balance of modded to vanilla lobbies to before character loader was merged into base game, as modded lobbies have become a dominant majority and vanilla players are finding it difficult to find games.&lt;ul&gt;
 &lt;li&gt;You can now filter lobbies by whether or not they use custom characters.&lt;/li&gt;
 &lt;/ul&gt;
@@ -2925,7 +2925,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.9.19.html</guid></item><item><title>1.9.5</title><link>/hustle/patchnotes/patchnotes/1.9.5.html</link><description>&lt;ul&gt;
+&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.9.19</guid></item><item><title>1.9.5</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/1.9.5</link><description>&lt;ul&gt;
 &lt;li&gt;Lobbies now wait for characters to load, this should fix the &amp;ldquo;mod mismatch&amp;rdquo; issue&lt;/li&gt;
 &lt;li&gt;Adjusted sound effect for all level-1 supers (think of them like EX moves&amp;hellip;)&lt;/li&gt;
 &lt;li&gt;
@@ -3196,4 +3196,4 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/1.9.5.html</guid></item><item><title>test</title><link>/hustle/patchnotes/patchnotes/testpatch.html</link><description>&lt;p&gt;test&lt;/p&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/hustle/patchnotes/patchnotes/testpatch.html</guid></item></channel></rss>
+&lt;/ul&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/1.9.5</guid></item><item><title>test</title><link>https://ivysly.com/hustle/patchnotes/patchnotes/testpatch</link><description>&lt;p&gt;test&lt;/p&gt;</description><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>https://ivysly.com/hustle/patchnotes/patchnotes/testpatch</guid></item></channel></rss>

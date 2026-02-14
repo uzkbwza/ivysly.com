@@ -10,5 +10,5 @@ Evil Egg knowing comfort under the flat white light of the aisle and checking ou
 Evil Egg sleeping as the warm rain blankets her in the wide dark.
 
 <div style="text-align: center;">
-<a href="/games/evil-egg.html"> <img src="/images/evileggblog3.png" alt="evil egg"> </a>
+<a href="/games/evil-egg"> <img src="/images/evileggblog3.png" alt="evil egg"> </a>
 </div>

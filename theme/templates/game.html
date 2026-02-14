@@ -18,7 +18,7 @@
 
 
 {% if article.cover %}
-{% block card_image %}{{SITEURL}}/{{ article.cover[2:] }}{% endblock card_image %}
+{% block card_image %}{{SITEURL}}{{ article.cover }}{% endblock card_image %}
 {% endif %}
 
 

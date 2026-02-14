@@ -15,12 +15,12 @@ STATIC_DIRS = ['content/static']
 
 # Navigation
 NAVIGATION_LINKS = [
-    ('games', 'games.html'),
-    ('music', 'music.html'),
-    ('blog', 'blog.html'),
-    ('dreams', 'dream.html'),
-    ('misc', 'misc.html'),
-    ('about', 'about.html'),
+    ('games', 'games'),
+    ('music', 'music'),
+    ('blog', 'blog'),
+    ('dreams', 'dream'),
+    ('misc', 'misc'),
+    ('about', 'about'),
 ]
 
 # Collections

@@ -14,6 +14,7 @@ from .building import (
     build_site, clean_output, copy_content_images, copy_static, copy_theme_static
 )
 from .rendering import (
+    RenderOutput,
     render_all_rss_feed, render_collection_list, render_item, render_page,
     render_rss_feed, render_tag_page, render_tags_list, render_template_page,
     setup_jinja_env, write_output
@@ -64,6 +65,15 @@ def build(dev: bool, config: str):
         if list_output:
             write_output(list_output)
             rendered_count += 1
+            # Also save as <dir>/index.html so /blog resolves to blog/index.html
+            # (when both blog.html and blog/ directory exist)
+            dir_path = list_output.output_path.with_suffix('')
+            if dir_path.is_dir():
+                index_output = RenderOutput(
+                    content=list_output.content,
+                    output_path=dir_path / 'index.html',
+                )
+                write_output(index_output)
 
         # Tag pages
         for tag in collection.tags.values():
@@ -135,10 +145,19 @@ def serve(port: int, config: str):
     # Change to output directory
     os.chdir(output_dir)
 
-    handler = http.server.SimpleHTTPRequestHandler
+    class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
+        """Handler that supports clean URLs (HTML rewriting)."""
+        def do_GET(self):
+            # Try .html extension if path has no extension and doesn't exist
+            path = self.path.split('?')[0].split('#')[0]
+            if '.' not in os.path.basename(path):
+                html_path = os.path.join(os.getcwd(), path.lstrip('/') + '.html')
+                if os.path.isfile(html_path):
+                    self.path = path + '.html'
+            super().do_GET()
 
     socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", port), handler) as httpd:
+    with socketserver.TCPServer(("", port), CleanURLHandler) as httpd:
         click.echo(f"Serving at http://localhost:{port}")
         click.echo("Press Ctrl+C to stop.")
         try:
@@ -291,10 +310,18 @@ def watch(port: int, config: str):
     output_dir = site_config.output_dir
     os.chdir(output_dir)
 
-    http_handler = http.server.SimpleHTTPRequestHandler
+    class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
+        """Handler that supports clean URLs (HTML rewriting)."""
+        def do_GET(self):
+            path = self.path.split('?')[0].split('#')[0]
+            if '.' not in os.path.basename(path):
+                html_path = os.path.join(os.getcwd(), path.lstrip('/') + '.html')
+                if os.path.isfile(html_path):
+                    self.path = path + '.html'
+            super().do_GET()
 
     socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", port), http_handler) as httpd:
+    with socketserver.TCPServer(("", port), CleanURLHandler) as httpd:
         url = f"http://localhost:{port}"
         click.echo(f"\nServing at {url}")
         click.echo("Watching for changes... Press Ctrl+C to stop.")

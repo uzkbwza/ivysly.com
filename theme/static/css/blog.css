@@ -36,7 +36,8 @@
 }
 
 .rainbow-letter {
-  animation: rainbow 3s linear infinite;
+  animation: rainbow 1s linear infinite;
+  filter: drop-shadow(1px 1px 1px);
 }
 
 @keyframes rainbow {

@@ -4,11 +4,11 @@
 {% block title %}dreamtag: {{ tag.name }}{% endblock title %}
 
 {% block header %}
-<h1><a href="{{ HTML_SITEURL }}/dream.html">{{ tag.name.upper() }}</a></h1>
+<h1><a href="{{ HTML_SITEURL }}/dream">{{ tag.name.upper() }}</a></h1>
 {% endblock header %}
 {% block tagcount %}{% endblock tagcount %}
 
 {% block links %}
-<a href="{{ HTML_SITEURL }}/dream.html">browse all</a><br>
+<a href="{{ HTML_SITEURL }}/dream">browse all</a><br>
 {{ super() }}
 {% endblock links %}

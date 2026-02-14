@@ -56,6 +56,7 @@ class ContentItem:
 
     # Computed fields
     url: str = ""
+    save_as: str = ""  # File output path (keeps .html)
     output_path: Path = field(default_factory=Path)
     summary: str = ""
 
@@ -93,13 +94,19 @@ class Tag:
     items: list[ContentItem] = field(default_factory=list, repr=False)
 
     @property
-    def url(self) -> str:
+    def save_as(self) -> str:
+        """File output path (keeps .html)."""
         if self.collection.tag_url:
             return self.collection.tag_url.format(
                 collection=self.collection.name,
                 slug=self.slug
             )
         return f"tag/{self.slug}.html"
+
+    @property
+    def url(self) -> str:
+        """Clean URL for linking (no .html)."""
+        return self.save_as.removesuffix('.html')
 
     def __str__(self) -> str:
         return self.name
@@ -119,6 +126,7 @@ class Page:
     source_path: Path
     meta: dict[str, Any]
     url: str = ""
+    save_as: str = ""  # File output path (keeps .html)
     output_path: Path = field(default_factory=Path)
     summary: str = ""
 

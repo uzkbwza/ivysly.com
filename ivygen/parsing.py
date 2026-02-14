@@ -52,6 +52,11 @@ def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
             body_start = i
             break
 
+    # Normalize ./ paths to absolute /
+    for key, value in meta.items():
+        if isinstance(value, str) and value.startswith('./'):
+            meta[key] = '/' + value[2:]
+
     body = '\n'.join(lines[body_start:])
     return meta, body
 
@@ -129,10 +134,11 @@ def parse_content_file(path: Path, collection: Collection) -> ContentItem:
     summary = meta.get('summary') or extract_summary(html_content)
 
     # Build URL
-    url = collection.item_url.format(
+    save_as = collection.item_url.format(
         collection=collection.name,
         slug=slug
     )
+    url = save_as.removesuffix('.html')
 
     return ContentItem(
         title=meta.get('title', path.stem),
@@ -144,6 +150,7 @@ def parse_content_file(path: Path, collection: Collection) -> ContentItem:
         collection=collection,
         meta=meta,
         url=url,
+        save_as=save_as,
         summary=summary,
         tags=[],  # Populated later during tag resolution
     )
@@ -159,6 +166,9 @@ def parse_page_file(path: Path, page_config: dict[str, Any]) -> Page:
     html_content = render_markdown(body)
     summary = meta.get('summary') or extract_summary(html_content)
 
+    save_as = page_config.get('url', f'{slug}.html')
+    url = save_as.removesuffix('.html')
+
     return Page(
         title=meta.get('title', path.stem),
         slug=slug,
@@ -167,7 +177,8 @@ def parse_page_file(path: Path, page_config: dict[str, Any]) -> Page:
         raw_content=body,
         source_path=path,
         meta=meta,
-        url=page_config.get('url', f'{slug}.html'),
+        url=url,
+        save_as=save_as,
         summary=summary,
     )
 

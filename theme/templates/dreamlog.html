@@ -29,7 +29,7 @@ dreamlog entries may touch on sensitive or explicit topics not suitable for all 
 {% block header %}
 {% endblock header %}
 <p class="disclaimer">dreamlog entries may touch on sensitive or explicit topics not suitable for all ages.<br>real names censored for privacy.</p>
-<p class="disclaimer">{% block dreamlog_entry_count %}number of entries: {{ articles|length }}{% endblock dreamlog_entry_count %}{% block tagcount %} <br>number of <a href="{{ HTML_SITEURL }}/dream/tags.html">tags</a>: {{ tags|length }} {% endblock tagcount %}</p>
+<p class="disclaimer">{% block dreamlog_entry_count %}number of entries: {{ articles|length }}{% endblock dreamlog_entry_count %}{% block tagcount %} <br>number of <a href="{{ HTML_SITEURL }}/dream/tags">tags</a>: {{ tags|length }} {% endblock tagcount %}</p>
 
 <div class="content">
   <div class="dream-table">
@@ -39,7 +39,7 @@ dreamlog entries may touch on sensitive or explicit topics not suitable for all 
     <span class="dream-title">{{ article.title }}</span>
     <span class="dream-tags">
           {% for tag in article.tags %}
-            <span class="dream-tag"><a href="{{ HTML_SITEURL }}/dream/tag/{{ tag }}.html">{{ tag }}</a></span>
+            <span class="dream-tag"><a href="{{ HTML_SITEURL }}/dream/tag/{{ tag }}">{{ tag }}</a></span>
           {% endfor %}
     </span>
 

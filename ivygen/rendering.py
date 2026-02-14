@@ -67,7 +67,7 @@ def make_base_context(site: Site, dev_mode: bool = False) -> dict[str, Any]:
     if dev_mode:
         siteurl = site.config.dev_url
         html_siteurl = site.config.dev_url
-        sitehome = f"{site.config.dev_url}/index.html" if site.config.dev_url else "/index.html"
+        sitehome = f"{site.config.dev_url}/" if site.config.dev_url else "/"
     else:
         siteurl = site.config.url
         html_siteurl = ""  # Use root-relative in production
@@ -113,7 +113,7 @@ def render_item(
     })
 
     html = template.render(**context)
-    output_path = site.config.output_dir / item.url
+    output_path = site.config.output_dir / item.save_as
 
     return RenderOutput(content=html, output_path=output_path)
 
@@ -186,7 +186,7 @@ def render_tag_page(
     })
 
     html = template.render(**context)
-    output_path = site.config.output_dir / tag.url
+    output_path = site.config.output_dir / tag.save_as
 
     return RenderOutput(content=html, output_path=output_path)
 
@@ -238,7 +238,7 @@ def render_page(
     })
 
     html = template.render(**context)
-    output_path = site.config.output_dir / page.url
+    output_path = site.config.output_dir / page.save_as
 
     return RenderOutput(content=html, output_path=output_path)
 

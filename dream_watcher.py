@@ -798,7 +798,7 @@ async def review(ctx, *, args: str = ""):
 
     await ctx.send(
         f"Published review for **{data['title']}** ({data.get('released', '?')}) to ivysly.com!\n"
-        f"<https://ivysly.com/reviews/{data['slug']}.html>"
+        f"<https://ivysly.com/reviews/{data['slug']}>"
     )
 
 

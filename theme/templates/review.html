@@ -5,7 +5,7 @@
 {% block linktitle %}Review: {{article.title|striptags}}{% endblock linktitle %}
 {% block title %}Review: {{ article.title|striptags }}{% endblock title %}
 
-{% block card_image %}{% if article.banner %}{{ SITEURL }}/{{ article.banner[2:] }}{% elif article.cover %}{{ SITEURL }}/{{ article.cover[2:] }}{% else %}{{ SITEURL }}/theme/images/card.png{% endif %}{% endblock card_image %}
+{% block card_image %}{% if article.banner %}{{ SITEURL }}{{ article.banner }}{% elif article.cover %}{{ SITEURL }}{{ article.cover }}{% else %}{{ SITEURL }}/theme/images/card.png{% endif %}{% endblock card_image %}
 
 {% block head %}
   {{ super() }}
@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block header_container %}
-<p style="margin-bottom: 0;"><a href="{{ HTML_SITEURL }}/reviews.html">&lt;&lt; back to reviews</a></p>
+<p style="margin-bottom: 0;"><a href="{{ HTML_SITEURL }}/reviews">&lt;&lt; back to reviews</a></p>
 <h1 class="header">{% block header %}Review: {{ article.title }}{% endblock header %}</h1>
 {% endblock header_container %}
 
@@ -35,9 +35,9 @@
 {% if article.banner or article.cover %}
 <div class="review-sidebar">
   {% if article.banner %}
-    <img src="{{ HTML_SITEURL }}/{{ article.banner[2:] }}" alt="{{ article.title }}" class="review-image">
+    <img src="{{ HTML_SITEURL }}{{ article.banner }}" alt="{{ article.title }}" class="review-image">
   {% elif article.cover %}
-    <img src="{{ HTML_SITEURL }}/{{ article.cover[2:] }}" alt="{{ article.title }}" class="review-image">
+    <img src="{{ HTML_SITEURL }}{{ article.cover }}" alt="{{ article.title }}" class="review-image">
   {% endif %}
   {% if article.released %}<div class="review-year">Released: <b>{{ article.released|strftime('%d %b %Y') }}</b></div>{% endif %}
 </div>

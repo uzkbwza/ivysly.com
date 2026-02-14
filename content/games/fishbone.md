@@ -11,7 +11,7 @@ Image: ../static/games/TheAstonishingAdventuresOfFinspectorEelliottFishboneEelDe
 Cover: ./static/games/TheAstonishingAdventuresOfFinspectorEelliottFishboneEelDetectivePart6TRAPPEDOnPlanetBigBurger!/Fishbone-screenshot.png
 Comments: 3m7yifduet22b
 
-puzzle platformer jamgame for sewerjam 8 and [my first game using the Fennel programming language](../blog/sologamedev-with-lisp.html). i made this with [takumatori](https://bsky.app/profile/did:plc:f26vfk2xbdsdq6et5fdlmfcp) who did all the art. i didn't get to finish it :(
+puzzle platformer jamgame for sewerjam 8 and [my first game using the Fennel programming language](../blog/sologamedev-with-lisp). i made this with [takumatori](https://bsky.app/profile/did:plc:f26vfk2xbdsdq6et5fdlmfcp) who did all the art. i didn't get to finish it :(
 
 the game saves your progress, so if you get stuck, you can hit escape/start and then press the continue button to restart the level. i am aware of at least one point in the game where you can get stuck
 

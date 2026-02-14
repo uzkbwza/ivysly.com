@@ -11,11 +11,11 @@
 {% block header %}blog{% endblock header %}
 {% block article_body %}
 <p>thoughts that were too long or precious for throwaway social media posts. entries may touch on sensitive or explicit topics not suitable for all ages.</p>
-<h3>view <a href="{{ HTML_SITEURL }}/reviews.html">{% for c in "GAME REVIEWS" %}<span class="rainbow-letter" style="animation-delay: {{ loop.index0 * -0.25 }}s">{{ '&nbsp;' if c == ' ' else c }}</span>{% endfor %}</a> here.</h3>
+<h3>view <a href="{{ HTML_SITEURL }}/reviews">{% for c in "GAME REVIEWS" %}<span class="rainbow-letter" style="animation-delay: {{ loop.index0 * -0.25 / 3 }}s">{{ '&nbsp;' if c == ' ' else c }}</span>{% endfor %}</a> here.</h3>
 
 {% for article in articles_page.object_list %}
 <div class="article-entry">
-    <span class="article-entry-title"><a href="{{ article.url }}">{{ article.title }}</a></span> <span class="blog-info">{{ article.date.strftime('%b %d, %Y') }}</span>
+    <span class="article-entry-title"><a href="{{ HTML_SITEURL }}/{{ article.url }}">{{ article.title }}</a></span> <span class="blog-info">{{ article.date.strftime('%b %d, %Y') }}</span>
     <div class="article-summary">{{ article.summary|striptags }}</div>
 </div>
 
