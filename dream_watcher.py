@@ -158,7 +158,7 @@ def deploy_post(post_type, title, content, overwrite=False):
         file.write(content)
 
     # Deploy to server
-    subprocess.run(["./deploy.sh"], capture_output=True, text=True)
+    subprocess.run(["bash", "deploy.sh"], capture_output=True, text=True)
 
 
 ###############################################################################
@@ -465,7 +465,7 @@ async def addtags(ctx, *, input_str: str):
             errors.append(f"- Title '{t}': {str(e)}")
 
     # Single deploy after updating all specified dreams
-    subprocess.run(["./deploy.sh"], capture_output=True, text=True)
+    subprocess.run(["bash", "deploy.sh"], capture_output=True, text=True)
 
     if errors:
         err_msg = "\n".join(errors)
@@ -514,7 +514,7 @@ async def removetags(ctx, *, input_str: str):
                 errors.append(f"- Title '{t}': {str(e)}")
 
         # Single deploy after updating all specified dreams
-        subprocess.run(["./deploy.sh"], capture_output=True, text=True)
+        subprocess.run(["bash", "deploy.sh"], capture_output=True, text=True)
 
         # Build success message
         success_msg = ""
@@ -537,7 +537,7 @@ async def removetags(ctx, *, input_str: str):
             changed_titles = remove_tags_from_all_dreams(remove_tags)
 
             # Deploy once for the global update
-            subprocess.run(["./deploy.sh"], capture_output=True, text=True)
+            subprocess.run(["bash", "deploy.sh"], capture_output=True, text=True)
 
             if changed_titles:
                 await ctx.send(
@@ -794,7 +794,7 @@ async def review(ctx, *, args: str = ""):
     # Deploy
     current_dir = os.path.dirname(os.path.realpath(__file__))
     os.chdir(current_dir)
-    subprocess.run(["./deploy.sh"], capture_output=True, text=True)
+    subprocess.run(["bash", "deploy.sh"], capture_output=True, text=True)
 
     await ctx.send(
         f"Published review for **{data['title']}** ({data.get('released', '?')}) to ivysly.com!\n"
@@ -802,4 +802,4 @@ async def review(ctx, *, args: str = ""):
     )
 
 
-bot.run("REDACTED")
+bot.run(os.environ["DISCORD_BOT_TOKEN"])
