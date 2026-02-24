@@ -23,7 +23,7 @@
 
     <meta property="og:title" content="ivysly.com - home">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://ivysly.com/theme/images/card.png">
+    <meta property="og:image" content="/theme/images/card.png">
     <meta property="og:description" content="ivy sly webzone">
     
     <meta name="twitter:site" content="@ivy_sly_">
@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="ivysly.com - home">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="ivy sly webzone">
-    <meta name="twitter:image" content="https://ivysly.com/theme/images/card.png">
+    <meta name="twitter:image" content="/theme/images/card.png">
   
 
 
@@ -54,6 +54,42 @@
     <title>ivysly.com - home</title>
     
 
+    <style>
+      #theme-toggle {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 999;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+      .theme-icon {
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .theme-icon {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      :root[data-theme="dark"] .theme-icon {
+        filter: invert(1);
+      }
+    </style>
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
 
 
 
@@ -62,12 +98,21 @@
 
 <body>
   
+  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <img class="theme-icon" src="/theme/images/lightmode1.png" alt=""
+      data-light="/theme/images/lightmode1.png"
+      data-dark="/theme/images/lightmode2.png">
+  </button>
+  
+  
   
 <div class="header-container">
   <a href="/">
     <img src="/theme/images/home/header.png" class="header-image"
       data-hover="/theme/images/home/header2.png"
-      data-normal="/theme/images/home/header.png">
+      data-normal="/theme/images/home/header.png"
+      data-hover-dark="/theme/images/home/header2_dark.png"
+      data-normal-dark="/theme/images/home/header_dark.png">
   </a>
 </div>
 
@@ -79,42 +124,54 @@
       usemap="#videogamesMap"
       style="position: absolute; right: 260px; top: -40px;"
       data-hover="/theme/images/home/videogames2.png"
-      data-normal="/theme/images/home/videogames1.png">
+      data-normal="/theme/images/home/videogames1.png"
+      data-hover-dark="/theme/images/home/videogames2_dark.png"
+      data-normal-dark="/theme/images/home/videogames1_dark.png">
     
     <img src="/theme/images/home/music1.png"
       id="musicBtn"
       usemap="#musicMap"
       style="position: absolute; left: 80px; top: 240px;"
       data-hover="/theme/images/home/music2.png"
-      data-normal="/theme/images/home/music1.png">
+      data-normal="/theme/images/home/music1.png"
+      data-hover-dark="/theme/images/home/music2_dark.png"
+      data-normal-dark="/theme/images/home/music1_dark.png">
     
     <img src="/theme/images/home/webwords1.png"
       id="webwordsBtn"
       usemap="#webwordsMap"
       style="position: absolute; left: 160px; top: 380px;"
       data-hover="/theme/images/home/webwords2.png"
-      data-normal="/theme/images/home/webwords1.png">
+      data-normal="/theme/images/home/webwords1.png"
+      data-hover-dark="/theme/images/home/webwords2_dark.png"
+      data-normal-dark="/theme/images/home/webwords1_dark.png">
     
     <img src="/theme/images/home/dreamlog1.png"
       id="dreamlogBtn"
       usemap="#dreamlogMap"
       style="position: absolute; left: 440px; top: 460px;"
       data-hover="/theme/images/home/dreamlog2.png"
-      data-normal="/theme/images/home/dreamlog1.png">
+      data-normal="/theme/images/home/dreamlog1.png"
+      data-hover-dark="/theme/images/home/dreamlog2_dark.png"
+      data-normal-dark="/theme/images/home/dreamlog1_dark.png">
     
     <img src="/theme/images/home/about1.png"
       id="aboutBtn"
       usemap="#aboutMap"
       style="position: absolute; left: 770px; top: 40px;"
       data-hover="/theme/images/home/about2.png"
-      data-normal="/theme/images/home/about1.png">
+      data-normal="/theme/images/home/about1.png"
+      data-hover-dark="/theme/images/home/about2_dark.png"
+      data-normal-dark="/theme/images/home/about1_dark.png">
     
     <img src="/theme/images/home/misc1.png"
       id="miscBtn"
       usemap="#miscMap"
       style="position: absolute; left: 720px; top: 310px;"
       data-hover="/theme/images/home/misc2.png"
-      data-normal="/theme/images/home/misc1.png">
+      data-normal="/theme/images/home/misc1.png"
+      data-hover-dark="/theme/images/home/misc2_dark.png"
+      data-normal-dark="/theme/images/home/misc1_dark.png">
     
   </div>
 </div>
@@ -152,17 +209,21 @@
 
 
 <script>
+  function isDark() {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  }
+
   // Handle hover for header
   document.querySelectorAll('.header-image').forEach(img => {
-    img.addEventListener('mouseover', () => img.src = img.dataset.hover);
-    img.addEventListener('mouseout', () => img.src = img.dataset.normal);
+    img.addEventListener('mouseover', () => img.src = isDark() ? img.dataset.hoverDark : img.dataset.hover);
+    img.addEventListener('mouseout', () => img.src = isDark() ? img.dataset.normalDark : img.dataset.normal);
   });
 
   // Handle hover for image map areas
   document.querySelectorAll('area[data-target]').forEach(area => {
     const img = document.getElementById(area.dataset.target);
-    area.addEventListener('mouseover', () => img.src = img.dataset.hover);
-    area.addEventListener('mouseout', () => img.src = img.dataset.normal);
+    area.addEventListener('mouseover', () => img.src = isDark() ? img.dataset.hoverDark : img.dataset.hover);
+    area.addEventListener('mouseout', () => img.src = isDark() ? img.dataset.normalDark : img.dataset.normal);
   });
 
   // Dynamically scale the collage to fit within the window width
@@ -176,9 +237,30 @@
   window.addEventListener('load', scaleCollage);
   window.addEventListener('resize', scaleCollage);
 
-  // Preload hover images
+  // Swap images for current theme
+  function applyThemeImages() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.querySelectorAll('[data-normal-dark]').forEach(img => {
+      var isHovered = img.src === img.dataset.hover || img.src === img.dataset.hoverDark;
+      if (dark) {
+        img.src = isHovered ? img.dataset.hoverDark : img.dataset.normalDark;
+      } else {
+        img.src = isHovered ? img.dataset.hover : img.dataset.normal;
+      }
+    });
+  }
+  applyThemeImages();
+
+  // Re-apply when theme toggles
+  new MutationObserver(applyThemeImages).observe(
+    document.documentElement, {attributes: true, attributeFilter: ['data-theme']}
+  );
+
+  // Preload all image variants
   document.querySelectorAll('[data-hover]').forEach(img => {
     new Image().src = img.dataset.hover;
+    if (img.dataset.hoverDark) new Image().src = img.dataset.hoverDark;
+    if (img.dataset.normalDark) new Image().src = img.dataset.normalDark;
   });
 </script>
 
@@ -188,4 +270,23 @@
 
 
     <script src="/theme/js/relativetime.js"></script>
+    <script>
+      function toggleTheme() {
+        var current = document.documentElement.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = next === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = document.documentElement.getAttribute('data-theme') === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+      });
+    </script>
 </html>

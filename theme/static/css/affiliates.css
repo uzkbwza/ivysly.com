@@ -7,22 +7,18 @@
 .affiliates-box {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   margin: 10px 40px;
   padding: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border-color, black);
 }
 
 
 .affiliates-box-title {
-  background-color: black;
-  color: white;
+  background-color: var(--text-color, black);
+  color: var(--bg-color, white);
   font-size: 2rem;
   font-weight: bold;
   padding: 0px 10px;
-
-  /* text-align: center; */
 }
 
 

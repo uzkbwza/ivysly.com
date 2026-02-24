@@ -8,7 +8,7 @@
 .review-image {
   width: 100%;
   display: block;
-  border: 1px solid black;
+  border: 1px solid var(--border-color, black);
 }
 
 .review-info {
@@ -48,6 +48,6 @@
 }
 
 .article-body {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border-color, black);
   margin-bottom: 10px;
 }

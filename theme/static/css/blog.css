@@ -19,16 +19,15 @@
 
 
 .article-summary {
-  /* font-size: 16px; */
   margin-left: 10px;
   padding-left: 10px;
   margin-right: 20px;
-  border-left: 1px solid #000;
-  /* font-style: italic; */
+  border-left: 1px solid var(--border-color, #000);
 }
 
 .header {
   margin-bottom: 10px;
+
 }
 
 .header h1 {

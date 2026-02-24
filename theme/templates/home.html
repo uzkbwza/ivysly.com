@@ -18,7 +18,9 @@
   <a href="{{ SITEHOME }}">
     <img src="{{ HTML_SITEURL }}/theme/images/home/header.png" class="header-image"
       data-hover="{{ HTML_SITEURL }}/theme/images/home/header2.png"
-      data-normal="{{ HTML_SITEURL }}/theme/images/home/header.png">
+      data-normal="{{ HTML_SITEURL }}/theme/images/home/header.png"
+      data-hover-dark="{{ HTML_SITEURL }}/theme/images/home/header2_dark.png"
+      data-normal-dark="{{ HTML_SITEURL }}/theme/images/home/header_dark.png">
   </a>
 </div>
 
@@ -30,7 +32,9 @@
       usemap="#{{ btn.name }}Map"
       style="position: absolute; {{ btn.pos }}"
       data-hover="{{ HTML_SITEURL }}/theme/images/home/{{ btn.name }}2.png"
-      data-normal="{{ HTML_SITEURL }}/theme/images/home/{{ btn.name }}1.png">
+      data-normal="{{ HTML_SITEURL }}/theme/images/home/{{ btn.name }}1.png"
+      data-hover-dark="{{ HTML_SITEURL }}/theme/images/home/{{ btn.name }}2_dark.png"
+      data-normal-dark="{{ HTML_SITEURL }}/theme/images/home/{{ btn.name }}1_dark.png">
     {% endfor %}
   </div>
 </div>
@@ -43,17 +47,21 @@
 {% endfor %}
 
 <script>
+  function isDark() {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  }
+
   // Handle hover for header
   document.querySelectorAll('.header-image').forEach(img => {
-    img.addEventListener('mouseover', () => img.src = img.dataset.hover);
-    img.addEventListener('mouseout', () => img.src = img.dataset.normal);
+    img.addEventListener('mouseover', () => img.src = isDark() ? img.dataset.hoverDark : img.dataset.hover);
+    img.addEventListener('mouseout', () => img.src = isDark() ? img.dataset.normalDark : img.dataset.normal);
   });
 
   // Handle hover for image map areas
   document.querySelectorAll('area[data-target]').forEach(area => {
     const img = document.getElementById(area.dataset.target);
-    area.addEventListener('mouseover', () => img.src = img.dataset.hover);
-    area.addEventListener('mouseout', () => img.src = img.dataset.normal);
+    area.addEventListener('mouseover', () => img.src = isDark() ? img.dataset.hoverDark : img.dataset.hover);
+    area.addEventListener('mouseout', () => img.src = isDark() ? img.dataset.normalDark : img.dataset.normal);
   });
 
   // Dynamically scale the collage to fit within the window width
@@ -67,9 +75,30 @@
   window.addEventListener('load', scaleCollage);
   window.addEventListener('resize', scaleCollage);
 
-  // Preload hover images
+  // Swap images for current theme
+  function applyThemeImages() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.querySelectorAll('[data-normal-dark]').forEach(img => {
+      var isHovered = img.src === img.dataset.hover || img.src === img.dataset.hoverDark;
+      if (dark) {
+        img.src = isHovered ? img.dataset.hoverDark : img.dataset.normalDark;
+      } else {
+        img.src = isHovered ? img.dataset.hover : img.dataset.normal;
+      }
+    });
+  }
+  applyThemeImages();
+
+  // Re-apply when theme toggles
+  new MutationObserver(applyThemeImages).observe(
+    document.documentElement, {attributes: true, attributeFilter: ['data-theme']}
+  );
+
+  // Preload all image variants
   document.querySelectorAll('[data-hover]').forEach(img => {
     new Image().src = img.dataset.hover;
+    if (img.dataset.hoverDark) new Image().src = img.dataset.hoverDark;
+    if (img.dataset.normalDark) new Image().src = img.dataset.normalDark;
   });
 </script>
 

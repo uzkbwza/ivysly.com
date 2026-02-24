@@ -153,9 +153,12 @@ def clean_output(output_dir: Path, preserve: list[str]) -> None:
         if child.name in preserve_set:
             continue
         if child.is_dir():
-            shutil.rmtree(child)
+            shutil.rmtree(child, ignore_errors=True)
         else:
-            child.unlink()
+            try:
+                child.unlink()
+            except OSError:
+                pass
 
 
 def copy_static(src_dirs: list[Path], output_dir: Path) -> None:

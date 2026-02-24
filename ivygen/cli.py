@@ -232,7 +232,7 @@ def watch(port: int, config: str):
     """Watch for changes and rebuild automatically, with dev server."""
     import threading
     import time
-    from watchdog.observers import Observer
+    from watchdog.observers.polling import PollingObserver
     from watchdog.events import FileSystemEventHandler
 
     config_path = Path(config).resolve()
@@ -249,16 +249,7 @@ def watch(port: int, config: str):
     needs_rebuild.set()  # Initial build
 
     class RebuildHandler(FileSystemEventHandler):
-        def __init__(self):
-            self.last_event = 0
-
         def on_any_event(self, event):
-            # Debounce events (500ms)
-            now = time.time()
-            if now - self.last_event < 0.5:
-                return
-            self.last_event = now
-
             # Ignore output directory, hidden files, pycache, and ivygen source
             path = event.src_path
             if any(x in path for x in ['output', '/.', '__pycache__', 'ivygen/']):
@@ -272,6 +263,8 @@ def watch(port: int, config: str):
     def rebuild_loop():
         while True:
             needs_rebuild.wait()
+            # Debounce: wait for rapid changes to settle
+            time.sleep(0.5)
             needs_rebuild.clear()
             click.echo("\nRebuilding...")
             try:
@@ -285,21 +278,17 @@ def watch(port: int, config: str):
     rebuild_thread = threading.Thread(target=rebuild_loop, daemon=True)
     rebuild_thread.start()
 
-    # Set up file watcher
-    observer = Observer()
+    # Set up file watcher (polling for NTFS/exFAT compatibility)
+    observer = PollingObserver(timeout=1)
     handler = RebuildHandler()
 
-    # Watch content, theme, and config
-    watch_paths = [
-        site_config.content_dir,
-        site_config.theme_dir,
-        config_path.parent,
-    ]
-
-    for path in watch_paths:
+    # Watch content and theme recursively, config file's dir non-recursively
+    for path in [site_config.content_dir, site_config.theme_dir]:
         if path.exists():
             observer.schedule(handler, str(path), recursive=True)
             click.echo(f"Watching: {path}")
+    observer.schedule(handler, str(config_path.parent), recursive=False)
+    click.echo(f"Watching: {config_path.parent} (config only)")
 
     observer.start()
 

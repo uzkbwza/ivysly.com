@@ -25,7 +25,7 @@
 
     <meta property="og:title" content="ivysly.com - dream: monkey mountain (19 apr 2020)">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://ivysly.com/theme/images/card.png">
+    <meta property="og:image" content="/theme/images/card.png">
     <meta property="og:description" content="A monkey loses his sponsorship after a climbing injury in the jungle gym. I explain this to another monkey on a very thin ledge at the top of a humongous mountain. The monkey falls off the ledge,...">
     
     <meta name="twitter:site" content="@ivy_sly_">
@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="ivysly.com - dream: monkey mountain (19 apr 2020)">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="A monkey loses his sponsorship after a climbing injury in the jungle gym. I explain this to another monkey on a very thin ledge at the top of a humongous mountain. The monkey falls off the ledge,...">
-    <meta name="twitter:image" content="https://ivysly.com/theme/images/card.png">
+    <meta name="twitter:image" content="/theme/images/card.png">
   
 
 
@@ -72,6 +72,42 @@
 
 
 
+    <style>
+      #theme-toggle {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 999;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+      .theme-icon {
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .theme-icon {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      :root[data-theme="dark"] .theme-icon {
+        filter: invert(1);
+      }
+    </style>
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
 
 
 
@@ -79,6 +115,7 @@
 
 
 <body>
+  
   
   
 <div class="dream-container">
@@ -137,4 +174,23 @@
 
 
     <script src="/theme/js/relativetime.js"></script>
+    <script>
+      function toggleTheme() {
+        var current = document.documentElement.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = next === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = document.documentElement.getAttribute('data-theme') === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+      });
+    </script>
 </html>

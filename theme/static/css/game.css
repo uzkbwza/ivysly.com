@@ -5,7 +5,7 @@
   display: block;
   float: right;
   margin-bottom: 20px;
-  border: 1px solid black;
+  border: 1px solid var(--border-color, black);
   margin-left: 25px;
 }
 
@@ -18,9 +18,8 @@
 }
 
 .article-body {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border-color, black);
   margin-bottom: 10px;
-
 }
 
 .header {

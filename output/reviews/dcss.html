@@ -24,7 +24,7 @@
 
     <meta property="og:title" content="ivysly.com - Review: Dungeon Crawl Stone Soup">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://ivysly.com/images/reviews/banner-dungeon-crawl-stone-soup.jpg">
+    <meta property="og:image" content="/images/reviews/banner-dungeon-crawl-stone-soup.jpg">
     <meta property="og:description" content="Dungeon Crawl Stone Soup puts the Playing Game in Role-Playing Game. It’s the best game ever made. Ok, not really. But good luck finding another strategy game that offers the same level of tactical...">
     
     <meta name="twitter:site" content="@ivy_sly_">
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="ivysly.com - Review: Dungeon Crawl Stone Soup">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Dungeon Crawl Stone Soup puts the Playing Game in Role-Playing Game. It’s the best game ever made. Ok, not really. But good luck finding another strategy game that offers the same level of tactical...">
-    <meta name="twitter:image" content="https://ivysly.com/images/reviews/banner-dungeon-crawl-stone-soup.jpg">
+    <meta name="twitter:image" content="/images/reviews/banner-dungeon-crawl-stone-soup.jpg">
   
 
 
@@ -62,11 +62,51 @@
   <script src="/theme/js/comments.js"></script>
 
 
+    <style>
+      #theme-toggle {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 999;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+      .theme-icon {
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .theme-icon {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      :root[data-theme="dark"] .theme-icon {
+        filter: invert(1);
+      }
+    </style>
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
 
 
 <style>
   html {
     background-image: url(/theme/images/background/blog.png);
+    background-color: var(--bg-color);
+  }
+  html[data-theme="dark"] {
+    background-blend-mode: difference;
   }
 </style>
 
@@ -75,11 +115,32 @@
 
 <body>
   
+  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <img class="theme-icon" src="/theme/images/lightmode1.png" alt=""
+      data-light="/theme/images/lightmode1.png"
+      data-dark="/theme/images/lightmode2.png">
+  </button>
+  
+  
 <div class="header-container">
 
   <a href=/><img src="/theme/images/home/header.png" class="header-image"
-    onmouseover="this.src='/theme/images/home/header2.png'"
-    onmouseout="this.src='/theme/images/home/header.png'" ></a>
+    data-hover="/theme/images/home/header2.png"
+    data-normal="/theme/images/home/header.png"
+    data-hover-dark="/theme/images/home/header2_dark.png"
+    data-normal-dark="/theme/images/home/header_dark.png"
+    onmouseover="this.src=document.documentElement.getAttribute('data-theme')==='dark'?this.dataset.hoverDark:this.dataset.hover"
+    onmouseout="this.src=document.documentElement.getAttribute('data-theme')==='dark'?this.dataset.normalDark:this.dataset.normal"></a>
+  <script>
+    (function() {
+      var img = document.querySelector('.header-image');
+      if (document.documentElement.getAttribute('data-theme') === 'dark') img.src = img.dataset.normalDark;
+      new MutationObserver(function() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        img.src = dark ? img.dataset.normalDark : img.dataset.normal;
+      }).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
+    })();
+  </script>
 
 </div>
 
@@ -112,9 +173,9 @@
       <div class="article-body">
       
 <div class="review-info">
-  <a href="/reviews/kero-blaster" class="nav-arrow">&lt;&lt;</a>
+  <a href="/reviews/minecraft" class="nav-arrow">&lt;&lt;</a>
   06 Mar 2023
-  <a href="/reviews/metroid-dread" class="nav-arrow">&gt;&gt;</a>
+  <a href="/reviews/kero-blaster" class="nav-arrow">&gt;&gt;</a>
 
 </div>
 
@@ -174,4 +235,23 @@
 
 
     <script src="/theme/js/relativetime.js"></script>
+    <script>
+      function toggleTheme() {
+        var current = document.documentElement.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = next === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = document.documentElement.getAttribute('data-theme') === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+      });
+    </script>
 </html>

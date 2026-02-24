@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<!-- 🦔 -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel='stylesheet' type='text/css' href="/theme/css/default.css">
+    <link rel='stylesheet' type='text/css' href="/theme/css/codestyles.css">
+
+    
+
+
+    <meta name="keywords" content="gamedev, music, electronic">
+    <meta name="description" content="If there's one thing I love to do more than anything it's fucking talking about myself ugh">
+
+
+    <meta name="author" content="Ivy Sly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+
+    <meta name="language" content="English">
+    <meta name="title" content="ivysly.com - how to make a successful indie game">
+
+    <meta property="og:title" content="ivysly.com - how to make a successful indie game">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/theme/images/card.png">
+    <meta property="og:description" content="If there's one thing I love to do more than anything it's fucking talking about myself ugh">
+    
+    <meta name="twitter:site" content="@ivy_sly_">
+    <meta name="twitter:creator" content="@ivy_sly_">
+    <meta name="twitter:title" content="ivysly.com - how to make a successful indie game">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="If there's one thing I love to do more than anything it's fucking talking about myself ugh">
+    <meta name="twitter:image" content="/theme/images/card.png">
+  
+
+
+    <link rel=apple-touch-icon sizes=180x180 href=/theme/images/apple-touch-icon.png>
+    <link rel=icon type=image/png sizes=16x16 href=/theme/images/favicon-16x16.png>
+    <link rel=icon type=image/png sizes=32x32 href=/theme/images/favicon-32x32.png>
+    <link rel=icon type=image/png sizes=192x192 href=/theme/images/android-chrome-192x192.png>
+    <link rel=icon type=image/png sizes=512x512 href=/theme/images/android-chrome-512x512.png>
+
+    <link rel="alternate" type="application/rss+xml" title="allfeeds" href="https://ivysly.com/feeds/all.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="blog" href="https://ivysly.com/feeds/blog.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="dream" href="https://ivysly.com/feeds/dream.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="games" href="https://ivysly.com/feeds/games.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="hustle" href="https://ivysly.com/feeds/hustle.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="misc" href="https://ivysly.com/feeds/misc.rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="reviews" href="https://ivysly.com/feeds/reviews.rss.xml">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <title>ivysly.com - how to make a successful indie game</title>
+    
+
+  
+  
+
+  
+
+  
+
+  <link rel='stylesheet' type='text/css' href="/theme/css/blog.css">
+
+  <link rel='stylesheet' type='text/css' href="/theme/css/comments.css">
+
+  <script src="/theme/js/comments.js"></script>
+
+
+
+    <style>
+      #theme-toggle {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 999;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+      .theme-icon {
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .theme-icon {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      :root[data-theme="dark"] .theme-icon {
+        filter: invert(1);
+      }
+    </style>
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+
+<style>
+  html {
+    background-image: url(/theme/images/background/blog.png);
+    background-color: var(--bg-color);
+  }
+  html[data-theme="dark"] {
+    background-blend-mode: difference;
+  }
+</style>
+
+  </head>
+
+
+<body>
+  
+  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <img class="theme-icon" src="/theme/images/lightmode1.png" alt=""
+      data-light="/theme/images/lightmode1.png"
+      data-dark="/theme/images/lightmode2.png">
+  </button>
+  
+  
+<div class="header-container">
+
+  <a href=/><img src="/theme/images/home/header.png" class="header-image"
+    data-hover="/theme/images/home/header2.png"
+    data-normal="/theme/images/home/header.png"
+    data-hover-dark="/theme/images/home/header2_dark.png"
+    data-normal-dark="/theme/images/home/header_dark.png"
+    onmouseover="this.src=document.documentElement.getAttribute('data-theme')==='dark'?this.dataset.hoverDark:this.dataset.hover"
+    onmouseout="this.src=document.documentElement.getAttribute('data-theme')==='dark'?this.dataset.normalDark:this.dataset.normal"></a>
+  <script>
+    (function() {
+      var img = document.querySelector('.header-image');
+      if (document.documentElement.getAttribute('data-theme') === 'dark') img.src = img.dataset.normalDark;
+      new MutationObserver(function() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        img.src = dark ? img.dataset.normalDark : img.dataset.normal;
+      }).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
+    })();
+  </script>
+
+</div>
+
+<div class="page"> 
+
+
+<div class="box">
+  <div class="nav-links top">
+    
+      <span class="nav-link"><a href="/games">games</a></span>
+    
+      <span class="nav-link"><a href="/music">music</a></span>
+    
+      <span class="nav-link"><a href="/blog">blog</a></span>
+    
+      <span class="nav-link"><a href="/dream">dreams</a></span>
+    
+      <span class="nav-link"><a href="/misc">misc</a></span>
+    
+      <span class="nav-link"><a href="/about">about</a></span>
+    
+  </div>
+
+  <div class="content">
+    
+      
+<div class="header">
+  <h1>how to make a successful indie game</h1>
+  <div class="blog-info">
+    <a href="/blog/ice" class="nav-arrow">&lt;&lt;</a>
+    21 Feb 2026
+    
+  </div>
+</div>
+
+      <div class="article-body">
+      
+
+
+<p>tl;dr</p>
+<div class="youtube youtube-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q-JgG0ECp2U?si=vNiiDxevmdXO34jF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<p>i have dawdled on making this post for a couple years now because ultimately i am not qualified. i am a dysfunctional loser who stumbled into market success in the arts, maybe as undeserving a person could get if you believe in anyone deserving anything at all. it&rsquo;s also hard to write this because it&rsquo;s going to sound a lot like &ldquo;fuck you, got mine&rdquo;, but that&rsquo;s not at all what i&rsquo;m trying to do here. in fact, i am actually trying to help the reader to not make a huge mistake and throw their life away. i believe that in most respects i am not aspirational, but as time goes on i receive dm after dm, email after email from people asking me for advice, real, serious life advice, the &ldquo;should i drop out of college and pursue game dev&rdquo; kind of advice that could easily fuck up someone&rsquo;s circumstances if taken to heart. this makes me feel a lot of ugly feelings and think a lot of nauseating thoughts, so i just want to lay it all out here so that i can stop sending the same depressing message to all the people—kids, mainly!—who look to me for guidance.</p>
+<p>you might think you want indie game development to be your #1 pursuit. okay. i will assume you don&rsquo;t have the passive income or other means that would make it an easy decision. i hear some countries just toss you 20 grand if you say you are an artist. good for them. let me ask you to think about this question:</p>
+<p>are you content with being poor for the rest of your life?</p>
+<p>when i was a kid i always thought i was going to be a rock star. i wanted to be like my dad who was, to me, the greatest guitar player who ever lived, and a rock star himself. thus i spent most of middle &amp; high school making crappy tunes in fl studio. i didnt care about school because i was going to be a rock star. i never had thoughts about getting a job (my parents hated their jobs, it wasn&rsquo;t who they were, i could see it, and i decided i would never do that, i would do what i wanted to do) because i was going to hit it big. i spent my adolescense in a ridiculous dream that cost me my academic and social development until the obvious reality finally snapped me awake. no matter how good i was, and really, i was not that good, it didn&rsquo;t matter, because the world is so huge and so many people want to be rock stars. how do i compete with someone smarter and more talented than me, someone who has more connections, more intrigue, more appeal, more money, more luck? </p>
+<p>i had to decide that i loved making stuff so much that i did not care if i would be poor and unknown forever. i only wanted to spend my time doing one thing, at any cost. anything was better than working. i am disabled (most people are) so i applied for social security income and was approved. for about 6 years i lived on around $9,000 USD a year, which at the time was already far below the poverty line. for two years i lived in a dining room, and i was lucky. the only thing i had was free time to grind away. that was all i wanted. the moral here is that i never had to ask anyone if i should do this. it was a shitty way to live and i can&rsquo;t recommend it to anyone else, but i knew what i wanted, that i still want it, and that i will go back to living that way if i have to.</p>
+<p>the financial success of my financially successful game was a complete accident. i was not trying to make money with it. i&rsquo;m a weak, lazy person and i had long given up entirely on any ambition to turn my hobby into a job. it happened to me, and i took the path of least resistance. this is not true for everyone who makes a successful game, but it should highlight the most important aspect of success: it can happen to anyone, and it can pass anyone by. you are not special, and i am not special except that i was lucky. i know someone will respond with some motivational bullshit about &ldquo;making your own luck&rdquo; which is true to the extent that you are more likely to win a jackpot if you play the machine 1000 times versus just once or none at all. it comes with a cost. you don&rsquo;t force it with skill and hard work. skill and hard work are just the prerequisites to getting lucky at all.</p>
+<p>i was lucky in other ways too. i knew i wouldn&rsquo;t be homeless if it came down to it. my family would have bent over backward for me and my siblings, as they have done before, but it would have destroyed us in the process. i am lucky to have a partner in my life who took care of me, kept me accountable, and in a way shared my absurd lifestyle. i am <em>luckier than most</em> and i still gave up long before i happened to win the lottery. i&rsquo;d return to shame and poverty if i had to, even though i rather like having a safety net and money to throw around. it would be my first choice. but i don&rsquo;t think everyone needs to be this way to find their own version of success. you don&rsquo;t have to quit school. you don&rsquo;t have to quit your career. you can work on projects on the side. this doesn&rsquo;t make you less of a game developer, less of an artist. you don&rsquo;t have to make money doing something to love what you do. making art is not about grand gestures and taking huge risks, it&rsquo;s about the love of the game and putting in the time that you do have. if you merely made something you are proud of, if you made a game you like to play, or even if you made a complete piece of shit that you hate, there&rsquo;s success in there. that i got more money and recognition than another artist in the scene is a sick joke. i don&rsquo;t have any more answers, any more insights. there is a bigger topic to explore about how people (in the US at least) are not allowed the humanity of leisure to do what they love, but i&rsquo;m not good at talking about that. all i want to discuss in this blog post is my advice to those who keep asking for it. i say only sacrifice when you are sure, and be aware of the sacrifices you are about to make. don&rsquo;t ask me if you should do what i did. if you have to ask&hellip;</p>
+
+ 
+
+<input type="hidden"  id="enrolled_comments_link" value="3mfg7t2g5bk2j">
+
+<div id="comments-container"></div>
+<script>
+  var comments = document.querySelector('#enrolled_comments_link').value;
+
+  comments = ("at://did:plc:4woruw474t2bm5qjow6wr3ad/app.bsky.feed.post/").concat(comments)
+
+  console.log(comments)
+
+  loadComments(comments)
+  
+
+</script>
+
+
+
+
+      </div>
+      <div class="footer"></div>
+
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+
+
+    <script src="/theme/js/relativetime.js"></script>
+    <script>
+      function toggleTheme() {
+        var current = document.documentElement.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = next === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var icon = document.querySelector('.theme-icon');
+        if (icon) icon.src = document.documentElement.getAttribute('data-theme') === 'dark' ? icon.dataset.dark : icon.dataset.light;
+      });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+      });
+    </script>
+</html>

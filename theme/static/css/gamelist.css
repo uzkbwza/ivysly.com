@@ -9,15 +9,11 @@
 }
 
 .game-image {
-  /* The aspect ratio you want (e.g., 16:9) */
   aspect-ratio: 4 / 3;
-
   width: 100%;
   position: relative;
-
   overflow: hidden;
-
-  border: 1px solid black;
+  border: 1px solid var(--border-color, black);
 }
 
 .game-image img {
